@@ -5,11 +5,82 @@
     "name": "yhteishyva.fi",
     "url": "https://yhteishyva.fi/reseptit/tacot-sienitaytteella/7GQv11U2iROmzXoDwwIjso"
   },
-  "ingredients": [],
-  "mealType": [
-    "dinner",
-    "side"
+  "ingredients": [
+    {
+      "ingredientId": "oyster-mushroom",
+      "quantity": 400,
+      "unit": "g",
+      "substitutions": [
+        {
+          "use": { "ingredientId": "funnel-chanterelle" },
+          "reason": "seasonal",
+          "ratio": "1:1",
+          "note": {
+            "en": "September is its month. It will not shred into strands the way oyster mushroom does, so expect a looser filling rather than pulled-pork texture.",
+            "fi": ""
+          }
+        },
+        {
+          "use": { "ingredientId": "button-mushroom" },
+          "reason": "pantry",
+          "ratio": "1:1",
+          "note": {
+            "en": "Always available and never a find. Slice rather than shred, and drive off the water properly before the soy and tomato go in.",
+            "fi": ""
+          }
+        }
+      ]
+    },
+    { "ingredientId": "yellow-onion", "quantity": 1 },
+    { "ingredientId": "garlic", "quantity": 2, "unit": "clove" },
+    { "ingredientId": "rapeseed-oil", "quantity": 1, "unit": "tbsp" },
+    { "ingredientId": "soy-sauce", "quantity": 2, "unit": "tbsp" },
+    { "ingredientId": "tomato-puree", "quantity": 1, "unit": "tbsp" },
+    {
+      "freeText": "maple syrup",
+      "quantity": 1,
+      "unit": "tbsp",
+      "substitutions": [
+        {
+          "use": { "ingredientId": "syrup" },
+          "reason": "pantry",
+          "ratio": "1:1",
+          "note": {
+            "en": "Ordinary light syrup does the same job here. It is a teaspoon of sweetness against the soy, not a flavour you would miss.",
+            "fi": ""
+          }
+        }
+      ]
+    },
+    { "freeText": "smoked paprika powder", "quantity": 1, "unit": "tsp" },
+    { "ingredientId": "cumin", "quantity": 0.5, "unit": "tsp" },
+    { "freeText": "black pepper, ground", "quantity": 0.25, "unit": "tsp" },
+    { "freeText": "chili powder", "unit": "pinch" },
+    { "ingredientId": "tortillas", "quantity": 8 },
+    { "freeText": "salad mix", "quantity": 80, "unit": "g", "optional": true },
+    { "freeText": "guacamole", "quantity": 200, "unit": "g", "optional": true },
+    { "freeText": "tomato salsa", "quantity": 300, "unit": "g", "optional": true },
+    {
+      "freeText": "oat fraiche",
+      "quantity": 2,
+      "unit": "dl",
+      "optional": true,
+      "substitutions": [
+        {
+          "use": { "ingredientId": "yogurt" },
+          "reason": "pantry",
+          "ratio": "1:1",
+          "note": {
+            "en": "Not vegan any more, but it is the same cold, sour thing against a warm sweet filling.",
+            "fi": ""
+          }
+        }
+      ]
+    }
   ],
-  "tags": [],
-  "effort": "medium"
+  "mealType": ["dinner"],
+  "tags": ["vegan"],
+  "timeMinutes": 30,
+  "effort": "medium",
+  "servings": 4
 }

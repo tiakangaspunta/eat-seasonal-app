@@ -5,11 +5,62 @@
     "name": "satokausi.fi",
     "url": "https://satokausi.fi/limettinuudelit/"
   },
-  "ingredients": [],
-  "mealType": [
-    "lunch",
-    "dinner"
+  "ingredients": [
+    { "ingredientId": "noodles", "quantity": 200, "unit": "g" },
+    { "ingredientId": "lime", "quantity": 4 },
+    { "ingredientId": "garlic", "quantity": 3, "unit": "clove" },
+    { "ingredientId": "shallot", "quantity": 1 },
+    { "ingredientId": "red-chili", "quantity": 1 },
+    { "ingredientId": "ginger", "quantity": 20, "unit": "g" },
+    {
+      "ingredientId": "bok-choy",
+      "quantity": 250,
+      "unit": "g",
+      "substitutions": [
+        {
+          "use": { "ingredientId": "napa-cabbage" },
+          "reason": "seasonal",
+          "ratio": "1:1",
+          "note": {
+            "en": "Napa cabbage is at its September peak too and wilts the same way. Shred it a little finer, since it has no thick stems to soften.",
+            "fi": ""
+          }
+        },
+        {
+          "use": { "ingredientId": "spinach" },
+          "reason": "seasonal",
+          "ratio": "1:1",
+          "note": {
+            "en": "Also in season, but it collapses to almost nothing. Add it off the heat at the very end.",
+            "fi": ""
+          }
+        }
+      ]
+    },
+    { "ingredientId": "coriander", "quantity": 1, "unit": "pot" },
+    { "ingredientId": "rapeseed-oil", "quantity": 0.5, "unit": "dl" },
+    { "ingredientId": "peanut-butter", "quantity": 4, "unit": "tbsp" },
+    { "ingredientId": "syrup", "quantity": 2, "unit": "tbsp" },
+    {
+      "freeText": "hoisin sauce",
+      "quantity": 2,
+      "unit": "tbsp",
+      "substitutions": [
+        {
+          "use": { "ingredientId": "soy-sauce" },
+          "reason": "pantry",
+          "ratio": "1 tbsp soy sauce plus 1 tbsp syrup for 2 tbsp hoisin",
+          "note": {
+            "en": "Hoisin is the one thing here you might not have. Soy sauce with extra syrup covers the salt and the sweetness, though not the five-spice note.",
+            "fi": ""
+          }
+        }
+      ]
+    }
   ],
-  "tags": [],
-  "effort": "medium"
+  "mealType": ["dinner"],
+  "tags": ["vegan", "quick"],
+  "timeMinutes": 15,
+  "effort": "medium",
+  "servings": 4
 }

@@ -5,10 +5,69 @@
     "name": "sydanmerkki.fi",
     "url": "https://www.sydanmerkki.fi/resepti/munakoisopasta-2"
   },
-  "ingredients": [],
-  "mealType": [
-    "dinner"
+  "ingredients": [
+    {
+      "ingredientId": "eggplant",
+      "quantity": 500,
+      "unit": "g",
+      "substitutions": [
+        {
+          "use": { "ingredientId": "pumpkin" },
+          "reason": "seasonal",
+          "ratio": "1:1",
+          "note": {
+            "en": "Both roast at the same temperature and both go sweet doing it. A different dish, not a disguised one.",
+            "fi": ""
+          }
+        }
+      ]
+    },
+    { "freeText": "oil", "quantity": 1, "unit": "tbsp" },
+    { "freeText": "dried oregano", "quantity": 2, "unit": "tsp" },
+    { "freeText": "salt", "quantity": 0.25, "unit": "tsp" },
+    { "ingredientId": "yellow-onion", "quantity": 1 },
+    { "ingredientId": "garlic", "quantity": 2, "unit": "clove" },
+    {
+      "ingredientId": "crushed-tomatoes",
+      "quantity": 400,
+      "unit": "g",
+      "substitutions": [
+        {
+          "use": { "ingredientId": "tomato" },
+          "reason": "seasonal",
+          "ratio": "600 g fresh for 400 g tinned",
+          "note": {
+            "en": "Finnish tomatoes are at their peak in September, which is the one time of year this is worth the extra half hour. Chop, salt, and cook them down further than feels necessary before the tofu goes in.",
+            "fi": ""
+          }
+        }
+      ]
+    },
+    { "freeText": "water", "quantity": 1, "unit": "dl" },
+    { "freeText": "salt", "quantity": 1, "unit": "tsp" },
+    { "ingredientId": "tofu", "quantity": 350, "unit": "g" },
+    { "ingredientId": "pasta", "quantity": 300, "unit": "g" },
+    {
+      "ingredientId": "basil",
+      "quantity": 0.5,
+      "unit": "pot",
+      "substitutions": [
+        {
+          "use": { "ingredientId": "parsley" },
+          "reason": "seasonal",
+          "ratio": "1:1",
+          "note": {
+            "en": "Basil has no Finnish season on record yet, parsley is at its September peak. Not the same herb, but it is the fresh green note at the end.",
+            "fi": ""
+          }
+        }
+      ]
+    },
+    { "ingredientId": "sunflower-seeds", "quantity": 2, "unit": "tbsp" }
   ],
-  "tags": [],
-  "effort": "medium"
+  "mealType": ["dinner"],
+  "tags": ["vegan"],
+  "timeMinutes": 40,
+  "effort": "medium",
+  "servings": 6
 }
