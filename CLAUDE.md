@@ -21,6 +21,21 @@ Read `docs/PLAN.md` before doing anything. It is the brief.
   about her own cooking (what is easy, what is worth the effort, which
   substitutions she would accept). Ask.
 
+## Responses
+
+- Every response ends with a plain-English summary, under an `In plain English:`
+  heading, after the normal answer. The technical answer stays exactly as it is.
+  The summary is added to it, never substituted for it.
+- The summary says what was done and why it matters, in everyday language: no
+  file paths, no commands, no jargon. Where a technical word is unavoidable, say
+  what it means in the same sentence.
+- Skip it only when the whole response is already one or two plain sentences and
+  the summary would just repeat them.
+- Tia has the `claudish-to-english` plugin installed, which does this same job.
+  It works, but it renders through a `MessageDisplay` hook, which appears to be
+  a Claude Code terminal feature and does not show in the VSCode extension. The
+  rule lives here so the summary arrives whatever the plugin does.
+
 ## Layers
 
 - `data/` seed content: ingredients and recipes as typed data.

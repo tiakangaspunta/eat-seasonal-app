@@ -190,3 +190,19 @@ Short entries, newest last. Why, not just what.
   a premature caller fails loudly instead of silently reading nothing.
 - **`next dev` appends its own `nextjs-agent-rules` block to `CLAUDE.md`.** It is
   regenerated on every dev run, so it is left in place rather than deleted.
+
+## 2026-09-03 Plain-English summaries are a CLAUDE.md rule, not just a plugin
+
+- **Every response ends with a plain-English summary**, appended after the normal
+  technical answer rather than replacing it. Append rather than replace because
+  the precise version is still what gets acted on; the summary is for reading.
+- **The rule is written into `CLAUDE.md` even though the `claudish-to-english`
+  plugin already does this.** The plugin is installed, configured for Windows
+  (`llama3.2`, append mode) and verified working: run by hand it returns a clean
+  rewrite. But it delivers through a `MessageDisplay` hook, which appears to be a
+  Claude Code terminal feature, and this project is worked on through the VSCode
+  extension, where the rewrite is generated and then not shown. Writing the rule
+  down means the summary arrives regardless of which client is in use.
+- **Consequence to watch:** in the terminal, both could fire and produce two
+  summaries. Harmless, but if it becomes annoying the fix is to disable the
+  plugin, since the CLAUDE.md rule works everywhere and the plugin does not.
