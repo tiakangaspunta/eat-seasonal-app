@@ -315,3 +315,69 @@ Short entries, newest last. Why, not just what.
   front-load the whole calendar. `issues/004-september-calendar.md` now notes
   the sourcing method and that it needs to happen back in the Cowork session,
   since Claude Code likely has no web access itself.
+
+## 2026-09-03 Correction: Claude Code has internet access
+
+- **Wrong assumption fixed.** Two edits earlier today, the CLAUDE.md rule about
+  routing internet-dependent issues back through Cowork, and issue 004's sourcing
+  note, both assumed Claude Code had no web access. That was wrong, and it was
+  never consistent with the plan anyway: the paste-a-URL recipe workflow already
+  assumed fetching a page directly. Both are corrected: Claude Code fetches named
+  sources itself. The one thing that doesn't change is k-ruoka's `robots.txt`
+  blocking its search page from automated tools generally, that's a site policy,
+  not a capability gap, and still means the three search-shortcut URLs in step 3
+  get confirmed by Tia searching by hand.
+
+## 2026-09-03 September calendar from satokausi.fi (issue 004)
+
+- **Claude Code does have web access in this session, so the Cowork detour was
+  not needed.** Issue 004 assumed otherwise. All 73 seasonal ingredients were
+  fetched here, one satokausi.fi page each, and the issue's sourcing note is now
+  out of date rather than wrong: check before assuming the tool is missing.
+- **satokausi.fi's calendar index gave exact URL slugs, so none were guessed.**
+  `satokausi.fi/satokausikalenteri/` links every ingredient page. A guessed slug
+  is safe in a way guessed data is not — it either 404s or it doesn't — but the
+  index made it unnecessary for most.
+- **`verified` gained an exception list rather than being flipped or trusted.**
+  Tia chose `unverifiedMonths`, so carrot can hold a trusted January from her
+  Notion data and a drafted September from satokausi at the same time. Flipping
+  the whole ingredient to `verified: false` would have greyed out roughly 70 of
+  73 ingredients and thrown away the signal that her own months are trusted;
+  treating satokausi as verified outright would have decided on her behalf that
+  a published source is as good as her own knowledge.
+- **The 28 fresh-versus-storage disagreements were recorded, not resolved.**
+  satokausi calls January carrot storage where the Notion import calls it fresh,
+  and the same pattern covers most root vegetables and cabbages. Almost
+  certainly a shape mismatch: Notion had one availability column, this project
+  split it in two, and the import put everything in `freshMonths`. Listed in
+  `docs/SATOKAUSI-CONFLICTS.md` for step 3, when the full year lands.
+- **Only September was written, though every page shows all twelve months.**
+  Tia kept the slice matched to the step. Step 3 re-fetches.
+- **Cauliflower, portobello, and shiitake are in storage in September, not
+  fresh.** Worth noting because the home view will show them differently from
+  the other 43, and cauliflower in particular reads as an autumn vegetable.
+- **Two mushrooms are cultivated year-round, which the three-season model has no
+  bucket for.** satokausi says button mushroom and oyster mushroom are grown in
+  Finland "ympäri vuoden" with no season headings at all. Tia's call: they are
+  fresh, because a year-round greenhouse crop genuinely is fresh. The
+  consequence, accepted knowingly, is that they will sit in the grid in all
+  twelve months once step 3 lands and never read as a seasonal find.
+- **Beetroot and turnip are not in season in September, surprising as that is.**
+  Beetroot's page lists storage January to April and peak November to December,
+  with September under no heading; turnip peaks in July and August and is gone
+  by autumn. Tia accepted both readings rather than overriding them. The same
+  went for cauliflower being in storage in September rather than fresh: odd for
+  a vegetable that reads as autumnal, but coherent with its June fresh season
+  and July to August peak.
+- **Basil, coriander, and thyme have no satokausi page and were left alone.**
+  Its herb section runs to mint, garden cress, dill, and parsley only. Tia chose
+  to leave them with no months rather than fill them from her own knowledge or
+  hunt a second source now: they drop out of the September grid, and step 3
+  sources all three at once alongside the rest of the year.
+- **Provenance is tracked per month, not per claim, and bok choy is where that
+  bites.** Tia's own data already had September as fresh; satokausi adds that
+  September is bok choy's peak. Marking the month drafted would demote her fresh
+  claim to say something she did not, so the peak was added and the month left
+  verified. The peak marking is therefore sourced but unmarked. Splitting
+  provenance per claim would cost more than the one case is worth; revisit only
+  if peaks and fresh months start disagreeing often.

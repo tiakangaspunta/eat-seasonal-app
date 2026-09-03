@@ -2,7 +2,17 @@
   "id": "cucumber",
   "name": "Cucumber",
   "category": "vegetable",
-  "availability": {},
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        9
+      ],
+      "storageMonths": []
+    }
+  },
   "verified": true,
-  "similarTo": []
+  "similarTo": [],
+  "unverifiedMonths": [
+    9
+  ]
 }

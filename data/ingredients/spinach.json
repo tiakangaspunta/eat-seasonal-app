@@ -2,7 +2,17 @@
   "id": "spinach",
   "name": "Spinach",
   "category": "vegetable",
-  "availability": {},
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        9
+      ],
+      "storageMonths": []
+    }
+  },
   "verified": true,
-  "similarTo": []
+  "similarTo": [],
+  "unverifiedMonths": [
+    9
+  ]
 }

@@ -6,10 +6,14 @@
     "imported": {
       "months": [
         2,
-        3
+        3,
+        9
       ]
     }
   },
   "verified": true,
-  "similarTo": []
+  "similarTo": [],
+  "unverifiedMonths": [
+    9
+  ]
 }

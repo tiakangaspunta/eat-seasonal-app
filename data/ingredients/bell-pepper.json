@@ -2,7 +2,14 @@
   "id": "bell-pepper",
   "name": "Bell pepper",
   "category": "vegetable",
-  "availability": {},
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        9
+      ],
+      "storageMonths": []
+    }
+  },
   "verified": false,
   "similarTo": []
 }

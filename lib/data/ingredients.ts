@@ -62,6 +62,12 @@ export function parseIngredient(raw: unknown, file: string): Ingredient {
     const i = availability.imported as Record<string, unknown>
     if (!isMonthArray(i.months)) fail('imported.months must be months 1-12')
   }
+  if (o.unverifiedMonths !== undefined) {
+    if (!isMonthArray(o.unverifiedMonths)) fail('unverifiedMonths must be months 1-12')
+    if (o.verified === false) {
+      fail('unverifiedMonths is redundant when verified is false: the whole ingredient is drafted')
+    }
+  }
   if (o.notes !== undefined && !isBilingual(o.notes)) fail('notes must be { en, fi }')
   if (o.warning !== undefined && !isBilingual(o.warning)) fail('warning must be { en, fi }')
   if (o.searchTermFi !== undefined && typeof o.searchTermFi !== 'string') {

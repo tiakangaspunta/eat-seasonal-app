@@ -61,6 +61,14 @@ export type Ingredient = {
   availability: Availability
   /** false means Claude drafted these months or this origin. */
   verified: boolean
+  /**
+   * The exception list to `verified`: months whose availability was drafted
+   * from a source rather than confirmed by Tia. One ingredient can hold both
+   * trusted and drafted months, which a single boolean cannot say. Only
+   * meaningful when `verified` is true; when it is false the whole ingredient
+   * is drafted and listing months again would be a second way to say it.
+   */
+  unverifiedMonths?: Month[]
   /** Ingredient ids that can stand in for this one. */
   similarTo: string[]
   image?: IngredientImage

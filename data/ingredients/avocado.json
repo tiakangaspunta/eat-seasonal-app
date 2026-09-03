@@ -8,10 +8,14 @@
         1,
         2,
         3,
-        4
+        4,
+        9
       ]
     }
   },
   "verified": true,
-  "similarTo": []
+  "similarTo": [],
+  "unverifiedMonths": [
+    9
+  ]
 }

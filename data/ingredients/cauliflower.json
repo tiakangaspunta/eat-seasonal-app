@@ -2,7 +2,17 @@
   "id": "cauliflower",
   "name": "Cauliflower",
   "category": "vegetable",
-  "availability": {},
+  "availability": {
+    "domestic": {
+      "freshMonths": [],
+      "storageMonths": [
+        9
+      ]
+    }
+  },
   "verified": true,
-  "similarTo": []
+  "similarTo": [],
+  "unverifiedMonths": [
+    9
+  ]
 }

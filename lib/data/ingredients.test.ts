@@ -51,8 +51,17 @@ describe('ingredient data', () => {
 
   it('merged the domestic and imported rows for apple onto one ingredient', () => {
     const apple = getIngredient('apple')
-    expect(apple?.availability.domestic?.freshMonths).toEqual([1, 2])
+    expect(apple?.availability.domestic?.freshMonths).toEqual([1, 2, 9])
     expect(ingredients.filter((i) => i.name === 'Apple')).toHaveLength(1)
+  })
+
+  it('marks September drafted wherever it came from satokausi.fi', () => {
+    // September is issue 004's slice: sourced, but not yet confirmed by Tia.
+    const apple = getIngredient('apple')
+    expect(apple?.verified).toBe(true)
+    expect(apple?.unverifiedMonths).toEqual([9])
+    // An ingredient Tia had already verified for September keeps its clean record.
+    expect(getIngredient('funnel-chanterelle')?.unverifiedMonths).toBeUndefined()
   })
 
   it('carries the false morel warning in the data', () => {
@@ -75,6 +84,30 @@ describe('ingredient data', () => {
         'parsnip.json',
       ),
     ).toThrow(/does not match its filename/)
+  })
+
+  it('rejects unverifiedMonths on an ingredient that is already unverified', () => {
+    expect(() =>
+      parseIngredient(
+        {
+          id: 'carrot', name: 'Carrot', category: 'vegetable', verified: false, similarTo: [],
+          availability: {}, unverifiedMonths: [9],
+        },
+        'carrot.json',
+      ),
+    ).toThrow(/redundant when verified is false/)
+  })
+
+  it('accepts a verified ingredient that lists individual drafted months', () => {
+    const ingredient = parseIngredient(
+      {
+        id: 'carrot', name: 'Carrot', category: 'vegetable', verified: true, similarTo: [],
+        availability: { domestic: { freshMonths: [1, 2], storageMonths: [] } },
+        unverifiedMonths: [9],
+      },
+      'carrot.json',
+    )
+    expect(ingredient.unverifiedMonths).toEqual([9])
   })
 
   it('rejects a month outside 1 to 12', () => {

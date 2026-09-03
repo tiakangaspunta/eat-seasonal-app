@@ -8,9 +8,13 @@
         1,
         2,
         3,
-        4
+        4,
+        9
       ],
-      "storageMonths": []
+      "storageMonths": [],
+      "peakMonths": [
+        9
+      ]
     }
   },
   "verified": false,

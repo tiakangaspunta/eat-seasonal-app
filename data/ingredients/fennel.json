@@ -8,6 +8,15 @@
         1,
         2
       ]
+    },
+    "domestic": {
+      "freshMonths": [
+        9
+      ],
+      "storageMonths": [],
+      "peakMonths": [
+        9
+      ]
     }
   },
   "verified": false,

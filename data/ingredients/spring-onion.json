@@ -2,7 +2,17 @@
   "id": "spring-onion",
   "name": "Spring onion",
   "category": "vegetable",
-  "availability": {},
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        9
+      ],
+      "storageMonths": []
+    }
+  },
   "verified": true,
-  "similarTo": []
+  "similarTo": [],
+  "unverifiedMonths": [
+    9
+  ]
 }

@@ -6,11 +6,15 @@
     "domestic": {
       "freshMonths": [
         2,
-        3
+        3,
+        9
       ],
       "storageMonths": []
     }
   },
   "verified": true,
-  "similarTo": []
+  "similarTo": [],
+  "unverifiedMonths": [
+    9
+  ]
 }

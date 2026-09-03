@@ -107,6 +107,8 @@ type Ingredient = {
     }
   }
   verified: boolean              // false means Claude drafted these months
+  unverifiedMonths?: number[]    // the exception list: months drafted from a
+                                 // source, on an otherwise verified ingredient
   similarTo: string[]            // ingredient ids that can stand in for this one
   image?: IngredientImage
   notes?: { en: string; fi: string }
@@ -162,6 +164,21 @@ appears rather than treating it as an ordinary mushroom.
 drafted month is never mistaken for a trusted one. Corrections are made by editing
 the data file, at which point the flag flips. The marker disappearing over time is
 its own progress bar. No verification screen is built.
+
+One boolean per ingredient turned out to be too coarse, because an ingredient can
+hold trusted and drafted months at once: carrot's January came from Tia's own
+Notion data and its September was sourced from satokausi.fi. `unverifiedMonths` is
+the exception list for exactly that case. A month is trusted when `verified` is
+true and the month is not in `unverifiedMonths`; when `verified` is false the
+whole ingredient is drafted and the list is not used.
+
+**Calendar source.** Each ingredient has its own page on satokausi.fi at
+`satokausi.fi/raaka-aineet/<finnish-name>/`, with a real month breakdown into
+Varastosesonki, Sesongissa, and Huippusesonki, mapping onto `storageMonths`,
+`freshMonths`, and `peakMonths`. That is the source for every month this project
+adds, rather than general knowledge. Where it contradicts the Notion import, the
+Notion months stand and the disagreement is recorded in
+`docs/SATOKAUSI-CONFLICTS.md`.
 
 Every image carries its attribution in the data, and an attribution list is
 rendered somewhere in the app. Images are approved before they enter the project:

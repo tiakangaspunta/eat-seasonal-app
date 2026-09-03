@@ -2,7 +2,17 @@
   "id": "green-beans",
   "name": "Green beans",
   "category": "vegetable",
-  "availability": {},
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        9
+      ],
+      "storageMonths": []
+    }
+  },
   "verified": true,
-  "similarTo": []
+  "similarTo": [],
+  "unverifiedMonths": [
+    9
+  ]
 }

@@ -2,7 +2,20 @@
   "id": "red-chili",
   "name": "Red chili",
   "category": "vegetable",
-  "availability": {},
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        9
+      ],
+      "storageMonths": [],
+      "peakMonths": [
+        9
+      ]
+    }
+  },
   "verified": true,
-  "similarTo": []
+  "similarTo": [],
+  "unverifiedMonths": [
+    9
+  ]
 }

@@ -10,7 +10,10 @@
         8,
         9
       ],
-      "storageMonths": []
+      "storageMonths": [],
+      "peakMonths": [
+        9
+      ]
     }
   },
   "verified": true,

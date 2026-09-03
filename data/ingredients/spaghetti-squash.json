@@ -5,7 +5,8 @@
   "availability": {
     "domestic": {
       "freshMonths": [
-        1
+        1,
+        9
       ],
       "storageMonths": []
     }
