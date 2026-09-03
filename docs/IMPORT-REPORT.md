@@ -49,7 +49,7 @@ they are three different products.
 
 ## Origins drafted, flagged `verified: false`
 
-These 11 rows have a season Tia entered but no `(kotimainen)` marker and are not
+These rows had a season Tia entered but no `(kotimainen)` marker and are not
 obviously imported produce. The months are hers and untouched; only the bucket
 they went into is a guess.
 
@@ -61,14 +61,16 @@ they went into is a guess.
 | Sweet potato | `sweet-potato` | imported | January–April |
 | Broccoli | `broccoli` | imported | February |
 | Latva- ja maa-artisokka | `globe-artichoke` | imported | February |
-| Parsa | `asparagus` | imported | April |
 | Varhaisparsakaali | `sprouting-broccoli` | imported | April |
 | Spagettikurpitsa | `spaghetti-squash` | domestic fresh | January |
 | Raitajuuri | `chioggia-beetroot` | domestic fresh | January–April |
 | Mustajuuri | `black-salsify` | domestic fresh | January–April |
 
-Asparagus in April is the one most worth a second look: Finnish asparagus is a
-May and June crop, so April reads as imported, but that is an inference.
+**Asparagus is settled.** Tia confirmed 2026-09-03: Spanish asparagus is April
+and May, Finnish is May and June, so April is imported. `asparagus` is now
+`verified: true`, and the fact is kept as a note on the ingredient. Its Finnish
+May and June months belong to the full-year calendar in step 3, not to this
+import, which extends no month set.
 
 One more ingredient carries `verified: false` for a different reason:
 `bell-pepper`, because folding Paprika into Peppers was a call made during the
@@ -79,9 +81,12 @@ import, not something Notion stated.
 - **Latva- ja maa-artisokka was split, not merged.** Globe artichoke and
   Jerusalem artichoke are unrelated plants with different seasons. Maa-artisokka
   already had its own row, so this row became `globe-artichoke` and took the
-  February season with it. If that February actually belonged to the Jerusalem
-  artichoke half, move it.
-- **Tomato is `vegetable`, not `fruit`.** Notion filed it under Fruits.
+  February season with it. **Still open**: Tia does not know which half that
+  February belonged to, so `globe-artichoke` stays `verified: false` until
+  something settles it. This is exactly the case the unverified marker exists
+  for, so it is not a blocker.
+- **Tomato is `vegetable`, not `fruit`.** Confirmed by Tia 2026-09-03. Notion
+  filed it under Fruits.
   `CATEGORY-REVIEW.md` already made the same call for red chili ("botanically a
   fruit, sold as a vegetable, and you use it as one"), and putting tomato in the
   Fruit section of the home view would be strange.

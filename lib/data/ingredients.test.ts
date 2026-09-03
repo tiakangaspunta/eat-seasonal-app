@@ -62,7 +62,7 @@ describe('ingredient data', () => {
   it('flags drafted origins as unverified', () => {
     const unverified = ingredients.filter((i) => !i.verified).map((i) => i.id).sort()
     expect(unverified).toEqual([
-      'asparagus', 'bell-pepper', 'black-salsify', 'broccoli', 'chioggia-beetroot',
+      'bell-pepper', 'black-salsify', 'broccoli', 'chioggia-beetroot',
       'fennel', 'garlic', 'globe-artichoke', 'parsley', 'spaghetti-squash',
       'sprouting-broccoli', 'sweet-potato',
     ])
