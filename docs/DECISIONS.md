@@ -381,3 +381,22 @@ Short entries, newest last. Why, not just what.
   verified. The peak marking is therefore sourced but unmarked. Splitting
   provenance per claim would cost more than the one case is worth; revisit only
   if peaks and fresh months start disagreeing often.
+
+## 2026-09-03 A temporary data preview, out of issue order
+
+- **The app was unviewable, so a throwaway preview was built before issue 005.**
+  `app/page.tsx` rendered one heading, which meant every review of the seed
+  content was a review of JSON. Tia asked to see something even if it looked
+  unfinished. The real home view is issue 007, two issues away and behind the
+  availability logic in 006, so the choice was between reordering the plan and
+  building something deliberately disposable. Disposable won: it unblocks the
+  reviewing without pulling design work forward onto content that is not
+  finished, and issue 007 deletes it.
+- **The preview derives nothing, on purpose.** It prints the stored month arrays
+  as coloured squares and never renders a season label, a "fresh now", or a
+  recipe's own season. Those belong in `lib/season/`, and a throwaway page is
+  exactly where a second, quietly disagreeing copy of that logic would take
+  root. The cost is that it reads as a data table rather than an app, which is
+  the right trade for a page with a delete date.
+- **It lives at `/preview`, not at `/`.** The home route keeps its scaffold plus
+  a link, so issue 007 builds into an empty route rather than deleting work.
