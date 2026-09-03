@@ -29,6 +29,10 @@ Read `docs/PLAN.md` before doing anything. It is the brief.
 - The summary says what was done and why it matters, in everyday language: no
   file paths, no commands, no jargon. Where a technical word is unavoidable, say
   what it means in the same sentence.
+- Real names stay real. GitHub is GitHub, not "your online copy". The terminal is
+  the terminal. Plain English means fewer unexplained ideas, not renaming things
+  Tia already knows: paraphrasing a familiar proper noun makes a summary harder
+  to follow, not easier, and reads as talking down.
 - Skip it only when the whole response is already one or two plain sentences and
   the summary would just repeat them.
 - Tia has the `claudish-to-english` plugin installed, which does this same job.

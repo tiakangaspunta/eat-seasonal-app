@@ -15,11 +15,11 @@ HITL. Tia confirms the setup and tooling before anything is built on top of it.
 
 ## Acceptance criteria
 
-- [ ] `npm run dev` serves an empty home page with no errors
-- [ ] `npm test` runs Vitest (even with zero tests) and exits clean
-- [ ] Playwright is installed and a trivial smoke test can run
-- [ ] `data/`, `lib/season/`, `lib/storage.ts`, `app/`, `components/` exist
-- [ ] `lib/storage.ts` exports the async interface shape from the plan, unimplemented
+- [x] `npm run dev` serves an empty home page with no errors
+- [x] `npm test` runs Vitest (even with zero tests) and exits clean
+- [x] Playwright is installed and a trivial smoke test can run
+- [x] `data/`, `lib/season/`, `lib/storage.ts`, `app/`, `components/` exist
+- [x] `lib/storage.ts` exports the async interface shape from the plan, unimplemented
 
 ## Tests
 
