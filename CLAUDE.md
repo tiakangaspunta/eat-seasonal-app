@@ -20,10 +20,13 @@ Read `docs/PLAN.md` before doing anything. It is the brief.
   Finnish seasonality that are not already in `data/` or the plan, and judgments
   about her own cooking (what is easy, what is worth the effort, which
   substitutions she would accept). Ask.
-- If an issue needs something fetched from the internet (a source page, a
-  reference site) and you have no web access here, say so plainly and ask Tia to
-  get it from her Cowork session, which does. Never draft data from memory as a
-  substitute for a real source the issue names.
+- When an issue names a real source (satokausi.fi, a recipe URL Tia pasted), fetch
+  and read it directly rather than drafting from memory. Never present drafted,
+  half-remembered content as if it came from the named source.
+- If a fetch is refused (a site's robots.txt blocks the page, a network error),
+  say so plainly rather than silently falling back to a guess. Ask Tia how she
+  wants to proceed, since the fix is usually her fetching it by hand, not retrying
+  automatically.
 
 ## Responses
 
