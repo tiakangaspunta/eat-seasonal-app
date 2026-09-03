@@ -1,0 +1,16 @@
+{
+  "id": "chickpea-patties",
+  "title": "Chickpea patties",
+  "source": {
+    "name": "k-ruoka.fi",
+    "url": "https://www.k-ruoka.fi/reseptit/kikhernepihvit"
+  },
+  "ingredients": [],
+  "mealType": [
+    "dinner",
+    "side"
+  ],
+  "tags": [],
+  "timeMinutes": 30,
+  "effort": "medium"
+}

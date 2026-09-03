@@ -1,0 +1,16 @@
+{
+  "id": "tuna-and-bean-salad",
+  "title": "Tuna and bean salad",
+  "source": {
+    "name": "soppa365.fi",
+    "url": "https://www.soppa365.fi/reseptit/arjen-nopeat-salaatit/tonnikala-papusalaatti"
+  },
+  "ingredients": [],
+  "mealType": [
+    "dinner",
+    "side"
+  ],
+  "tags": [],
+  "timeMinutes": 45,
+  "effort": "medium"
+}

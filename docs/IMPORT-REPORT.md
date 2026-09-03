@@ -5,8 +5,9 @@ It is a list of small corrections, each one fixable by editing a file in
 `data/ingredients/` or, once the app runs, by renaming in place.
 
 Ingredients imported 2026-09-03 from
-`Sources/notion-export-ingredients/…_all.csv` (issue 002). Recipes are issue 003
-and are not covered yet.
+`Sources/notion-export-ingredients/…_all.csv` (issue 002). Recipes imported
+2026-09-03 from `Sources/notion-export-recipes/…_all.csv` (issue 003); their
+section is at the bottom.
 
 ## Counts
 
@@ -138,3 +139,131 @@ Varhaisparsakaali → Sprouting broccoli · Sulatejuusto → Processed cheese
 
 `korvasieni` (false morel) carries a `warning` in the data, so the app can show
 it wherever the ingredient appears rather than relying on memory.
+
+
+# Recipes
+
+Metadata only, per issue 003: title, source, meal type, effort, and time where
+Notion had one. Ingredient lists are rebuilt from the source pages in issue 005,
+so every recipe currently has `ingredients: []`.
+
+## Counts
+
+31 rows read, 30 recipes written: 1 row dropped.
+
+| Meal type | Recipes |
+| --- | --- |
+| dinner | 29 |
+| side | 6 |
+| lunch | 5 |
+| breakfast | 1 |
+| dessert | 0 |
+| snack | 0 |
+
+A recipe can have more than one meal type, so these add up to more than 30.
+`dessert` and `snack` exist in the model but nothing in the export is one.
+
+## The export has 31 rows, not 30
+
+`NOTION-IMPORT.md` and issue 003 both say 30. Both CSV exports contain 31 data
+rows. With `Pesto` dropped (below) the written count is 30 anyway, and the "19
+recipes with no time" figure in the issue turns out to be exactly right, because
+the dropped row was one of the timeless ones.
+
+## Row dropped
+
+| Notion row | Why |
+| --- | --- |
+| Pesto (A ei tykännyt) | Dropped at Tia's request. Its URL pointed at k-ruoka's täytetyt portobellot rather than a pesto recipe, and the row was marked Not good |
+
+## Effort filled in
+
+| Recipe | Notion | Written | Source of the call |
+| --- | --- | --- | --- |
+| Mushroom filling for tacos | blank | `medium` | Tia, 2026-09-03 |
+
+Everything else mapped mechanically: Low to `easy`, Medium to `medium`, High to
+`hard`.
+
+## The 19 recipes with no time
+
+Notion had a time for 11 of the 30. These 19 get theirs from the source page in
+issue 005:
+
+Potato pancake with cream cheese filling · Root vegetable and mushroom pie · Red
+cabbage bao buns · Tacos · Sweet potato curry · Spinach pancakes · Carrot
+pancakes · Mushroom filling for tacos · Lime noodles · Green peppercorn salmon
+with fennel stew · Hummus pasta · Roasted chickpea pasta · Naan · Herby
+oven-baked tofu · Creamy barley and mushroom risotto · Indian lentil soup ·
+Summer soup · Creamed vegetable soup · Aubergine pasta
+
+Two of them, **Tacos** and **Creamy barley and mushroom risotto**, have no URL
+either, so they are own-recipe entries with no `source`. Their times and
+ingredient lists have to come from Tia rather than from a page.
+
+## Meal type calls
+
+Mechanical part of the mapping: Main Course and Light to `dinner`, Lunch to
+`lunch`, Side Dish to `side`, Breakfast to `breakfast`, Salad to `side`.
+Multi-value rows became several meal types. The judgment calls:
+
+| Recipe | Notion Type | Written | Why |
+| --- | --- | --- | --- |
+| Tuna and bean salad | Light, Main Course, Salad | `dinner`, `side` | Light and Main Course both point at dinner, and Salad adds `side`. The three Notion values collapse to two |
+| Chanterelle sauce | Main Course | `dinner` | A sauce is arguably a `side`, but Notion says Main Course and it is a plate of pasta away from being one. Kept as filed |
+| Mushroom filling for tacos | Main Course, Side Dish | `dinner`, `side` | A filling rather than a dish, so `side` is the honest half. `dinner` kept because Notion had it |
+| Naan | Side Dish | `side` | Straightforward, listed only because it is the one recipe with no `dinner` at all |
+| Spinach pancakes, Carrot pancakes, Chickpea patties | Main Course, Side Dish | `dinner`, `side` | Both, as Notion had them |
+
+## Tags are empty on every recipe
+
+Notion has no diet or style column, so there is nothing to import. `vegan`,
+`vegetarian`, and `dairy-free` are all decided by the ingredient list, which
+issue 005 builds, so tagging now would mean guessing. Confirmed with Tia
+2026-09-03: leave `tags: []` and fill them in issue 005.
+
+## Titles
+
+Descriptive Finnish titles translated to English, names kept as names. Finnish
+originals kept here so nothing is lost:
+
+Perunapannukakku tuorejuustotäytteellä → Potato pancake with cream cheese
+filling · Kurkuma-perunacurry → Turmeric potato curry · Täyteläinen
+maapähkinäcurry → Rich peanut curry · Porkkanaletut soseesta ja avokadosalaatti →
+Carrot pancakes with avocado salad · Juures-sienipiirakka → Root vegetable and
+mushroom pie · Kantarellikastike → Chanterelle sauce · Kantarellipiirakka →
+Chanterelle pie · Punakaali-bao buns → Red cabbage bao buns · Bataatticurry →
+Sweet potato curry · Pinaattiletut → Spinach pancakes · Porkkanaletut → Carrot
+pancakes · Sienitäyte tacoihin → Mushroom filling for tacos · Limettinuudelit →
+Lime noodles · Tonnikala-papusalaatti → Tuna and bean salad · Viherpippurilohi ja
+fenkolimuhennos → Green peppercorn salmon with fennel stew · Suppilovahveropasta →
+Suppilovahvero pasta · Kikhernepihvit → Chickpea patties · Hummuspasta → Hummus
+pasta · Paahdettu kikhernepasta → Roasted chickpea pasta · Yrttinen uunitofu →
+Herby oven-baked tofu · Intialainen linssikeitto → Indian lentil soup ·
+Uunifeta-parsapasta → Baked feta and asparagus pasta · Kesäkeitto → Summer soup ·
+Kasvissosekeitto → Creamed vegetable soup · Munakoisopasta → Aubergine pasta
+
+Kept as they were: **Palak paneer**, **Naan**, **Shakshuka**, **Tacos**, and
+**Creamy barley (ohra) and mushroom risotto**, which lost only its parenthetical.
+
+**Suppilovahvero pasta** keeps the Finnish mushroom name on purpose, because
+issue 002 kept `Suppilovahvero` as that ingredient's name. "Funnel chanterelle
+pasta" would have been the only place in the app using the English name.
+
+## Source URLs worth a second look
+
+| Recipe | Note |
+| --- | --- |
+| Hummus pasta | The URL is a satokausi.fi collection page ("uudet talviset suosikkireseptit"), not a single recipe. Issue 005 has to find the right recipe on that page, or ask |
+| Tacos, Creamy barley and mushroom risotto | No URL at all. Own-recipe entries |
+
+`source.name` is the bare domain with `www.` stripped: `k-ruoka.fi` (17
+recipes), `satokausi.fi` (5), `yhteishyva.fi` (3), `soppa365.fi`,
+`ravintolanepal.fi`, `sydanmerkki.fi` (1 each).
+
+## Columns ignored
+
+`Success`, `Favorites`, `Meal Plan`, `Day`, and `Season` were all dropped, as
+planned: cooking history is not imported, and a recipe's season is always derived
+from its ingredients. `Ingredients` is not read at all in this slice; issue 005
+rebuilds those lists from the source pages.

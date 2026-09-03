@@ -1,0 +1,14 @@
+{
+  "id": "naan",
+  "title": "Naan",
+  "source": {
+    "name": "ravintolanepal.fi",
+    "url": "https://ravintolanepal.fi/naan/"
+  },
+  "ingredients": [],
+  "mealType": [
+    "side"
+  ],
+  "tags": [],
+  "effort": "hard"
+}

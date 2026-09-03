@@ -1,0 +1,11 @@
+{
+  "id": "tacos",
+  "title": "Tacos",
+  "ingredients": [],
+  "mealType": [
+    "lunch",
+    "dinner"
+  ],
+  "tags": [],
+  "effort": "easy"
+}

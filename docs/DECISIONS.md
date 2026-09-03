@@ -261,3 +261,57 @@ Short entries, newest last. Why, not just what.
   searches only work in Finnish, and names are a single field that may already be
   English, so an ingredient like fennel needs its Finnish word recorded somewhere
   even if it isn't the display name.
+
+## 2026-09-03 Recipe metadata import (issue 003)
+
+- **The export has 31 rows, not the 30 the plan and the issue both claim.** Both
+  CSV variants agree. `Pesto (A ei tykännyt)` was then dropped at Tia's request,
+  because its URL pointed at a stuffed-portobello recipe rather than a pesto one
+  and the row was marked Not good, so 30 recipes were written after all.
+- **`tags` is empty on every recipe.** Notion has no diet or style column, and
+  `vegan`, `vegetarian`, and `dairy-free` are all decided by the ingredient list,
+  which issue 005 builds. Tagging now would mean guessing at the one thing a
+  filter has to be right about.
+- **Personal notes do not live in titles.** The dropped Pesto row carried "(A ei
+  tykännyt)" in its name; had it stayed, that would have moved to `ownNotes`.
+  The same rule applies to any future row.
+- **A recipe's meal types can outnumber Notion's Type values, or be fewer.**
+  "Light, Main Course, Salad" collapses to `dinner` and `side`, because Light and
+  Main Course both mean dinner. The mapping is per recipe, and every judgment
+  call is listed in `IMPORT-REPORT.md`.
+- **Titles are English where the Finnish was descriptive, except where an
+  ingredient name would disagree with itself.** `Suppilovahveropasta` became
+  "Suppilovahvero pasta" rather than "Funnel chanterelle pasta", because issue
+  002 kept `Suppilovahvero` as the ingredient's display name and the app should
+  not use two names for one mushroom.
+- **The recipe loader mirrors the ingredient loader rather than sharing code with
+  it.** Same directory-as-manifest reading, same throw-on-bad-file validation,
+  but the two shapes have almost nothing in common beyond `id`, so a shared
+  abstraction would be a wrapper around two unrelated bodies of rules. Revisit if
+  a third data type appears.
+- **The recipe loader also checks that every `ingredientId` exists.** Nothing
+  uses it yet, since the lists are empty, but a recipe pointing at a deleted
+  ingredient would surface as a quietly missing match in season logic, which is
+  the failure the ingredient loader already refuses to allow.
+- **Effort for `Mushroom filling for tacos` came from Tia, not from a guess.** It
+  was the one blank Effort in the export, and effort is a judgment about her own
+  cooking.
+
+
+## 2026-09-03 satokausi.fi confirmed as a real, structured source
+
+- **satokausi.fi has a real per-ingredient season breakdown, not just a
+  current-month listing.** Each ingredient has its own page at
+  `satokausi.fi/raaka-aineet/<name>/` with months tagged storage season, in
+  season, or peak season, verified on `porkkana` (carrot). This maps directly
+  onto `freshMonths`, `storageMonths`, and `peakMonths`, and is meaningfully
+  better than drafting the calendar from general knowledge as originally planned.
+- **Reading it is not the same category of thing as the recipe scraping
+  question.** It's public reference data, read once per ingredient to extract
+  facts, not code built to repeatedly query a site. `robots.txt` doesn't restrict
+  it.
+- **The actual pulling of this data waits for issue 004, not done in bulk now.**
+  Tia chose to keep the work matched to the step in front of us rather than
+  front-load the whole calendar. `issues/004-september-calendar.md` now notes
+  the sourcing method and that it needs to happen back in the Cowork session,
+  since Claude Code likely has no web access itself.

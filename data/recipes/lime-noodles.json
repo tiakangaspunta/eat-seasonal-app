@@ -1,0 +1,15 @@
+{
+  "id": "lime-noodles",
+  "title": "Lime noodles",
+  "source": {
+    "name": "satokausi.fi",
+    "url": "https://satokausi.fi/limettinuudelit/"
+  },
+  "ingredients": [],
+  "mealType": [
+    "lunch",
+    "dinner"
+  ],
+  "tags": [],
+  "effort": "medium"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "summer-soup",
+  "title": "Summer soup",
+  "source": {
+    "name": "k-ruoka.fi",
+    "url": "https://www.k-ruoka.fi/reseptit/varikas-kesakeitto"
+  },
+  "ingredients": [],
+  "mealType": [
+    "dinner"
+  ],
+  "tags": [],
+  "effort": "medium"
+}

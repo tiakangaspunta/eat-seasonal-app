@@ -1,0 +1,15 @@
+{
+  "id": "turmeric-potato-curry",
+  "title": "Turmeric potato curry",
+  "source": {
+    "name": "satokausi.fi",
+    "url": "https://satokausi.fi/kurkuma-perunacurry/"
+  },
+  "ingredients": [],
+  "mealType": [
+    "dinner"
+  ],
+  "tags": [],
+  "timeMinutes": 45,
+  "effort": "hard"
+}

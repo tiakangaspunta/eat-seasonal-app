@@ -1,0 +1,16 @@
+{
+  "id": "chanterelle-pie",
+  "title": "Chanterelle pie",
+  "source": {
+    "name": "k-ruoka.fi",
+    "url": "https://www.k-ruoka.fi/reseptit/kantarellipiirakka"
+  },
+  "ingredients": [],
+  "mealType": [
+    "lunch",
+    "dinner"
+  ],
+  "tags": [],
+  "timeMinutes": 45,
+  "effort": "medium"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "shakshuka",
+  "title": "Shakshuka",
+  "source": {
+    "name": "k-ruoka.fi",
+    "url": "https://www.k-ruoka.fi/reseptit/tomaatti-kananmunapannu-eli-shakshuka"
+  },
+  "ingredients": [],
+  "mealType": [
+    "breakfast",
+    "lunch",
+    "dinner"
+  ],
+  "tags": [],
+  "timeMinutes": 30,
+  "effort": "medium"
+}

@@ -18,10 +18,10 @@ relied on.
 
 ## Acceptance criteria
 
-- [ ] All 30 recipes exist with title, source, effort, mealType, tags
-- [ ] Ambiguous mealType calls are listed in `docs/IMPORT-REPORT.md`
-- [ ] The 19 recipes with no Notion time are flagged, to be filled in slice 5
-- [ ] `ingredients: []` placeholder, not yet populated
+- [x] All 30 recipes exist with title, source, effort, mealType, tags
+- [x] Ambiguous mealType calls are listed in `docs/IMPORT-REPORT.md`
+- [x] The 19 recipes with no Notion time are flagged, to be filled in slice 5
+- [x] `ingredients: []` placeholder, not yet populated
 
 ## Tests
 
