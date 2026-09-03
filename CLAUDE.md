@@ -20,6 +20,10 @@ Read `docs/PLAN.md` before doing anything. It is the brief.
   Finnish seasonality that are not already in `data/` or the plan, and judgments
   about her own cooking (what is easy, what is worth the effort, which
   substitutions she would accept). Ask.
+- If an issue needs something fetched from the internet (a source page, a
+  reference site) and you have no web access here, say so plainly and ask Tia to
+  get it from her Cowork session, which does. Never draft data from memory as a
+  substitute for a real source the issue names.
 
 ## Responses
 
