@@ -9,11 +9,11 @@ dropped rather than accommodated.
 
 - 132 ingredient rows. 57 have a season, almost all within January to April.
   September has two entries: bok choy and suppilovahvero.
-- 30 recipe rows. 18 from k-ruoka.fi, 5 from satokausi.fi, 3 from yhteishyva.fi,
+- 31 recipe rows. 18 from k-ruoka.fi, 5 from satokausi.fi, 3 from yhteishyva.fi,
   one each from soppa365.fi, ravintolanepal.fi, and sydanmerkki.fi, and 2 with no
   URL.
 - Ingredient relations on recipes are patchy: 5 recipes have none, most have 4 to 6.
-- Only 11 of 30 recipes have a time.
+- Only 11 of the 31 rows have a time.
 
 Use the `_all.csv` files. They are the full view.
 
@@ -72,7 +72,7 @@ Claude adds is `verified: false`. Do not silently extend an imported month set.
 | Recipes | `title`, a single field. Translate descriptive Finnish titles into English, keep names that are already names. Tia renames anything she prefers in the app |
 | URL | `source.url`, with `source.name` from the domain. The 2 rows without a URL become own-recipe entries with no source |
 | Effort | `effort`: Low to `easy`, Medium to `medium`, High to `hard`. One blank row needs asking about |
-| Time | `timeMinutes`: "30 minutes" to 30, "45 minutes" to 45, "Hour" to 60. The 19 blanks are filled from the source page |
+| Time | `timeMinutes`: "30 minutes" to 30, "45 minutes" to 45, "Hour" to 60. The 20 blanks are filled from the source page |
 | Type | `mealType`: Main Course and Light become `dinner`, Lunch becomes `lunch`, Side Dish becomes `side`, Breakfast becomes `breakfast`, Salad becomes `side` unless the recipe is clearly a main. Multi-value rows (e.g. "Lunch, Main Course") become multiple mealType entries |
 | Ingredients | starting point only. Parse the name before ` (https://`, then rebuild the full list from the source page |
 | Season | ignored. A recipe's season is always derived from its ingredients |
@@ -99,7 +99,7 @@ The relations are too incomplete to use as the ingredient list. For each recipe
 with a URL, read the source page once, extract the ingredient list with quantities,
 map each line to an ingredient id where one exists, and leave the rest as
 `freeText`. Steps are not copied. This is the same per-recipe reading described in
-`PLAN.md` section 3, run over 28 URLs.
+`PLAN.md` section 3, run over the 28 recipes that have a URL.
 
 Substitutions are not invented during the import. They are added per recipe, with
 Tia, afterwards.
