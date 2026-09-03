@@ -78,6 +78,15 @@ Reviewed with Tia, five judgment calls settled:
 - Bok choy keeps Tia's verified September and gains satokausi's peak marking.
 - Basil, coriander, and thyme stay empty until step 3 finds a source.
 
+Deliberately not done, despite being asked for above: the fresh-versus-storage
+correction to the existing January-to-April months. satokausi disagrees with the
+Notion import on 28 of 50 domestic ingredients, always the same way, and Tia
+chose to record the disagreements in `docs/SATOKAUSI-CONFLICTS.md` and fix them
+at step 3, when every ingredient is re-fetched for the full twelve months
+anyway. Until then the data says carrot is fresh in February, which satokausi
+contradicts. September is unaffected, so the home view in issue 007 will not
+show it, but the month strip in step 3 would.
+
 ## Blocked by
 
 Blocked by `issues/002-import-ingredients.md`.

@@ -11,3 +11,10 @@ blob-report/
 
 .env*.local
 .DS_Store
+
+# Personal editor appearance (Peacock window colours), not a project setting.
+.vscode/settings.json
+
+# The Notion export the transition was built from. Kept on disk, and still in
+# git history at 20c9f8e if the import ever needs re-checking.
+Sources/
