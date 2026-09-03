@@ -111,6 +111,7 @@ type Ingredient = {
   image?: IngredientImage
   notes?: { en: string; fi: string }
   warning?: { en: string; fi: string }   // preparation that matters for safety
+  searchTermFi?: string          // Finnish word, only needed if name isn't already Finnish
 }
 
 type IngredientImage = {
@@ -344,6 +345,25 @@ a one to five star rating.
 Season or month, meal type, effort, time needed, tags, and origin. Filter state
 lives in the URL query string so a filtered view can be linked and reloaded.
 
+### Recipe search shortcut
+
+Not a scraper, and not scanning the internet. A link, next to an ingredient, that
+opens k-ruoka, soppa365, or yhteishyva's own search for that ingredient in a new
+tab, so browsing those sites for inspiration is one click shorter. Nothing is
+fetched, read, or stored by the app; the click just hands off to the site the way
+typing the same search into the address bar would.
+
+Each site's search URL must be confirmed by hand before this is built: open the
+site, search a known Finnish term (e.g. "fenkoli"), and note the resulting URL.
+k-ruoka's own `robots.txt` blocks automated tools from even reading its search
+page, so this genuinely can't be discovered any other way, and guessing risks a
+dead link. This is a small addition to step 3, not its own step.
+
+Because the search has to run in Finnish, an ingredient needs a Finnish search
+term available even when its display `name` is English. `Ingredient` gets an
+optional `searchTermFi`, filled in only where the display name isn't already
+Finnish.
+
 ## 8. Mobile adaptation
 
 Desktop is built first, but every layout decision is written down at the time it is
@@ -407,7 +427,9 @@ workflow documented in `docs/ADDING-RECIPES.md`.
 
 **Step 3: the rest of the year**
 Full twelve-month calendar for all ingredients, remaining photos, month strip,
-month view, all filters, filter state in the URL, imported produce toggle.
+month view, all filters, filter state in the URL, imported produce toggle, and the
+recipe search shortcut links to k-ruoka, soppa365, and yhteishyva once their
+search URLs are confirmed by hand.
 
 **Step 4: favorites, tried, and progress**
 The async storage interface and its browser implementation, favorites, "tried

@@ -1,0 +1,16 @@
+{
+  "id": "apple",
+  "name": "Apple",
+  "category": "fruit",
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        1,
+        2
+      ],
+      "storageMonths": []
+    }
+  },
+  "verified": true,
+  "similarTo": []
+}

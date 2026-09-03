@@ -1,0 +1,16 @@
+{
+  "id": "napa-cabbage",
+  "name": "Napa cabbage",
+  "category": "vegetable",
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        1,
+        2
+      ],
+      "storageMonths": []
+    }
+  },
+  "verified": true,
+  "similarTo": []
+}

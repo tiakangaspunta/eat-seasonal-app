@@ -1,0 +1,17 @@
+{
+  "id": "lime",
+  "name": "Lime",
+  "category": "fruit",
+  "availability": {
+    "imported": {
+      "months": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  },
+  "verified": true,
+  "similarTo": []
+}

@@ -1,0 +1,17 @@
+{
+  "id": "red-cabbage",
+  "name": "Red cabbage",
+  "category": "vegetable",
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        2,
+        3,
+        4
+      ],
+      "storageMonths": []
+    }
+  },
+  "verified": true,
+  "similarTo": []
+}

@@ -1,0 +1,16 @@
+{
+  "id": "blood-orange",
+  "name": "Blood orange",
+  "category": "fruit",
+  "availability": {
+    "imported": {
+      "months": [
+        2,
+        3,
+        4
+      ]
+    }
+  },
+  "verified": true,
+  "similarTo": []
+}

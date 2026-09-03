@@ -1,0 +1,19 @@
+{
+  "id": "false-morel",
+  "name": "Korvasieni",
+  "category": "mushroom",
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        4
+      ],
+      "storageMonths": []
+    }
+  },
+  "verified": true,
+  "similarTo": [],
+  "warning": {
+    "en": "Toxic raw. Must be boiled in plenty of water at least twice, discarding the water each time and airing the kitchen, before it is safe to eat.",
+    "fi": ""
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "id": "kiwi",
+  "name": "Kiwi",
+  "category": "fruit",
+  "availability": {
+    "imported": {
+      "months": [
+        1,
+        2
+      ]
+    }
+  },
+  "verified": true,
+  "similarTo": []
+}

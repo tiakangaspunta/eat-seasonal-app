@@ -1,0 +1,16 @@
+{
+  "id": "horseradish",
+  "name": "Horseradish",
+  "category": "vegetable",
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        3,
+        4
+      ],
+      "storageMonths": []
+    }
+  },
+  "verified": true,
+  "similarTo": []
+}

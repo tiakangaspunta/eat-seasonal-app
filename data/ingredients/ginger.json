@@ -1,0 +1,15 @@
+{
+  "id": "ginger",
+  "name": "Ginger",
+  "category": "vegetable",
+  "availability": {
+    "imported": {
+      "months": [
+        3,
+        4
+      ]
+    }
+  },
+  "verified": true,
+  "similarTo": []
+}

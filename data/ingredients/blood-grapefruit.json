@@ -1,0 +1,16 @@
+{
+  "id": "blood-grapefruit",
+  "name": "Blood grapefruit",
+  "category": "fruit",
+  "availability": {
+    "imported": {
+      "months": [
+        1,
+        2,
+        3
+      ]
+    }
+  },
+  "verified": true,
+  "similarTo": []
+}

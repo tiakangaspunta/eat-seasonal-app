@@ -206,3 +206,58 @@ Short entries, newest last. Why, not just what.
 - **Consequence to watch:** in the terminal, both could fire and produce two
   summaries. Harmless, but if it becomes annoying the fix is to disable the
   plugin, since the CLAUDE.md rule works everywhere and the plugin does not.
+
+## 2026-09-03 Ingredient import (issue 002)
+
+- **The conversion ran once and was not kept as a rerunnable script.** The app
+  writes back into `data/ingredients/` (name editing), so a generator that could
+  be run again would eventually overwrite Tia's edits with the Notion export. The
+  JSON files are the source of truth from now on. Provenance lives in
+  `docs/IMPORT-REPORT.md` instead of in a script.
+- **One JSON file per ingredient, named by id.** Keeps "adding an ingredient
+  means editing a data file and nothing else" literally true, and means the
+  dev-mode write route rewrites one small file rather than a 124-entry array.
+- **The loader reads the directory rather than a manifest,** for the same reason:
+  dropping a file in is the whole operation.
+- **Validation throws instead of skipping a bad file.** A silent hole in the data
+  would show up as a missing card weeks later; a thrown error shows up now.
+- **Three merges Tia settled:** Kevätsipuli with Nippusipuli, Vehnäjauho with
+  Flour, Kasvisliemikuutio with Broth. The three tomato products stay separate,
+  because they are three different products.
+- **Names are English where a common English name exists.** Palsternakka,
+  Suppilovahvero, Korvasieni, and Kelta- ja kaurajuuri stay Finnish. Ids are
+  English slugs regardless, so any later rename is free.
+- **Tomato is `vegetable`, not the `fruit` Notion had.** Same reasoning
+  `CATEGORY-REVIEW.md` already applied to red chili: sold and used as a
+  vegetable, and the Fruit section of the home view is the wrong place for it.
+- **Fresh herbs got no drafted months.** `CATEGORY-REVIEW.md` suggested drafting
+  seasons for thyme, basil, and coriander, but Finnish harvest months are not
+  something to guess, and it is not in issue 002's scope. They wait for the
+  September calendar or step 3.
+- **`similarTo` is empty everywhere.** Which produce substitutes for which is a
+  judgment about Tia's cooking, so it is not invented during an import.
+- **`timeMinutes` on `Recipe` is optional, unlike the plan's `number`.** 19 of the
+  30 Notion recipes have no time, and issue 003 imports metadata before slice 5
+  fills them in. Making it required would mean inventing 19 numbers.
+
+## 2026-09-03 Recipe search shortcut, not a scraper
+
+- **Declined again: automated scanning of k-ruoka, soppa365, or any recipe site
+  for ingredient matches.** Same reasoning as the original recipe-sourcing
+  decision. Code that queries a site's search and reads results on its own is
+  scraping, regardless of personal-use framing, and k-ruoka's `robots.txt`
+  explicitly disallows automated access to its search parameters, confirming the
+  concern rather than changing it.
+- **Built instead: a plain link that opens each site's own search for an
+  ingredient in a new tab.** Nothing fetched or stored, the equivalent of typing
+  the search into the address bar. Added to step 3, at Tia's request, alongside a
+  third source, yhteishyva.fi.
+- **The three search URLs must be confirmed by hand, not guessed.** k-ruoka
+  blocks automated tools from even reading its search page, and yhteishyva's
+  search URL only resolves once a query actually runs, so neither could be
+  verified from outside a real browser. Tia searches "fenkoli" once per site when
+  this is built and pastes back the resulting URL.
+- **A separate `searchTermFi` field was added to `Ingredient`.** The site
+  searches only work in Finnish, and names are a single field that may already be
+  English, so an ingredient like fennel needs its Finnish word recorded somewhere
+  even if it isn't the display name.

@@ -1,0 +1,16 @@
+{
+  "id": "celeriac",
+  "name": "Celeriac",
+  "category": "vegetable",
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        2,
+        3
+      ],
+      "storageMonths": []
+    }
+  },
+  "verified": true,
+  "similarTo": []
+}

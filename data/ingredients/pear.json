@@ -1,0 +1,16 @@
+{
+  "id": "pear",
+  "name": "Pear",
+  "category": "fruit",
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        2,
+        3
+      ],
+      "storageMonths": []
+    }
+  },
+  "verified": true,
+  "similarTo": []
+}

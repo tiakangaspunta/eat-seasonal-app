@@ -1,0 +1,17 @@
+{
+  "id": "yellow-beet",
+  "name": "Kelta- ja kaurajuuri",
+  "category": "vegetable",
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        2,
+        3,
+        4
+      ],
+      "storageMonths": []
+    }
+  },
+  "verified": true,
+  "similarTo": []
+}

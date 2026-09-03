@@ -1,0 +1,14 @@
+{
+  "id": "grapefruit",
+  "name": "Grapefruit",
+  "category": "fruit",
+  "availability": {
+    "imported": {
+      "months": [
+        2
+      ]
+    }
+  },
+  "verified": true,
+  "similarTo": []
+}

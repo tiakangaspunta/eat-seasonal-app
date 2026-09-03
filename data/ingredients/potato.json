@@ -1,0 +1,18 @@
+{
+  "id": "potato",
+  "name": "Potato",
+  "category": "vegetable",
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "storageMonths": []
+    }
+  },
+  "verified": true,
+  "similarTo": []
+}

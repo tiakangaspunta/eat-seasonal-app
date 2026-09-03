@@ -1,0 +1,15 @@
+{
+  "id": "pointed-pepper",
+  "name": "Pointed pepper",
+  "category": "vegetable",
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        4
+      ],
+      "storageMonths": []
+    }
+  },
+  "verified": true,
+  "similarTo": []
+}

@@ -24,11 +24,11 @@ the converted data against the category decisions before it's trusted.
 
 ## Acceptance criteria
 
-- [ ] Every non-dropped row from the export exists as an ingredient
-- [ ] No ingredient has both a `(kotimainen)` and non-`(kotimainen)` duplicate
-- [ ] Category counts match `CATEGORY-REVIEW.md`
-- [ ] `verified: true` only where Tia's own data set the months
-- [ ] A script or test prints counts by category for a quick sanity check
+- [x] Every non-dropped row from the export exists as an ingredient
+- [x] No ingredient has both a `(kotimainen)` and non-`(kotimainen)` duplicate
+- [x] Category counts match `CATEGORY-REVIEW.md`
+- [x] `verified: true` only where Tia's own data set the months
+- [x] A script or test prints counts by category for a quick sanity check
 
 ## Tests
 

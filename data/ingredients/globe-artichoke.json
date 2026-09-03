@@ -1,0 +1,14 @@
+{
+  "id": "globe-artichoke",
+  "name": "Globe artichoke",
+  "category": "vegetable",
+  "availability": {
+    "imported": {
+      "months": [
+        2
+      ]
+    }
+  },
+  "verified": false,
+  "similarTo": []
+}

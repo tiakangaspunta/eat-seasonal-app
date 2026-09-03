@@ -1,0 +1,18 @@
+{
+  "id": "white-cabbage",
+  "name": "White cabbage",
+  "category": "vegetable",
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "storageMonths": []
+    }
+  },
+  "verified": true,
+  "similarTo": []
+}

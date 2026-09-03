@@ -1,0 +1,15 @@
+{
+  "id": "fennel",
+  "name": "Fennel",
+  "category": "vegetable",
+  "availability": {
+    "imported": {
+      "months": [
+        1,
+        2
+      ]
+    }
+  },
+  "verified": false,
+  "similarTo": []
+}

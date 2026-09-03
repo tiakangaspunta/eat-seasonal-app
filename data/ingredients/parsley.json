@@ -1,0 +1,14 @@
+{
+  "id": "parsley",
+  "name": "Parsley",
+  "category": "herb",
+  "availability": {
+    "imported": {
+      "months": [
+        2
+      ]
+    }
+  },
+  "verified": false,
+  "similarTo": []
+}

@@ -1,0 +1,15 @@
+{
+  "id": "spaghetti-squash",
+  "name": "Spaghetti squash",
+  "category": "vegetable",
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        1
+      ],
+      "storageMonths": []
+    }
+  },
+  "verified": false,
+  "similarTo": []
+}

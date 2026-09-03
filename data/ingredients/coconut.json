@@ -1,0 +1,14 @@
+{
+  "id": "coconut",
+  "name": "Coconut",
+  "category": "fruit",
+  "availability": {
+    "imported": {
+      "months": [
+        1
+      ]
+    }
+  },
+  "verified": true,
+  "similarTo": []
+}

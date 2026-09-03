@@ -1,0 +1,16 @@
+{
+  "id": "red-onion",
+  "name": "Red onion",
+  "category": "vegetable",
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        2,
+        3
+      ],
+      "storageMonths": []
+    }
+  },
+  "verified": true,
+  "similarTo": []
+}

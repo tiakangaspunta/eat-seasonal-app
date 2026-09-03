@@ -1,0 +1,17 @@
+{
+  "id": "shiitake",
+  "name": "Shiitake",
+  "category": "mushroom",
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        1,
+        2,
+        3
+      ],
+      "storageMonths": []
+    }
+  },
+  "verified": true,
+  "similarTo": []
+}

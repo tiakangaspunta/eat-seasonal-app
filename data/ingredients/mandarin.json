@@ -1,0 +1,16 @@
+{
+  "id": "mandarin",
+  "name": "Mandarin",
+  "category": "fruit",
+  "availability": {
+    "imported": {
+      "months": [
+        2,
+        3,
+        4
+      ]
+    }
+  },
+  "verified": true,
+  "similarTo": []
+}

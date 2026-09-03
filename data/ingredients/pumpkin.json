@@ -1,0 +1,15 @@
+{
+  "id": "pumpkin",
+  "name": "Pumpkin",
+  "category": "vegetable",
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        1
+      ],
+      "storageMonths": []
+    }
+  },
+  "verified": true,
+  "similarTo": []
+}

@@ -1,0 +1,14 @@
+{
+  "id": "sprouting-broccoli",
+  "name": "Sprouting broccoli",
+  "category": "vegetable",
+  "availability": {
+    "imported": {
+      "months": [
+        4
+      ]
+    }
+  },
+  "verified": false,
+  "similarTo": []
+}

@@ -1,0 +1,16 @@
+{
+  "id": "guava",
+  "name": "Guava",
+  "category": "fruit",
+  "availability": {
+    "imported": {
+      "months": [
+        1,
+        2,
+        3
+      ]
+    }
+  },
+  "verified": true,
+  "similarTo": []
+}

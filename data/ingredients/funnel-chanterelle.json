@@ -1,0 +1,17 @@
+{
+  "id": "funnel-chanterelle",
+  "name": "Suppilovahvero",
+  "category": "mushroom",
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        9,
+        10,
+        11
+      ],
+      "storageMonths": []
+    }
+  },
+  "verified": true,
+  "similarTo": []
+}

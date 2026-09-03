@@ -1,0 +1,18 @@
+{
+  "id": "portobello",
+  "name": "Portobello",
+  "category": "mushroom",
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "storageMonths": []
+    }
+  },
+  "verified": true,
+  "similarTo": []
+}

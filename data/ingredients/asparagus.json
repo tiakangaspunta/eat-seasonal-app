@@ -1,0 +1,14 @@
+{
+  "id": "asparagus",
+  "name": "Asparagus",
+  "category": "vegetable",
+  "availability": {
+    "imported": {
+      "months": [
+        4
+      ]
+    }
+  },
+  "verified": false,
+  "similarTo": []
+}

@@ -1,0 +1,15 @@
+{
+  "id": "brussels-sprout",
+  "name": "Brussels sprout",
+  "category": "vegetable",
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        1
+      ],
+      "storageMonths": []
+    }
+  },
+  "verified": true,
+  "similarTo": []
+}

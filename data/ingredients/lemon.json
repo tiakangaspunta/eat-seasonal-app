@@ -1,0 +1,14 @@
+{
+  "id": "lemon",
+  "name": "Lemon",
+  "category": "fruit",
+  "availability": {
+    "imported": {
+      "months": [
+        2
+      ]
+    }
+  },
+  "verified": true,
+  "similarTo": []
+}

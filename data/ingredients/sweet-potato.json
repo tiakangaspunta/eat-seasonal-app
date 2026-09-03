@@ -1,0 +1,17 @@
+{
+  "id": "sweet-potato",
+  "name": "Sweet potato",
+  "category": "vegetable",
+  "availability": {
+    "imported": {
+      "months": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  },
+  "verified": false,
+  "similarTo": []
+}

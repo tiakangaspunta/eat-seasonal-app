@@ -1,0 +1,15 @@
+{
+  "id": "papaya",
+  "name": "Papaya",
+  "category": "fruit",
+  "availability": {
+    "imported": {
+      "months": [
+        2,
+        3
+      ]
+    }
+  },
+  "verified": true,
+  "similarTo": []
+}

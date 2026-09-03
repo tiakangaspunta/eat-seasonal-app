@@ -1,0 +1,16 @@
+{
+  "id": "butternut-squash",
+  "name": "Butternut squash",
+  "category": "vegetable",
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        1,
+        2
+      ],
+      "storageMonths": []
+    }
+  },
+  "verified": true,
+  "similarTo": []
+}

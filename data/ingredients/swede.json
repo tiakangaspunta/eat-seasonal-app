@@ -1,0 +1,17 @@
+{
+  "id": "swede",
+  "name": "Swede",
+  "category": "vegetable",
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        1,
+        2,
+        3
+      ],
+      "storageMonths": []
+    }
+  },
+  "verified": true,
+  "similarTo": []
+}

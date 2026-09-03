@@ -1,0 +1,14 @@
+{
+  "id": "broccoli",
+  "name": "Broccoli",
+  "category": "vegetable",
+  "availability": {
+    "imported": {
+      "months": [
+        2
+      ]
+    }
+  },
+  "verified": false,
+  "similarTo": []
+}
