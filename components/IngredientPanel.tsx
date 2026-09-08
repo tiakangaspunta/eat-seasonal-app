@@ -54,7 +54,7 @@ export function IngredientPanel({
             {ingredient.seasonLabel && ` · ${ingredient.seasonLabel}`}
           </p>
           <div className="mt-2">
-            <OriginTag origin={ingredient.origin} countries={ingredient.countries} />
+            <OriginTag origin={ingredient.origin} countries={ingredient.countries} showCountries />
           </div>
         </div>
         <button

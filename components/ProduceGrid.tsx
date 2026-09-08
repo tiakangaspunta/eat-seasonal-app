@@ -140,7 +140,7 @@ function IngredientCard({
         </span>
       )}
       <div className="mt-1.5">
-        <OriginTag origin={ingredient.origin} countries={ingredient.countries} maxCountries={2} />
+        <OriginTag origin={ingredient.origin} countries={ingredient.countries} />
       </div>
       {statusLabel && (
         <div className="mt-1.5 text-sm text-neutral-600">

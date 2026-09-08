@@ -24,9 +24,9 @@ exist yet. This file records what was actually built.
 
 - **Origin tag** (`components/OriginTag.tsx`, issue 008): the same pill at every
   size, wrapping to a second line rather than overflowing when a country list is
-  long, with the dot staying on the first line. Cards cap the list at two
-  countries and count the rest, so the tag stays one line on a phone; the panel
-  passes no cap and lists them all.
+  long, with the dot staying on the first line. Cards show only "Imported", so
+  the tag is one short line at every width; the panel opts in and lists the
+  countries, where a wrap costs nothing.
 - **Ingredient side panel** (`components/IngredientPanel.tsx`, issue 008): a
   bottom sheet on mobile, anchored to the bottom of the screen and starting
   below the top of the viewport so the grid stays visible above it; from `md:`

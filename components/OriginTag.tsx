@@ -12,12 +12,16 @@
 export function OriginTag({
   origin,
   countries,
-  maxCountries,
+  showCountries = false,
 }: {
   origin: 'domestic' | 'imported' | 'none'
   countries: string[]
-  /** Cards pass a limit; the panel shows the whole list. */
-  maxCountries?: number
+  /**
+   * Cards say only "Imported": a grid of forty is scanned, and orange alone
+   * brings six countries. The panel, which is read rather than scanned, opts in
+   * and lists them all.
+   */
+  showCountries?: boolean
 }) {
   if (origin === 'none') return null
 
@@ -38,21 +42,7 @@ export function OriginTag({
   return (
     <span className="inline-flex max-w-full items-start gap-1.5 rounded-full bg-blue-50 px-2 py-0.5 text-left text-xs font-medium text-blue-900">
       <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500" aria-hidden />
-      {importedLabel(countries, maxCountries)}
+      {showCountries && countries.length > 0 ? `Imported · ${countries.join(', ')}` : 'Imported'}
     </span>
   )
-}
-
-/**
- * Oranges come from six countries at once in satokausi.fi's calendar, which is
- * a sentence rather than a tag. Cards show the first few and count the rest;
- * the panel, which has the room, passes no limit and lists them all.
- */
-function importedLabel(countries: string[], maxCountries?: number): string {
-  if (countries.length === 0) return 'Imported'
-  if (maxCountries === undefined || countries.length <= maxCountries) {
-    return `Imported · ${countries.join(', ')}`
-  }
-  const shown = countries.slice(0, maxCountries)
-  return `Imported · ${shown.join(', ')} +${countries.length - maxCountries}`
 }

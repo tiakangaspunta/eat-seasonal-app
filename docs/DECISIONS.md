@@ -452,9 +452,11 @@ Short entries, newest last. Why, not just what.
   coconut in Ivory Coast where satokausi's January row says the Philippines.
   Three ingredients are left with no origin rather than filled from a source
   that does not cover the month. Full record in `docs/IMPORT-ORIGINS.md`.
-- **Cards show at most two countries, the panel shows all of them.** Orange has
-  six at once, which is a sentence rather than a tag, so the card reads
-  "Imported · Spain, Egypt +4".
+- **Cards say only "Imported"; the countries live in the panel.** Tia's call,
+  after seeing cards read "Imported · Colombia, Ecuador +1". A grid of forty is
+  scanned for what is Finnish and what is not, which one word answers, and
+  orange alone brings six countries. The panel is read rather than scanned, so
+  it lists them in full.
 - **"Fresh" and "from storage" disappear from imported cards.** Both are claims
   about Finnish harvest and Finnish storage. Printing "Autumn · Imported" on a
   banana, which the card did before, said the wrong thing twice over.
