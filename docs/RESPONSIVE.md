@@ -9,18 +9,17 @@ exist yet. This file records what was actually built.
 ## Built
 
 - **Home grid** (`app/page.tsx`, `components/ProduceGrid.tsx`, issues 007 and
-  008): two columns of ingredient cards on mobile, three on tablet (`md:`), four
-  on desktop (`lg:`) and five on a wide screen (`xl:`). Revised from the plan's
-  one-column mobile case after seeing it: a card is a photo, a name and a season
-  line, which is legible at half a phone's width, and one column meant scrolling
-  past six ingredients to reach forty. The imported-produce toggle is a single
-  checkbox with a 44-pixel-plus touch target, full width on every size since
-  there is nothing to reflow.
-- **Ingredient card** (`components/ProduceGrid.tsx`, issue 008): the photo slot
-  is 4:3 at every size, so cards shrink with the column rather than keeping a
-  fixed height. The unverified badge sits in the photo's top corner instead of
-  beside the name, because at two columns on a phone the two of them together
-  left the name a single word per line.
+  008): one column of ingredient cards on mobile, two on tablet (`md:`), three
+  on desktop (`lg:`) and four on a wide screen (`xl:`), which is the plan's
+  mobile case after all. Cards are wide and short rather than tall, so a single
+  column on a phone is a readable row, not a wasted screen. The imported-produce
+  toggle is a single checkbox with a 44-pixel-plus touch target, full width on
+  every size since there is nothing to reflow.
+- **Ingredient card** (`components/ProduceGrid.tsx`, issue 008): a thumbnail on
+  the left, 64 pixels square and 80 from `sm:` up, with name, origin tag and
+  season line filling the rest of the row. The text column is `min-w-0` so a
+  long name wraps instead of pushing the card wider, and the unverified badge
+  sits at the end of the name row and never shrinks.
 
 - **Origin tag** (`components/OriginTag.tsx`, issue 008): the same pill at every
   size, wrapping to a second line rather than overflowing when a country list is

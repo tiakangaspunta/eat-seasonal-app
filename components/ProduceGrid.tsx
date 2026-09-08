@@ -68,12 +68,16 @@ export function ProduceGrid({
           return (
             <section key={category}>
               <h2 className="text-lg font-semibold">{heading}</h2>
-              <div className="mt-3 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+              <div className="mt-3 grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {items.map((ingredient) => (
                   <IngredientCard
                     key={ingredient.id}
                     ingredient={ingredient}
                     selected={ingredient.id === selectedId}
+                    // With imported produce hidden, every card in the grid is
+                    // Finnish and a tag on each one says nothing 46 times. The
+                    // tag earns its place only once the grid holds both.
+                    showOrigin={includeImported}
                     onOpen={open}
                   />
                 ))}
@@ -99,10 +103,12 @@ export function ProduceGrid({
 function IngredientCard({
   ingredient,
   selected,
+  showOrigin,
   onOpen,
 }: {
   ingredient: HomeIngredient
   selected: boolean
+  showOrigin: boolean
   onOpen: (id: string, element: HTMLElement | null) => void
 }) {
   // Fresh or from storage is a claim about Finnish produce. An imported card
@@ -119,36 +125,40 @@ function IngredientCard({
       type="button"
       onClick={(event) => onOpen(ingredient.id, event.currentTarget)}
       aria-expanded={selected}
-      className={`relative rounded-lg border p-3 text-left ${
+      className={`flex w-full items-start gap-3 rounded-lg border p-3 text-left ${
         selected ? 'border-neutral-900 ring-1 ring-neutral-900' : 'border-neutral-200'
       }`}
     >
-      {/* 4:3, not a square: a square photo slot makes the card taller than the
-          screen can show many of, and produce photos are wider than they are
-          tall anyway. The badge sits in its corner rather than beside the name,
-          which at two columns on a phone left neither of them room. */}
-      <div className="aspect-[4/3] w-full rounded-md bg-neutral-100" aria-hidden />
-      <div className="mt-2 font-medium">{ingredient.name}</div>
-      {/* Positioned over the photo, but written after the name so the card
-          still reads "Garlic, unverified" rather than the other way round. */}
-      {ingredient.unverified && (
-        <span
-          className="absolute right-4 top-4 rounded-full bg-amber-100 px-2 py-0.5 text-xs text-amber-800"
-          title="This season data is drafted, not yet confirmed"
-        >
-          unverified
-        </span>
-      )}
-      <div className="mt-1.5">
-        <OriginTag origin={ingredient.origin} countries={ingredient.countries} />
-      </div>
-      {statusLabel && (
-        <div className="mt-1.5 text-sm text-neutral-600">
-          {ingredient.seasonLabel && <span className="capitalize">{ingredient.seasonLabel}</span>}
-          {ingredient.seasonLabel && ' · '}
-          {statusLabel}
+      {/* A thumbnail beside the text, not a banner above it. The card is here
+          to carry the season facts; the photo is how you recognise the
+          ingredient without reading, which a small square does as well as a
+          large one and in a third of the height. */}
+      <div className="h-16 w-16 shrink-0 rounded-md bg-neutral-100 sm:h-20 sm:w-20" aria-hidden />
+      <div className="min-w-0 flex-1">
+        <div className="flex items-start justify-between gap-2">
+          <span className="font-medium">{ingredient.name}</span>
+          {ingredient.unverified && (
+            <span
+              className="mt-0.5 shrink-0 rounded-full bg-amber-100 px-2 py-0.5 text-xs text-amber-800"
+              title="This season data is drafted, not yet confirmed"
+            >
+              unverified
+            </span>
+          )}
         </div>
-      )}
+        {showOrigin && (
+          <div className="mt-1.5">
+            <OriginTag origin={ingredient.origin} countries={ingredient.countries} />
+          </div>
+        )}
+        {statusLabel && (
+          <div className="mt-1.5 text-sm text-neutral-600">
+            {ingredient.seasonLabel && <span className="capitalize">{ingredient.seasonLabel}</span>}
+            {ingredient.seasonLabel && ' · '}
+            {statusLabel}
+          </div>
+        )}
+      </div>
     </button>
   )
 }

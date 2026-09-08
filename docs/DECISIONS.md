@@ -460,3 +460,24 @@ Short entries, newest last. Why, not just what.
 - **"Fresh" and "from storage" disappear from imported cards.** Both are claims
   about Finnish harvest and Finnish storage. Printing "Autumn · Imported" on a
   banana, which the card did before, said the wrong thing twice over.
+
+## 2026-09-08 The card is information first, photo second (issue 008)
+
+- **The photo became a thumbnail beside the text, not a banner above it.** Tia's
+  call: the card exists to carry the season facts, and a large photo made the
+  picture the subject of a card whose point is the information. A 64-pixel
+  square identifies an ingredient without reading just as well as a large one
+  does, in a third of the height. Twenty ingredients now fit on a desktop screen
+  where ten did.
+- **Which returned the grid to one column on a phone.** Wide short rows read
+  well full width, so the plan's original mobile case turned out right after
+  all; it was the tall photo cards that made two columns look better.
+- **The origin tag only appears when the grid actually mixes origins.** With
+  imported produce hidden, every card is Finnish and a green tag on each of the
+  46 says nothing 46 times. Ticking "include imported produce" brings the tags
+  back on every card, which is the case the tag was added for.
+- **Photos still do not exist.** The thumbnail is a placeholder until issue 010,
+  which is the contact-sheet approval flow from `docs/PLAN.md` section 4:
+  candidates from Wikimedia Commons and Openverse, shown with author and
+  licence, and only approved ones downloaded. Deciding the card layout first
+  means that issue fills a slot whose size is already settled.
