@@ -45,6 +45,13 @@ resolved for the recipes rebuilt so far. The remaining `Other unusual` recipes
 are Herby oven-baked tofu, Suppilovahvero pasta, and Carrot pancakes with
 avocado salad.
 
+## Signed off 2026-09-08
+
+Tia signed off on the 4 done recipes and the chanterelle fix as enough to
+unblock issue 006. The 6 k-ruoka.fi recipes below remain deferred as a
+follow-up, to be picked back up whenever Tia pastes in their ingredient
+lists; they are not part of step 1's remaining scope for now.
+
 ## Paused: the k-ruoka.fi recipes
 
 Paused 2026-09-03, at Tia's request. Nothing here is a code problem, so it can
