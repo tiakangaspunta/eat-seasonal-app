@@ -13,7 +13,7 @@ describe('ingredient data', () => {
   const ingredients = getIngredients()
 
   it('loads every file and validates its shape', () => {
-    expect(ingredients.length).toBe(124)
+    expect(ingredients.length).toBe(125)
   })
 
   it('prints counts by category', () => {
@@ -71,7 +71,7 @@ describe('ingredient data', () => {
   it('flags drafted origins as unverified', () => {
     const unverified = ingredients.filter((i) => !i.verified).map((i) => i.id).sort()
     expect(unverified).toEqual([
-      'bell-pepper', 'black-salsify', 'broccoli', 'chioggia-beetroot',
+      'bell-pepper', 'black-salsify', 'broccoli', 'chanterelle', 'chioggia-beetroot',
       'fennel', 'garlic', 'globe-artichoke', 'parsley', 'spaghetti-squash',
       'sprouting-broccoli', 'sweet-potato',
     ])

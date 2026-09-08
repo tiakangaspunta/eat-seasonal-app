@@ -1,0 +1,20 @@
+{
+  "id": "chanterelle",
+  "name": "Kantarelli",
+  "category": "mushroom",
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        6,
+        7,
+        8
+      ],
+      "storageMonths": [],
+      "peakMonths": [
+        8
+      ]
+    }
+  },
+  "verified": false,
+  "similarTo": []
+}
