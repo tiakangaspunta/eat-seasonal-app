@@ -11,6 +11,7 @@ blob-report/
 
 .env*.local
 .DS_Store
+*.log
 
 # Personal editor appearance (Peacock window colours), not a project setting.
 .vscode/settings.json
