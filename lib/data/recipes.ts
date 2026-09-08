@@ -178,6 +178,21 @@ export function getRecipe(id: string): Recipe | undefined {
   return getRecipes().find((recipe) => recipe.id === id)
 }
 
+/**
+ * Recipes whose ingredient list names this ingredient, in the id order
+ * getRecipes() already sorts by.
+ *
+ * A recipe that only offers the ingredient as a substitution does not count: it
+ * is a swap suggested inside another recipe, not a recipe that uses this. The
+ * ingredient panel lists these, so the distinction is the difference between an
+ * honest list and a padded one.
+ */
+export function recipesUsingIngredient(ingredientId: string): Recipe[] {
+  return getRecipes().filter((recipe) =>
+    recipe.ingredients.some((line) => line.ingredientId === ingredientId),
+  )
+}
+
 /** Recipes still missing a time. Filled in when ingredient lists are rebuilt. */
 export function recipesWithoutTime(): Recipe[] {
   return getRecipes().filter((recipe) => recipe.timeMinutes === undefined)

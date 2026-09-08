@@ -20,12 +20,12 @@ on it.
 
 ## Acceptance criteria
 
-- [ ] Clicking a card opens the panel without navigating away
-- [ ] The home grid stays visible and interactive behind the panel
-- [ ] The panel shows the twelve-month bar correctly for at least one fresh-only
+- [x] Clicking a card opens the panel without navigating away
+- [x] The home grid stays visible and interactive behind the panel
+- [x] The panel shows the twelve-month bar correctly for at least one fresh-only
       and one fresh-plus-storage ingredient
-- [ ] Recipes using this ingredient are listed, and only those recipes
-- [ ] A combine control is visibly present but not functional
+- [x] Recipes using this ingredient are listed, and only those recipes
+- [x] A combine control is visibly present but not functional
 
 ## Tests
 

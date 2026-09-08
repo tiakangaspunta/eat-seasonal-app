@@ -61,6 +61,35 @@ export function parseIngredient(raw: unknown, file: string): Ingredient {
   if (availability.imported !== undefined) {
     const i = availability.imported as Record<string, unknown>
     if (!isMonthArray(i.months)) fail('imported.months must be months 1-12')
+    if (i.origins !== undefined) {
+      if (!Array.isArray(i.origins)) fail('imported.origins must be an array')
+      const claimed = new Set<number>()
+      for (const raw of i.origins as unknown[]) {
+        const entry = raw as Record<string, unknown>
+        if (!isMonthArray(entry?.months) || entry.months.length === 0) {
+          fail('an imported origin needs months 1-12')
+        }
+        const countries = entry?.countries
+        if (
+          !Array.isArray(countries) ||
+          countries.length === 0 ||
+          countries.some((c) => typeof c !== 'string' || c === '')
+        ) {
+          fail('an imported origin needs a non-empty list of country names')
+        }
+        // Two invariants worth failing the load over, because both would show
+        // up as a quietly wrong country rather than as a crash: an origin for a
+        // month the ingredient is not imported in, and two origins claiming the
+        // same month.
+        for (const month of entry.months as Month[]) {
+          if (!(i.months as Month[]).includes(month)) {
+            fail(`imported origin covers month ${month}, which is not an imported month`)
+          }
+          if (claimed.has(month)) fail(`two imported origins both claim month ${month}`)
+          claimed.add(month)
+        }
+      }
+    }
   }
   if (o.unverifiedMonths !== undefined) {
     if (!isMonthArray(o.unverifiedMonths)) fail('unverifiedMonths must be months 1-12')

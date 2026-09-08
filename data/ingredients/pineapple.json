@@ -8,6 +8,19 @@
         2,
         3,
         4
+      ],
+      "origins": [
+        {
+          "months": [
+            2,
+            3,
+            4
+          ],
+          "countries": [
+            "Ecuador",
+            "Costa Rica"
+          ]
+        }
       ]
     }
   },

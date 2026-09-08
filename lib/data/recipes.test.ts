@@ -8,7 +8,14 @@
 import { describe, expect, it } from 'vitest'
 
 import { getIngredients } from './ingredients'
-import { countByMealType, getRecipe, getRecipes, parseRecipe, recipesWithoutTime } from './recipes'
+import {
+  countByMealType,
+  getRecipe,
+  getRecipes,
+  parseRecipe,
+  recipesUsingIngredient,
+  recipesWithoutTime,
+} from './recipes'
 
 const valid = {
   id: 'tacos',
@@ -105,6 +112,27 @@ describe('recipe data', () => {
 
   it('maps a multi-value Notion type onto several meal types', () => {
     expect(getRecipe('shakshuka')?.mealType).toEqual(['breakfast', 'lunch', 'dinner'])
+  })
+
+  it('finds the recipes that use an ingredient, and only those', () => {
+    expect(recipesUsingIngredient('eggplant').map((r) => r.id)).toEqual(['aubergine-pasta'])
+    expect(recipesUsingIngredient('garlic').map((r) => r.id)).toEqual([
+      'aubergine-pasta',
+      'lime-noodles',
+      'mushroom-filling-for-tacos',
+      'red-cabbage-bao-buns',
+    ])
+  })
+
+  it('does not count an ingredient a recipe only substitutes in', () => {
+    // Two recipes offer parsley as the seasonal stand-in for basil and for
+    // coriander. That is a swap suggested inside another recipe, not a recipe
+    // that uses parsley, and the parsley panel would be lying if it listed them.
+    expect(recipesUsingIngredient('parsley')).toEqual([])
+  })
+
+  it('returns nothing for an ingredient no recipe touches', () => {
+    expect(recipesUsingIngredient('false-morel')).toEqual([])
   })
 
   it('rejects a file whose id does not match its filename', () => {

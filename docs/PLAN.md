@@ -104,6 +104,10 @@ type Ingredient = {
     }
     imported?: {
       months: number[]           // when imported stock is good and reasonably priced
+      origins?: Array<{          // where it is imported from, per month, for the
+        months: number[]         // origin tag. Optional, and never guessed:
+        countries: string[]      // a month with no source recorded shows
+      }>                         // "Imported" and no country
     }
   }
   verified: boolean              // false means Claude drafted these months
@@ -135,6 +139,16 @@ buying. The domestic-by-default setting filters which month set counts, not whic
 ingredients exist, so apple never appears twice in one grid.
 
 An ingredient with no `domestic` at all is imported-only, such as lemon or mango.
+
+Every card carries an origin tag saying whether that month's produce is Finnish
+or imported, derived from the same month sets, so the imported toggle never
+leaves a grid where some cards are labelled and the rest are ambiguous.
+`origins` names where imported stock comes from, per month, because origin
+rotates with the season: satokausi.fi has avocado coming from Spain, Colombia,
+Peru and Mexico in spring and from Spain, Kenya and South Africa in September.
+It is the one part of this that no calculation can supply, so an imported month
+with no source recorded reads "Imported" and never a guessed country. The
+sourcing is recorded in `docs/IMPORT-ORIGINS.md`.
 
 `vegetable`, `fruit`, `berry`, `mushroom`, and `herb` are the seasonal categories:
 the ones with month data, filtered by month, and grouped on the home view. Fresh

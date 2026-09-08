@@ -8,6 +8,19 @@
         1,
         2,
         3
+      ],
+      "origins": [
+        {
+          "months": [
+            1,
+            2,
+            3
+          ],
+          "countries": [
+            "Brazil",
+            "Colombia"
+          ]
+        }
       ]
     }
   },

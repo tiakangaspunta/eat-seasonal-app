@@ -400,3 +400,61 @@ Short entries, newest last. Why, not just what.
   the right trade for a page with a delete date.
 - **It lives at `/preview`, not at `/`.** The home route keeps its scaffold plus
   a link, so issue 007 builds into an empty route rather than deleting work.
+
+## 2026-09-08 The ingredient side panel (issue 008)
+
+- **The panel is not modal, and there is no backdrop.** The plan asks for the
+  main content to stay visible behind it, and a dimming overlay that swallows
+  clicks would make "visible" mean "greyed out and untouchable". So the grid
+  stays fully usable with the panel open: a second card can be clicked and the
+  panel switches to it. Closing is the close button or Escape, not a click
+  outside, because a click outside is a click on something else the user meant
+  to press.
+- **The client components get view models, not domain objects.** `app/page.tsx`
+  derives availability, the season label, and the recipe list on the server and
+  hands the grid plain data (`components/types.ts`). The panel therefore holds
+  open-and-close state and nothing else, and no season rule can drift into a
+  component.
+- **A recipe that only substitutes an ingredient in does not count as using
+  it.** `recipesUsingIngredient` matches ingredient lines only. Two recipes
+  offer parsley as the seasonal stand-in for basil and for coriander; listing
+  them on the parsley panel would claim a recipe that does not exist. The
+  near-miss and swapped-in cases are step 5's job and will be marked as such
+  when they arrive.
+- **"Similar ingredients" is built but currently invisible.** No ingredient has
+  `similarTo` filled yet, so the section renders nothing. It is left in rather
+  than deferred, because filling the field later should light it up with no code
+  change.
+
+## 2026-09-08 Origin tags on every card (issue 008, Tia's request)
+
+- **Every card says where it is from, not only the imported ones.** With the
+  imported toggle on, tagging only imported produce would leave every other card
+  saying nothing, which reads as ambiguous rather than as Finnish. So domestic
+  cards carry a "Finnish" tag and imported ones an "Imported" tag.
+- **One colour scheme, applied in both places.** Green and amber are Finnish
+  produce, fresh and from storage; blue is grown somewhere else. The panel's
+  twelve-month bar gained a blue state for imported months, which also fixes an
+  imported-only ingredient rendering as twelve grey squares.
+- **Origin is recorded per month, not per ingredient.** The field started as one
+  country list per ingredient and lasted about an hour: satokausi.fi has avocado
+  arriving from Spain, Colombia, Peru and Mexico in the spring and from Spain,
+  Kenya and South Africa in September, and mango from Brazil in February and
+  Spain in September. A flat list would have been wrong in September, which is
+  the only month the app currently shows. So `imported.origins` is a list of
+  `{ months, countries }`, validated on load: an origin for a month the
+  ingredient is not imported in, or two origins claiming the same month, fails
+  the load rather than rendering a quietly wrong country.
+- **The countries came from satokausi.fi, not from retailers or memory.** Its
+  ingredient pages carry country flags per month, which is Finland-specific and
+  month-specific, and it is already this project's calendar source. Retailer
+  pages state today's shelf and say so themselves; a September shelf check put
+  coconut in Ivory Coast where satokausi's January row says the Philippines.
+  Three ingredients are left with no origin rather than filled from a source
+  that does not cover the month. Full record in `docs/IMPORT-ORIGINS.md`.
+- **Cards show at most two countries, the panel shows all of them.** Orange has
+  six at once, which is a sentence rather than a tag, so the card reads
+  "Imported · Spain, Egypt +4".
+- **"Fresh" and "from storage" disappear from imported cards.** Both are claims
+  about Finnish harvest and Finnish storage. Printing "Autumn · Imported" on a
+  banana, which the card did before, said the wrong thing twice over.

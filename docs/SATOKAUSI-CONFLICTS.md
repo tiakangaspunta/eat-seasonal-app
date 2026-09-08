@@ -73,3 +73,20 @@ from, rather than about fresh versus storage. Also unchanged.
 Basil, coriander, and thyme have no page on satokausi.fi — its herb section
 covers only mint, garden cress, dill, and parsley. Their months were left
 exactly as they were, and a different source will be needed for them.
+
+## A second disagreement, found while sourcing import origins (2026-09-08)
+
+Filling `imported.origins` meant reading each imported ingredient's satokausi
+page again, this time for the country flags. Three of them disagree with our
+data about whether the month is imported at all.
+
+| Ingredient | Our data says | satokausi says | Left as |
+| --- | --- | --- | --- |
+| Garlic | imported in February | February is Finnish storage (the row carries the FIN flag and no other) | no origin recorded |
+| Broccoli | imported in February | no winter row at all; the page starts in June with Finland | no origin recorded |
+| Parsley | imported in February | no page under the slugs tried; the herb pages cover June to September only | no origin recorded |
+
+Nothing was changed here either, for the same reason as above: these months came
+from Tia's Notion export and this file records disagreements rather than
+settling them. The practical effect today is small, since none of the three
+shows an origin tag; a February view at step 3 is where it starts to matter.

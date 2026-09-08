@@ -9,6 +9,24 @@
         2,
         3,
         4
+      ],
+      "origins": [
+        {
+          "months": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "countries": [
+            "Spain",
+            "Egypt",
+            "Morocco",
+            "Israel",
+            "Italy",
+            "Greece"
+          ]
+        }
       ]
     }
   },

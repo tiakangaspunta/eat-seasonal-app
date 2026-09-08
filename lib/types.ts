@@ -37,6 +37,13 @@ export type IngredientImage = {
   sourceUrl: string
 }
 
+/** The countries an ingredient is imported from during a given set of months. */
+export type ImportOrigin = {
+  months: Month[]
+  /** Country names as displayed, in the order the source lists them. */
+  countries: string[]
+}
+
 export type Availability = {
   domestic?: {
     /** Harvested or picked fresh in Finland. */
@@ -49,6 +56,20 @@ export type Availability = {
   imported?: {
     /** When imported stock is good and reasonably priced. */
     months: Month[]
+    /**
+     * Where that imported stock comes from, by month.
+     *
+     * Per month rather than per ingredient because origin rotates with the
+     * season and the difference is not cosmetic: satokausi.fi has avocado
+     * arriving from Spain, Colombia, Peru and Mexico in January to April, and
+     * from Spain, Kenya and South Africa in September. A single list would be
+     * wrong half the year.
+     *
+     * Optional, and absent for the ingredients no source could settle. A month
+     * with no origin recorded renders as "Imported" and never as a guessed
+     * country.
+     */
+    origins?: ImportOrigin[]
   }
 }
 

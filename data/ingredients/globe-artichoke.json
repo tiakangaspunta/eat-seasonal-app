@@ -6,6 +6,18 @@
     "imported": {
       "months": [
         2
+      ],
+      "origins": [
+        {
+          "months": [
+            2
+          ],
+          "countries": [
+            "Italy",
+            "France",
+            "Spain"
+          ]
+        }
       ]
     },
     "domestic": {

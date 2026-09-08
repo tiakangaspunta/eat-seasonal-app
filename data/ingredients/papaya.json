@@ -7,6 +7,19 @@
       "months": [
         2,
         3
+      ],
+      "origins": [
+        {
+          "months": [
+            2,
+            3
+          ],
+          "countries": [
+            "Brazil",
+            "Colombia",
+            "Costa Rica"
+          ]
+        }
       ]
     }
   },

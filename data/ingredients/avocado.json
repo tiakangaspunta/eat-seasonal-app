@@ -10,6 +10,32 @@
         3,
         4,
         9
+      ],
+      "origins": [
+        {
+          "months": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "countries": [
+            "Spain",
+            "Colombia",
+            "Peru",
+            "Mexico"
+          ]
+        },
+        {
+          "months": [
+            9
+          ],
+          "countries": [
+            "Spain",
+            "Kenya",
+            "South Africa"
+          ]
+        }
       ]
     }
   },
