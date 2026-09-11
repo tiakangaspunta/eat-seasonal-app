@@ -13,7 +13,7 @@ describe('ingredient data', () => {
   const ingredients = getIngredients()
 
   it('loads every file and validates its shape', () => {
-    expect(ingredients.length).toBe(125)
+    expect(ingredients.length).toBe(174)
   })
 
   it('prints counts by category', () => {
@@ -71,9 +71,17 @@ describe('ingredient data', () => {
   it('flags drafted origins as unverified', () => {
     const unverified = ingredients.filter((i) => !i.verified).map((i) => i.id).sort()
     expect(unverified).toEqual([
-      'bell-pepper', 'black-salsify', 'broccoli', 'chanterelle', 'chioggia-beetroot',
-      'fennel', 'garlic', 'globe-artichoke', 'parsley', 'spaghetti-squash',
-      'sprouting-broccoli', 'sweet-potato',
+      'aronia', 'bearberry', 'beef-tomato', 'bell-pepper', 'black-salsify', 'black-trumpet',
+      'blackberry', 'bog-bilberry', 'bolete', 'broccoli', 'celery', 'chanterelle',
+      'cherry-tomato', 'chicory', 'chioggia-beetroot', 'chives', 'courgette', 'cranberry',
+      'crowberry', 'damson', 'dill', 'endive', 'fennel', 'garden-cress', 'garlic', 'giant-onion',
+      'globe-artichoke', 'head-lettuce', 'hokkaido-squash', 'ice-lettuce', 'iceberg-lettuce',
+      'juniper-berry', 'kohlrabi', 'lambs-lettuce', 'leaf-lettuce', 'leek', 'lingonberry',
+      'lollo-rosso', 'matsutake', 'mint', 'mooli', 'parsley', 'pattypan-squash', 'potato-onion',
+      'raspberry', 'rocket', 'romanesco', 'root-parsley', 'rosehip', 'rowanberry',
+      'savoy-cabbage', 'sea-buckthorn', 'sea-kale', 'silverskin-onion', 'spaghetti-squash',
+      'sprouting-broccoli', 'stone-bramble', 'sweet-potato', 'watermelon', 'wax-bean',
+      'white-beet',
     ])
   })
 

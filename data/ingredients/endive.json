@@ -1,0 +1,15 @@
+{
+  "id": "endive",
+  "name": "Endiivi",
+  "category": "vegetable",
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        9
+      ],
+      "storageMonths": []
+    }
+  },
+  "verified": false,
+  "similarTo": []
+}

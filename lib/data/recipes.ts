@@ -136,11 +136,25 @@ function parseRecipeIngredient(
   return raw as RecipeIngredient
 }
 
+/**
+ * The parsed recipes, kept only in a production build.
+ *
+ * In development the files under `data/` change under the running server —
+ * Claude Code writes them, and dev-mode name editing writes them — and nothing
+ * tells Next about it, because they are read with `fs` at request time rather
+ * than imported. A cache here would then serve the state the server started
+ * with, which reads as missing data rather than as a stale cache. Re-reading
+ * 175 small files per request costs a few milliseconds and is the price of the
+ * files on disk being the truth.
+ *
+ * In a production build nothing can change them, so the cache is free.
+ */
+const cacheable = process.env.NODE_ENV === 'production'
 let cache: Recipe[] | undefined
 
 /** Every recipe, sorted by id so output is stable across machines. */
 export function getRecipes(): Recipe[] {
-  if (cache) return cache
+  if (cacheable && cache) return cache
   const files = fs.readdirSync(RECIPES_DIR).filter((f) => f.endsWith('.json'))
   const recipes = files.map((file) =>
     parseRecipe(JSON.parse(fs.readFileSync(path.join(RECIPES_DIR, file), 'utf8')), file),

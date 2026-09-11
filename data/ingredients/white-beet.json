@@ -1,0 +1,15 @@
+{
+  "id": "white-beet",
+  "name": "Valkojuurikas",
+  "category": "vegetable",
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        9
+      ],
+      "storageMonths": []
+    }
+  },
+  "verified": false,
+  "similarTo": []
+}

@@ -1,0 +1,16 @@
+{
+  "id": "wax-bean",
+  "name": "Wax bean",
+  "category": "vegetable",
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        9
+      ],
+      "storageMonths": []
+    }
+  },
+  "verified": false,
+  "similarTo": [],
+  "searchTermFi": "vahapapu"
+}

@@ -1,0 +1,18 @@
+{
+  "id": "juniper-berry",
+  "name": "Katajanmarja",
+  "category": "berry",
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        9
+      ],
+      "storageMonths": [],
+      "peakMonths": [
+        9
+      ]
+    }
+  },
+  "verified": false,
+  "similarTo": []
+}

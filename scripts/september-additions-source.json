@@ -1,0 +1,1612 @@
+{
+  "minttu": {
+    "url": "https://satokausi.fi/raaka-aineet/minttu/",
+    "title": "Minttu",
+    "season": [
+      {
+        "months": [
+          5
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          6,
+          7,
+          8
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          9
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "tilli": {
+    "url": "https://satokausi.fi/raaka-aineet/tilli/",
+    "title": "Tilli",
+    "season": [
+      {
+        "months": [
+          5
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          6,
+          7,
+          8
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          9
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "vihanneskrassi": {
+    "url": "https://satokausi.fi/raaka-aineet/vihanneskrassi/",
+    "title": "Vihanneskrassi",
+    "season": [
+      {
+        "months": [
+          4,
+          5
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          6,
+          7,
+          8
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          9
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "romanesco": {
+    "url": "https://satokausi.fi/raaka-aineet/romanesco/",
+    "title": "Romanesco",
+    "season": [
+      {
+        "months": [
+          5
+        ],
+        "bucket": "peak",
+        "flags": [
+          "ESP"
+        ]
+      },
+      {
+        "months": [
+          6
+        ],
+        "bucket": "peak",
+        "flags": [
+          "EPS"
+        ]
+      },
+      {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          10
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "merikaali": {
+    "url": "https://satokausi.fi/raaka-aineet/merikaali/",
+    "title": "Merikaali",
+    "season": [
+      {
+        "months": [
+          6,
+          7
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          8,
+          9
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          10
+        ],
+        "bucket": "storage",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "kyssakaali-kaalirapi": {
+    "url": "https://satokausi.fi/raaka-aineet/kyssakaali-kaalirapi/",
+    "title": "Kyssäkaali, kaalirapi",
+    "season": [
+      {
+        "months": [
+          1
+        ],
+        "bucket": "storage",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          6,
+          7
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          8,
+          9
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          10,
+          11,
+          12
+        ],
+        "bucket": "storage",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "kurttukaali-savoijinkaali": {
+    "url": "https://satokausi.fi/raaka-aineet/kurttukaali-savoijinkaali/",
+    "title": "Savoijinkaali, kurttukaali",
+    "season": [
+      {
+        "months": [
+          1
+        ],
+        "bucket": "storage",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          8,
+          9,
+          10
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          11
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          12
+        ],
+        "bucket": "storage",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "lehtisalaatti": {
+    "url": "https://satokausi.fi/raaka-aineet/lehtisalaatti/",
+    "title": "Lehtisalaatti",
+    "season": [
+      {
+        "months": [
+          6,
+          7,
+          8
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          9
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "kerasalaatti": {
+    "url": "https://satokausi.fi/raaka-aineet/kerasalaatti/",
+    "title": "Keräsalaatti",
+    "season": [
+      {
+        "months": [
+          6
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          7,
+          8
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          9
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "jaavuorisalaatti": {
+    "url": "https://satokausi.fi/raaka-aineet/jaavuorisalaatti/",
+    "title": "Jäävuorisalaatti",
+    "season": [
+      {
+        "months": [
+          6
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          7,
+          8
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          9
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "jaasalaatti": {
+    "url": "https://satokausi.fi/raaka-aineet/jaasalaatti/",
+    "title": "Jääsalaatti",
+    "season": [
+      {
+        "months": [
+          6
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          7,
+          8
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          9
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "lollo-rosso": {
+    "url": "https://satokausi.fi/raaka-aineet/lollo-rosso/",
+    "title": "Lollo Rosso",
+    "season": [
+      {
+        "months": [
+          6
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          7,
+          8
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          9
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "rucola": {
+    "url": "https://satokausi.fi/raaka-aineet/rucola/",
+    "title": "Rucola",
+    "season": [
+      {
+        "months": [
+          6,
+          7,
+          8
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          9
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "vuonankaali": {
+    "url": "https://satokausi.fi/raaka-aineet/vuonankaali/",
+    "title": "Vuonankaali",
+    "season": [
+      {
+        "months": [
+          6,
+          7,
+          8
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          9,
+          10
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          11
+        ],
+        "bucket": "storage",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "salaattisikuri": {
+    "url": "https://satokausi.fi/raaka-aineet/salaattisikuri/",
+    "title": "Salaattisikuri",
+    "season": [
+      {
+        "months": [
+          1
+        ],
+        "bucket": "fresh",
+        "flags": []
+      },
+      {
+        "months": [
+          6
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          7,
+          8
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          9
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          10,
+          11,
+          12
+        ],
+        "bucket": "storage",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "endiivit": {
+    "url": "https://satokausi.fi/raaka-aineet/endiivit/",
+    "title": "Endiivit",
+    "season": [
+      {
+        "months": [
+          1
+        ],
+        "bucket": "storage",
+        "flags": [
+          "ITA",
+          "NLD"
+        ]
+      },
+      {
+        "months": [
+          6
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          9
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          10
+        ],
+        "bucket": "storage",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          11
+        ],
+        "bucket": "storage",
+        "flags": [
+          "ESP",
+          "ITA"
+        ]
+      },
+      {
+        "months": [
+          12
+        ],
+        "bucket": "peak",
+        "flags": [
+          "ESP",
+          "ITA"
+        ]
+      }
+    ]
+  },
+  "lehtiselleri-varsiselleri": {
+    "url": "https://satokausi.fi/raaka-aineet/lehtiselleri-varsiselleri/",
+    "title": "Varsiselleri, lehtiselleri",
+    "season": [
+      {
+        "months": [
+          5,
+          6
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          10,
+          11,
+          12
+        ],
+        "bucket": "storage",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "puolukka": {
+    "url": "https://satokausi.fi/raaka-aineet/puolukka/",
+    "title": "Puolukka",
+    "season": [
+      {
+        "months": [
+          8,
+          9
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "karpalo": {
+    "url": "https://satokausi.fi/raaka-aineet/karpalo/",
+    "title": "Karpalo",
+    "season": [
+      {
+        "months": [
+          9,
+          10,
+          11
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          12
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "vadelma": {
+    "url": "https://satokausi.fi/raaka-aineet/vadelma/",
+    "title": "Vadelma",
+    "season": [
+      {
+        "months": [
+          7,
+          8
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          9
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "karhunvatukka": {
+    "url": "https://satokausi.fi/raaka-aineet/karhunvatukka/",
+    "title": "Karhunvatukka",
+    "season": [
+      {
+        "months": [
+          8,
+          9
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "juolukka": {
+    "url": "https://satokausi.fi/raaka-aineet/juolukka/",
+    "title": "Juolukka",
+    "season": [
+      {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "variksenmarja": {
+    "url": "https://satokausi.fi/raaka-aineet/variksenmarja/",
+    "title": "Variksenmarja",
+    "season": [
+      {
+        "months": [
+          7
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          8,
+          9
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          10
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "tyrnimarja": {
+    "url": "https://satokausi.fi/raaka-aineet/tyrnimarja/",
+    "title": "Tyrnimarja",
+    "season": [
+      {
+        "months": [
+          8
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          9,
+          10
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "pihlajanmarja": {
+    "url": "https://satokausi.fi/raaka-aineet/pihlajanmarja/",
+    "title": "Pihlajanmarja",
+    "season": [
+      {
+        "months": [
+          9,
+          10
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          11
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "ruusunmarja": {
+    "url": "https://satokausi.fi/raaka-aineet/ruusunmarja/",
+    "title": "Ruusunmarja",
+    "season": [
+      {
+        "months": [
+          8,
+          9
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "marja-aronia": {
+    "url": "https://satokausi.fi/raaka-aineet/marja-aronia/",
+    "title": "Marja-aronia",
+    "season": [
+      {
+        "months": [
+          9
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "katajanmarja": {
+    "url": "https://satokausi.fi/raaka-aineet/katajanmarja/",
+    "title": "Katajanmarja",
+    "season": [
+      {
+        "months": [
+          9
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          10
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "lillukka": {
+    "url": "https://satokausi.fi/raaka-aineet/lillukka/",
+    "title": "Lillukka",
+    "season": [
+      {
+        "months": [
+          7
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          8
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          9
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "riekonmarja": {
+    "url": "https://satokausi.fi/raaka-aineet/riekonmarja/",
+    "title": "Riekonmarja",
+    "season": [
+      {
+        "months": [
+          8,
+          9
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "kriikuna": {
+    "url": "https://satokausi.fi/raaka-aineet/kriikuna/",
+    "title": "Kriikuna",
+    "season": [
+      {
+        "months": [
+          8,
+          9
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "tatit": {
+    "url": "https://satokausi.fi/raaka-aineet/tatit/",
+    "title": "Tatit",
+    "season": [
+      {
+        "months": [
+          7
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          8,
+          9
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          10
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "mustatorvisieni": {
+    "url": "https://satokausi.fi/raaka-aineet/mustatorvisieni/",
+    "title": "Mustatorvisieni",
+    "season": [
+      {
+        "months": [
+          8,
+          9
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          10
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "matsutake-tuoksuvalmuska": {
+    "url": "https://satokausi.fi/raaka-aineet/matsutake-tuoksuvalmuska/",
+    "title": "Matsutake, tuoksuvalmuska",
+    "season": [
+      {
+        "months": [
+          7
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          8,
+          9
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "kesakurpitsa": {
+    "url": "https://satokausi.fi/raaka-aineet/kesakurpitsa/",
+    "title": "Kesäkurpitsa",
+    "season": [
+      {
+        "months": [
+          5
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "ESP",
+          "NLD"
+        ]
+      },
+      {
+        "months": [
+          6,
+          7
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          8
+        ],
+        "bucket": "fresh",
+        "flags": []
+      },
+      {
+        "months": [
+          9
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "patissionkurpitsa": {
+    "url": "https://satokausi.fi/raaka-aineet/patissionkurpitsa/",
+    "title": "Patissionkurpitsa",
+    "season": [
+      {
+        "months": [
+          7,
+          8
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          9
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "hokkaidokurpitsa": {
+    "url": "https://satokausi.fi/raaka-aineet/hokkaidokurpitsa/",
+    "title": "Hokkaidokurpitsa",
+    "season": [
+      {
+        "months": [
+          1
+        ],
+        "bucket": "storage",
+        "flags": [
+          "FIN",
+          "NLD"
+        ]
+      },
+      {
+        "months": [
+          2
+        ],
+        "bucket": "storage",
+        "flags": [
+          "NLD"
+        ]
+      },
+      {
+        "months": [
+          9,
+          10,
+          11,
+          12
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "vesimeloni": {
+    "url": "https://satokausi.fi/raaka-aineet/vesimeloni/",
+    "title": "Vesimeloni",
+    "season": [
+      {
+        "months": [
+          5,
+          6,
+          7
+        ],
+        "bucket": "peak",
+        "flags": [
+          "ESP"
+        ]
+      },
+      {
+        "months": [
+          8,
+          9
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          10
+        ],
+        "bucket": "storage",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "vahapapu": {
+    "url": "https://satokausi.fi/raaka-aineet/vahapapu/",
+    "title": "Vahapapu",
+    "season": [
+      {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "harkapapu": {
+    "url": "https://satokausi.fi/raaka-aineet/harkapapu/",
+    "title": "Härkäpapu",
+    "season": [
+      {
+        "months": [
+          8,
+          9
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          10
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN",
+          "ESP",
+          "ITA"
+        ]
+      }
+    ]
+  },
+  "pihvitomaatti": {
+    "url": "https://satokausi.fi/raaka-aineet/pihvitomaatti/",
+    "title": "Pihvitomaatti",
+    "season": [
+      {
+        "months": [
+          5
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          6,
+          7,
+          8
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          9
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "kirsikkatomaatti": {
+    "url": "https://satokausi.fi/raaka-aineet/kirsikkatomaatti/",
+    "title": "Kirsikkatomaatti",
+    "season": [
+      {
+        "months": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "bucket": "fresh",
+        "flags": []
+      }
+    ]
+  },
+  "purjosipuli": {
+    "url": "https://satokausi.fi/raaka-aineet/purjosipuli/",
+    "title": "Purjosipuli",
+    "season": [
+      {
+        "months": [
+          6
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          10
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          11,
+          12
+        ],
+        "bucket": "storage",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "ruohosipuli": {
+    "url": "https://satokausi.fi/raaka-aineet/ruohosipuli/",
+    "title": "Ruohosipuli",
+    "season": [
+      {
+        "months": [
+          5
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          6,
+          7,
+          8
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          9,
+          10
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "ryvassipuli": {
+    "url": "https://satokausi.fi/raaka-aineet/ryvassipuli/",
+    "title": "Ryvässipuli",
+    "season": [
+      {
+        "months": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "bucket": "storage",
+        "flags": []
+      },
+      {
+        "months": [
+          6,
+          7,
+          8
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          9
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          10,
+          11,
+          12
+        ],
+        "bucket": "storage",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "hopeasipuli": {
+    "url": "https://satokausi.fi/raaka-aineet/hopeasipuli/",
+    "title": "Hopeasipuli",
+    "season": [
+      {
+        "months": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "bucket": "storage",
+        "flags": []
+      },
+      {
+        "months": [
+          6
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          7,
+          8,
+          9
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          10,
+          11,
+          12
+        ],
+        "bucket": "storage",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "jattisipuli": {
+    "url": "https://satokausi.fi/raaka-aineet/jattisipuli/",
+    "title": "Jättisipuli",
+    "season": [
+      {
+        "months": [
+          7,
+          8
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          9
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          10
+        ],
+        "bucket": "storage",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "retikka": {
+    "url": "https://satokausi.fi/raaka-aineet/retikka/",
+    "title": "Retikka",
+    "season": [
+      {
+        "months": [
+          6,
+          7,
+          8
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          9,
+          10
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          11,
+          12
+        ],
+        "bucket": "storage",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "valkojuurikas": {
+    "url": "https://satokausi.fi/raaka-aineet/valkojuurikas/",
+    "title": "Valkojuurikas",
+    "season": [
+      {
+        "months": [
+          1
+        ],
+        "bucket": "storage",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          9,
+          10
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          11
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          12
+        ],
+        "bucket": "storage",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "juuripersilja": {
+    "url": "https://satokausi.fi/raaka-aineet/juuripersilja/",
+    "title": "Juuripersilja",
+    "season": [
+      {
+        "months": [
+          1,
+          2,
+          3
+        ],
+        "bucket": "storage",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          9,
+          10
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          11
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          12
+        ],
+        "bucket": "storage",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  }
+}

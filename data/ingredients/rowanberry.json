@@ -1,0 +1,15 @@
+{
+  "id": "rowanberry",
+  "name": "Pihlajanmarja",
+  "category": "berry",
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        9
+      ],
+      "storageMonths": []
+    }
+  },
+  "verified": false,
+  "similarTo": []
+}

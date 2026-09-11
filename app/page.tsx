@@ -61,7 +61,7 @@ export default function HomePage() {
         {MONTH_NAMES[month]}
         <span className="ml-2 font-normal capitalize text-neutral-500">{seasonLabel([month])}</span>
       </h1>
-      <p className="mt-4 text-neutral-700">In season, and worth cooking with, this month.</p>
+      <p className="mt-4 text-neutral-700">In season this month.</p>
 
       <div className="mt-8">
         <ProduceGrid ingredients={ingredients} month={month} />

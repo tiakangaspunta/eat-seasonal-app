@@ -1,0 +1,16 @@
+{
+  "id": "leaf-lettuce",
+  "name": "Leaf lettuce",
+  "category": "vegetable",
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        9
+      ],
+      "storageMonths": []
+    }
+  },
+  "verified": false,
+  "similarTo": [],
+  "searchTermFi": "lehtisalaatti"
+}

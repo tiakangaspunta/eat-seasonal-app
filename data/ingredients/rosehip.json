@@ -1,0 +1,15 @@
+{
+  "id": "rosehip",
+  "name": "Ruusunmarja",
+  "category": "berry",
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        9
+      ],
+      "storageMonths": []
+    }
+  },
+  "verified": false,
+  "similarTo": []
+}

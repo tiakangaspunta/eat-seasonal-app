@@ -1,0 +1,16 @@
+{
+  "id": "watermelon",
+  "name": "Watermelon",
+  "category": "fruit",
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        9
+      ],
+      "storageMonths": []
+    }
+  },
+  "verified": false,
+  "similarTo": [],
+  "searchTermFi": "vesimeloni"
+}

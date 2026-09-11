@@ -17,12 +17,35 @@ trusting it, since this is the first time the app writes to its own content.
 
 ## Acceptance criteria
 
-- [ ] Clicking a name in the panel makes it editable
-- [ ] Saving writes the new name into the correct file in `data/ingredients/`
-- [ ] The change is visible on reload, and in the file on disk
-- [ ] The ingredient's `id` is unchanged after a rename
-- [ ] `verified` is unchanged after a rename
-- [ ] The write route does not exist in a production build
+- [x] Clicking a name in the panel makes it editable
+- [x] Saving writes the new name into the correct file in `data/ingredients/`
+- [x] The change is visible on reload, and in the file on disk
+- [x] The ingredient's `id` is unchanged after a rename
+- [x] `verified` is unchanged after a rename
+- [x] The write route does not exist in a production build
+
+## Done
+
+Built as proposed, with one addition Tia asked for: recipe titles are editable
+as well as ingredient names, which the plan files under step 2. Both go through
+one route, `/api/rename/:kind/:id`.
+
+- `lib/data/rename.ts` holds the validate-and-write, with 11 tests in
+  `lib/data/rename.test.ts` running against a temporary directory.
+- `app/api/rename/[kind]/[id]/route.dev.ts` is the route, and
+  `next.config.ts` keeps `dev.ts` out of the production extension list.
+  `npm run build` outputs `/` and `/_not-found` only, which is the
+  acceptance criterion checked rather than asserted.
+- `components/EditableName.tsx` is the field: click on desktop, press and hold
+  on touch, Enter or clicking away saves, Escape cancels, empty reverts.
+- Driven end to end in the running app with Playwright: renamed Brussels sprout
+  to Ruusukaali and the recipe to Lyttyruusukaalit, confirmed both files on
+  disk, confirmed the grid behind the panel updates without a reload, and put
+  both back. `git diff` on those two files is empty afterwards.
+
+Worth knowing for step 2: a click on a recipe title currently starts editing.
+When the recipe panel lands, the click has to become "open", and editing moves
+into that panel, which is where `docs/PLAN.md` section 6 puts it anyway.
 
 ## Tests
 

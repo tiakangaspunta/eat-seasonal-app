@@ -1,6 +1,6 @@
 {
-  "id": "broad-bean",
-  "name": "Broad bean",
+  "id": "hokkaido-squash",
+  "name": "Hokkaido squash",
   "category": "vegetable",
   "availability": {
     "domestic": {
@@ -13,10 +13,7 @@
       ]
     }
   },
-  "verified": true,
+  "verified": false,
   "similarTo": [],
-  "unverifiedMonths": [
-    9
-  ],
-  "searchTermFi": "härkäpapu"
+  "searchTermFi": "hokkaidokurpitsa"
 }

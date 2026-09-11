@@ -12,7 +12,7 @@ month to drafted.
 
 Ingredients in `nut` and `other` have no season and are left out.
 
-## Fresh in September (43)
+## Fresh in September (93)
 
 Finnish produce actually being harvested or picked this month. **(peak)** marks
 satokausi's Huippusesonki: best quality and price.
@@ -20,38 +20,81 @@ satokausi's Huippusesonki: best quality and price.
 | Ingredient | Category | Sourced from | Who says so |
 | --- | --- | --- | --- |
 | Apple **(peak)** | fruit | [omenat](https://satokausi.fi/raaka-aineet/omenat/) | drafted |
+| Beef tomato **(peak)** | vegetable | [pihvitomaatti](https://satokausi.fi/raaka-aineet/pihvitomaatti/) | drafted |
 | Bell pepper | vegetable | [paprika](https://satokausi.fi/raaka-aineet/paprika/) | drafted |
 | Black salsify **(peak)** | vegetable | [mustajuuri](https://satokausi.fi/raaka-aineet/mustajuuri/) | drafted |
+| Blackberry **(peak)** | berry | [karhunvatukka](https://satokausi.fi/raaka-aineet/karhunvatukka/) | drafted |
 | Bok choy **(peak)** | vegetable | [pinaattikiinankaali](https://satokausi.fi/raaka-aineet/pinaattikiinankaali/) | Tia |
+| Broad bean **(peak)** | vegetable | [harkapapu](https://satokausi.fi/raaka-aineet/harkapapu/) | drafted |
 | Broccoli **(peak)** | vegetable | [parsakaali-brokkoli](https://satokausi.fi/raaka-aineet/parsakaali-brokkoli/) | drafted |
 | Brussels sprout | vegetable | [ruusukaali](https://satokausi.fi/raaka-aineet/ruusukaali/) | drafted |
 | Button mushroom | mushroom | [herkkusieni](https://satokausi.fi/raaka-aineet/herkkusieni/) | drafted |
 | Carrot **(peak)** | vegetable | [porkkana](https://satokausi.fi/raaka-aineet/porkkana/) | drafted |
 | Celeriac **(peak)** | vegetable | [juuriselleri-mukulaselleri](https://satokausi.fi/raaka-aineet/juuriselleri-mukulaselleri/) | drafted |
+| Celery | vegetable | [lehtiselleri-varsiselleri](https://satokausi.fi/raaka-aineet/lehtiselleri-varsiselleri/) | drafted |
+| Cherry tomato | vegetable | [kirsikkatomaatti](https://satokausi.fi/raaka-aineet/kirsikkatomaatti/) | drafted |
 | Chioggia beetroot | vegetable | [raitajuuri](https://satokausi.fi/raaka-aineet/raitajuuri/) | drafted |
+| Chives **(peak)** | herb | [ruohosipuli](https://satokausi.fi/raaka-aineet/ruohosipuli/) | drafted |
+| Cranberry **(peak)** | berry | [karpalo](https://satokausi.fi/raaka-aineet/karpalo/) | drafted |
 | Cucumber | vegetable | [kurkku](https://satokausi.fi/raaka-aineet/kurkku/) | drafted |
+| Dill **(peak)** | herb | [tilli](https://satokausi.fi/raaka-aineet/tilli/) | drafted |
 | Eggplant **(peak)** | vegetable | [munakoiso](https://satokausi.fi/raaka-aineet/munakoiso/) | drafted |
+| Endiivi | vegetable | [endiivit](https://satokausi.fi/raaka-aineet/endiivit/) | drafted |
 | Fennel **(peak)** | vegetable | [salaattifenkoli](https://satokausi.fi/raaka-aineet/salaattifenkoli/) | drafted |
+| Garden cress **(peak)** | herb | [vihanneskrassi](https://satokausi.fi/raaka-aineet/vihanneskrassi/) | drafted |
 | Garlic **(peak)** | vegetable | [valkosipuli](https://satokausi.fi/raaka-aineet/valkosipuli/) | drafted |
 | Globe artichoke **(peak)** | vegetable | [latva-artisokka](https://satokausi.fi/raaka-aineet/latva-artisokka/) | drafted |
 | Green beans | vegetable | [taitepapu-vihreapapu](https://satokausi.fi/raaka-aineet/taitepapu-vihreapapu/) | drafted |
+| Hokkaido squash **(peak)** | vegetable | [hokkaidokurpitsa](https://satokausi.fi/raaka-aineet/hokkaidokurpitsa/) | drafted |
+| Hopeasipuli **(peak)** | vegetable | [hopeasipuli](https://satokausi.fi/raaka-aineet/hopeasipuli/) | drafted |
 | Horseradish | vegetable | [piparjuuri](https://satokausi.fi/raaka-aineet/piparjuuri/) | drafted |
+| Iceberg lettuce | vegetable | [jaavuorisalaatti](https://satokausi.fi/raaka-aineet/jaavuorisalaatti/) | drafted |
 | Jerusalem artichoke **(peak)** | vegetable | [maa-artisokka](https://satokausi.fi/raaka-aineet/maa-artisokka/) | drafted |
+| Juolukka **(peak)** | berry | [juolukka](https://satokausi.fi/raaka-aineet/juolukka/) | drafted |
+| Juuripersilja **(peak)** | vegetable | [juuripersilja](https://satokausi.fi/raaka-aineet/juuripersilja/) | drafted |
+| Jättisipuli | vegetable | [jattisipuli](https://satokausi.fi/raaka-aineet/jattisipuli/) | drafted |
+| Jääsalaatti | vegetable | [jaasalaatti](https://satokausi.fi/raaka-aineet/jaasalaatti/) | drafted |
 | Kale **(peak)** | vegetable | [lehtikaali](https://satokausi.fi/raaka-aineet/lehtikaali/) | drafted |
+| Katajanmarja **(peak)** | berry | [katajanmarja](https://satokausi.fi/raaka-aineet/katajanmarja/) | drafted |
 | Kelta- ja kaurajuuri **(peak)** | vegetable | [keltajuuri](https://satokausi.fi/raaka-aineet/keltajuuri/) | drafted |
+| Keräsalaatti | vegetable | [kerasalaatti](https://satokausi.fi/raaka-aineet/kerasalaatti/) | drafted |
+| Kesäkurpitsa | vegetable | [kesakurpitsa](https://satokausi.fi/raaka-aineet/kesakurpitsa/) | drafted |
+| Kohlrabi **(peak)** | vegetable | [kyssakaali-kaalirapi](https://satokausi.fi/raaka-aineet/kyssakaali-kaalirapi/) | drafted |
+| Kriikuna **(peak)** | fruit | [kriikuna](https://satokausi.fi/raaka-aineet/kriikuna/) | drafted |
+| Leaf lettuce | vegetable | [lehtisalaatti](https://satokausi.fi/raaka-aineet/lehtisalaatti/) | drafted |
+| Lillukka | berry | [lillukka](https://satokausi.fi/raaka-aineet/lillukka/) | drafted |
+| Lingonberry **(peak)** | berry | [puolukka](https://satokausi.fi/raaka-aineet/puolukka/) | drafted |
+| Lollo Rosso **(peak)** | vegetable | [lollo-rosso](https://satokausi.fi/raaka-aineet/lollo-rosso/) | drafted |
+| Marja-aronia **(peak)** | berry | [marja-aronia](https://satokausi.fi/raaka-aineet/marja-aronia/) | drafted |
+| Matsutake **(peak)** | mushroom | [matsutake-tuoksuvalmuska](https://satokausi.fi/raaka-aineet/matsutake-tuoksuvalmuska/) | drafted |
+| Merikaali **(peak)** | vegetable | [merikaali](https://satokausi.fi/raaka-aineet/merikaali/) | drafted |
+| Mint **(peak)** | herb | [minttu](https://satokausi.fi/raaka-aineet/minttu/) | drafted |
+| Mustatorvisieni **(peak)** | mushroom | [mustatorvisieni](https://satokausi.fi/raaka-aineet/mustatorvisieni/) | drafted |
 | Napa cabbage **(peak)** | vegetable | [kiinankaali](https://satokausi.fi/raaka-aineet/kiinankaali/) | drafted |
 | Oyster mushroom | mushroom | [osterivinokas](https://satokausi.fi/raaka-aineet/osterivinokas/) | drafted |
 | Palsternakka **(peak)** | vegetable | [palsternakka](https://satokausi.fi/raaka-aineet/palsternakka/) | drafted |
 | Parsley **(peak)** | herb | [persilja](https://satokausi.fi/raaka-aineet/persilja/) | drafted |
+| Patissonkurpitsa **(peak)** | vegetable | [patissionkurpitsa](https://satokausi.fi/raaka-aineet/patissionkurpitsa/) | drafted |
 | Pear | fruit | [paaryna](https://satokausi.fi/raaka-aineet/paaryna/) | drafted |
+| Pihlajanmarja | berry | [pihlajanmarja](https://satokausi.fi/raaka-aineet/pihlajanmarja/) | drafted |
 | Pointed cabbage | vegetable | [suippokaali](https://satokausi.fi/raaka-aineet/suippokaali/) | drafted |
 | Pointed pepper **(peak)** | vegetable | [suippopaprika](https://satokausi.fi/raaka-aineet/suippopaprika/) | drafted |
 | Potato **(peak)** | vegetable | [peruna](https://satokausi.fi/raaka-aineet/peruna/) | drafted |
 | Pumpkin **(peak)** | vegetable | [kurpitsa](https://satokausi.fi/raaka-aineet/kurpitsa/) | drafted |
+| Purjo | vegetable | [purjosipuli](https://satokausi.fi/raaka-aineet/purjosipuli/) | drafted |
 | Radish **(peak)** | vegetable | [retiisi](https://satokausi.fi/raaka-aineet/retiisi/) | drafted |
+| Raspberry **(peak)** | berry | [vadelma](https://satokausi.fi/raaka-aineet/vadelma/) | drafted |
 | Red cabbage | vegetable | [punakaali](https://satokausi.fi/raaka-aineet/punakaali/) | drafted |
 | Red chili **(peak)** | vegetable | [chili](https://satokausi.fi/raaka-aineet/chili/) | drafted |
 | Red onion | vegetable | [punasipuli](https://satokausi.fi/raaka-aineet/punasipuli/) | drafted |
+| Retikka **(peak)** | vegetable | [retikka](https://satokausi.fi/raaka-aineet/retikka/) | drafted |
+| Riekonmarja | berry | [riekonmarja](https://satokausi.fi/raaka-aineet/riekonmarja/) | drafted |
+| Romanesco | vegetable | [romanesco](https://satokausi.fi/raaka-aineet/romanesco/) | drafted |
+| Rucola **(peak)** | vegetable | [rucola](https://satokausi.fi/raaka-aineet/rucola/) | drafted |
+| Ruusunmarja | berry | [ruusunmarja](https://satokausi.fi/raaka-aineet/ruusunmarja/) | drafted |
+| Ryvässipuli **(peak)** | vegetable | [ryvassipuli](https://satokausi.fi/raaka-aineet/ryvassipuli/) | drafted |
+| Salaattisikuri **(peak)** | vegetable | [salaattisikuri](https://satokausi.fi/raaka-aineet/salaattisikuri/) | drafted |
+| Savoy cabbage | vegetable | [kurttukaali-savoijinkaali](https://satokausi.fi/raaka-aineet/kurttukaali-savoijinkaali/) | drafted |
 | Shallot | vegetable | [salottisipuli](https://satokausi.fi/raaka-aineet/salottisipuli/) | drafted |
 | Spaghetti squash | vegetable | [spagettikurpitsa](https://satokausi.fi/raaka-aineet/spagettikurpitsa/) | drafted |
 | Spinach | vegetable | [pinaatti](https://satokausi.fi/raaka-aineet/pinaatti/) | drafted |
@@ -59,7 +102,14 @@ satokausi's Huippusesonki: best quality and price.
 | Sprouting broccoli **(peak)** | vegetable | [varsiparsakaali](https://satokausi.fi/raaka-aineet/varsiparsakaali/) | drafted |
 | Suppilovahvero | mushroom | [suppilovahvero](https://satokausi.fi/raaka-aineet/suppilovahvero/) | Tia |
 | Swede **(peak)** | vegetable | [lanttu](https://satokausi.fi/raaka-aineet/lanttu/) | drafted |
+| Tatit | mushroom | [tatit](https://satokausi.fi/raaka-aineet/tatit/) | drafted |
 | Tomato | vegetable | [tomaatti](https://satokausi.fi/raaka-aineet/tomaatti/) | drafted |
+| Tyrnimarja | berry | [tyrnimarja](https://satokausi.fi/raaka-aineet/tyrnimarja/) | drafted |
+| Valkojuurikas | vegetable | [valkojuurikas](https://satokausi.fi/raaka-aineet/valkojuurikas/) | drafted |
+| Variksenmarja | berry | [variksenmarja](https://satokausi.fi/raaka-aineet/variksenmarja/) | drafted |
+| Vuonankaali **(peak)** | vegetable | [vuonankaali](https://satokausi.fi/raaka-aineet/vuonankaali/) | drafted |
+| Watermelon | fruit | [vesimeloni](https://satokausi.fi/raaka-aineet/vesimeloni/) | drafted |
+| Wax bean | vegetable | [vahapapu](https://satokausi.fi/raaka-aineet/vahapapu/) | drafted |
 | White cabbage **(peak)** | vegetable | [valkokaali-kerakaali](https://satokausi.fi/raaka-aineet/valkokaali-kerakaali/) | drafted |
 | Yellow onion | vegetable | [ruokasipuli-keltasipuli](https://satokausi.fi/raaka-aineet/ruokasipuli-keltasipuli/) | drafted |
 

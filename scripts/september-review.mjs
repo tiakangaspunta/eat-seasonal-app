@@ -7,7 +7,14 @@
 import fs from 'node:fs'
 import path from 'node:path'
 
+import { HARKAPAPU, NEW_INGREDIENTS } from './september-additions.mjs'
 import { SEPTEMBER_BY_INGREDIENT } from './september-source.mjs'
+
+/** id -> satokausi slug for the ingredients the calendar page added (2026-09-11). */
+const ADDED_SLUGS = Object.fromEntries([
+  ...Object.entries(NEW_INGREDIENTS).map(([slug, [id]]) => [id, slug]),
+  [HARKAPAPU.id, HARKAPAPU.slug],
+])
 
 const SEPTEMBER = 9
 const DIR = path.join(process.cwd(), 'data', 'ingredients')
@@ -19,7 +26,7 @@ const ingredients = fs.readdirSync(DIR)
 
 const has = (months, month) => Array.isArray(months) && months.includes(month)
 const source = (id) => {
-  const slug = SEPTEMBER_BY_INGREDIENT[id]?.[1]
+  const slug = SEPTEMBER_BY_INGREDIENT[id]?.[1] ?? ADDED_SLUGS[id]
   return slug ? `[${slug}](https://satokausi.fi/raaka-aineet/${slug}/)` : '—'
 }
 const drafted = (i) => (i.verified ? (has(i.unverifiedMonths, SEPTEMBER) ? 'drafted' : 'Tia') : 'drafted')

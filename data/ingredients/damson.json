@@ -1,0 +1,18 @@
+{
+  "id": "damson",
+  "name": "Kriikuna",
+  "category": "fruit",
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        9
+      ],
+      "storageMonths": [],
+      "peakMonths": [
+        9
+      ]
+    }
+  },
+  "verified": false,
+  "similarTo": []
+}

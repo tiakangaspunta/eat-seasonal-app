@@ -1,0 +1,15 @@
+{
+  "id": "leek",
+  "name": "Purjo",
+  "category": "vegetable",
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        9
+      ],
+      "storageMonths": []
+    }
+  },
+  "verified": false,
+  "similarTo": []
+}

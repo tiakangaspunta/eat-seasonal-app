@@ -1,7 +1,7 @@
 {
-  "id": "broad-bean",
-  "name": "Broad bean",
-  "category": "vegetable",
+  "id": "mint",
+  "name": "Mint",
+  "category": "herb",
   "availability": {
     "domestic": {
       "freshMonths": [
@@ -13,10 +13,7 @@
       ]
     }
   },
-  "verified": true,
+  "verified": false,
   "similarTo": [],
-  "unverifiedMonths": [
-    9
-  ],
-  "searchTermFi": "härkäpapu"
+  "searchTermFi": "minttu"
 }

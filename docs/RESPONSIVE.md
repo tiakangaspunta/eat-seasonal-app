@@ -40,6 +40,14 @@ exist yet. This file records what was actually built.
   and the similar-ingredient chips are all at least 44 pixels high, and the chip
   rows wrap rather than scroll sideways.
 
+- **Name editing** (`components/EditableName.tsx`, issue 009): a click on
+  desktop, a press and hold on a touch screen, because a tap has to stay free
+  for opening things and on a recipe title it will mean exactly that from step 2
+  on. The field is sized from the text it holds and capped at the width of its
+  column, so a long Finnish name never forces a horizontal scrollbar and a short
+  one never collapses to a sliver. Both the name and the field it becomes are at
+  least 44 pixels high at every size.
+
 ## Not built yet
 
 Month strip, combine control (its space is reserved in the panel, its logic is

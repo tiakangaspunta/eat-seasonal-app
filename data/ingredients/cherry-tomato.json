@@ -1,0 +1,16 @@
+{
+  "id": "cherry-tomato",
+  "name": "Cherry tomato",
+  "category": "vegetable",
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        9
+      ],
+      "storageMonths": []
+    }
+  },
+  "verified": false,
+  "similarTo": [],
+  "searchTermFi": "kirsikkatomaatti"
+}

@@ -1,0 +1,15 @@
+{
+  "id": "head-lettuce",
+  "name": "Keräsalaatti",
+  "category": "vegetable",
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        9
+      ],
+      "storageMonths": []
+    }
+  },
+  "verified": false,
+  "similarTo": []
+}

@@ -1,0 +1,18 @@
+{
+  "id": "bog-bilberry",
+  "name": "Juolukka",
+  "category": "berry",
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        9
+      ],
+      "storageMonths": [],
+      "peakMonths": [
+        9
+      ]
+    }
+  },
+  "verified": false,
+  "similarTo": []
+}

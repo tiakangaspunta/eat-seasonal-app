@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 
 import { MONTHS, MONTH_NAMES, monthInitial } from '@/lib/months'
+import { EditableName } from '@/components/EditableName'
 import { OriginTag } from '@/components/OriginTag'
 import type { HomeIngredient, PanelRecipe } from '@/components/types'
 import type { MealType, Month } from '@/lib/types'
@@ -48,7 +49,14 @@ export function IngredientPanel({
     >
       <div className="flex items-start justify-between gap-3 border-b border-neutral-200 p-5">
         <div>
-          <h2 className="text-xl font-semibold">{ingredient.name}</h2>
+          <h2>
+            <EditableName
+              kind="ingredient"
+              id={ingredient.id}
+              name={ingredient.name}
+              className="text-xl font-semibold"
+            />
+          </h2>
           <p className="mt-1 text-sm capitalize text-neutral-500">
             {ingredient.category}
             {ingredient.seasonLabel && ` · ${ingredient.seasonLabel}`}
@@ -237,7 +245,12 @@ function RecipeList({ recipes }: { recipes: PanelRecipe[] }) {
       <ul className="mt-3 space-y-2">
         {visible.map((recipe) => (
           <li key={recipe.id} className="rounded-lg border border-neutral-200 p-3">
-            <p className="font-medium">{recipe.title}</p>
+            <EditableName
+              kind="recipe"
+              id={recipe.id}
+              name={recipe.title}
+              className="font-medium"
+            />
             <p className="mt-1 text-sm text-neutral-600">
               {/* capitalize sits on the words, not the line: "40 min" is not a proper noun. */}
               <span className="capitalize">

@@ -31,7 +31,7 @@ describe('recipe data', () => {
   const rebuilt = recipes.filter((r) => r.ingredients.length > 0)
 
   it('loads every file and validates its shape', () => {
-    expect(recipes.length).toBe(30)
+    expect(recipes.length).toBe(31)
   })
 
   it('prints counts by meal type', () => {
@@ -64,6 +64,7 @@ describe('recipe data', () => {
       'lime-noodles',
       'mushroom-filling-for-tacos',
       'red-cabbage-bao-buns',
+      'smashed-brussels-sprouts',
     ])
   })
 
@@ -84,7 +85,13 @@ describe('recipe data', () => {
 
   it('gives every rebuilt recipe a time and at least one substitution', () => {
     // Slice 5's acceptance criteria, as a test rather than a checklist.
-    expect(rebuilt.filter((r) => r.timeMinutes === undefined).map((r) => r.id)).toEqual([])
+    // Smashed Brussels sprouts is the exception, and not a slice 5 recipe: its
+    // source page states an oven temperature and "until crispy" and no minutes
+    // at all, so a time here would be invented rather than sourced. It gets one
+    // when Tia says what it should be.
+    expect(rebuilt.filter((r) => r.timeMinutes === undefined).map((r) => r.id)).toEqual([
+      'smashed-brussels-sprouts',
+    ])
     expect(
       rebuilt
         .filter((r) => !r.ingredients.some((line) => (line.substitutions ?? []).length > 0))
@@ -96,7 +103,11 @@ describe('recipe data', () => {
     // 19 after the import, and it only shrinks. Reaching zero means slice 5 and
     // the two own-recipe entries are all done.
     expect(recipesWithoutTime().length).toBeLessThan(19)
-    expect(recipesWithoutTime().every((r) => r.ingredients.length === 0)).toBe(true)
+    expect(
+      recipesWithoutTime()
+        .filter((r) => r.ingredients.length > 0)
+        .map((r) => r.id),
+    ).toEqual(['smashed-brussels-sprouts'])
   })
 
   it('gives every recipe a source except the two Notion rows without a URL', () => {

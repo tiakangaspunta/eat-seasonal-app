@@ -1,0 +1,15 @@
+{
+  "id": "bearberry",
+  "name": "Riekonmarja",
+  "category": "berry",
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        9
+      ],
+      "storageMonths": []
+    }
+  },
+  "verified": false,
+  "similarTo": []
+}

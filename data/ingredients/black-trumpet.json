@@ -1,0 +1,18 @@
+{
+  "id": "black-trumpet",
+  "name": "Mustatorvisieni",
+  "category": "mushroom",
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        9
+      ],
+      "storageMonths": [],
+      "peakMonths": [
+        9
+      ]
+    }
+  },
+  "verified": false,
+  "similarTo": []
+}

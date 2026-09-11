@@ -1,0 +1,16 @@
+{
+  "id": "iceberg-lettuce",
+  "name": "Iceberg lettuce",
+  "category": "vegetable",
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        9
+      ],
+      "storageMonths": []
+    }
+  },
+  "verified": false,
+  "similarTo": [],
+  "searchTermFi": "jäävuorisalaatti"
+}

@@ -481,3 +481,86 @@ Short entries, newest last. Why, not just what.
   candidates from Wikimedia Commons and Openverse, shown with author and
   licence, and only approved ones downloaded. Deciding the card layout first
   means that issue fills a slot whose size is already settled.
+
+## 2026-09-11 September, filled out from the calendar page
+
+Tia pointed at `satokausi.fi/satokausikalenteri/`, the month grid rather than
+the per-ingredient pages issue 004 read. The comparison is in
+`docs/SEPTEMBER-CALENDAR-GAPS.md`.
+
+- **Nothing already in the app needed September added.** All 47 calendar entries
+  that map to an ingredient we had were already marked, and the imported
+  countries matched. Issue 004's September stands.
+- **Finnish only, of the 72 missing.** Tia's call: 49 added, being the entries
+  the calendar flags FIN. The 23 imported ones — six melons, finger lime,
+  kiwano, prickly pear, quince, yam and the rest — were left out because the app
+  is domestic by default and none of them is a thing she buys. They are listed
+  in the gaps document if that changes.
+- **Months came from each ingredient's own page, not the calendar.** The
+  calendar grid says only "this month"; it has no Varastosesonki / Sesongissa /
+  Huippusesonki split. So all 50 pages were fetched and their season table
+  parsed by `scripts/satokausi-fetch.mjs`, keeping the rule that months come
+  from the per-ingredient page. The parser was checked against porkkana, whose
+  transcription issue 004 already recorded by hand, and agreed with it.
+- **September only, though the parse holds all twelve months.** Writing the rest
+  now would be doing step 3 early for a 49-ingredient subset, and would import
+  the same fresh-versus-storage disagreement `SATOKAUSI-CONFLICTS.md` is holding
+  open. The full parse is kept in `scripts/september-additions-source.json` for
+  step 3.
+- **Names are English where Tia would say the English word, Finnish where an
+  English name would be invented.** Leek, courgette, celery, raspberry,
+  cranberry and kohlrabi are English; riekonmarja, lillukka, kriikuna,
+  ryvässipuli, retikka and vuonankaali stay Finnish rather than become
+  "bearberry" or "stone bramble", which name the right plant and would still
+  leave her guessing. Ids stay English slugs either way, and every name is
+  editable in the app. Tia then moved five more to Finnish on sight — purjo,
+  kesäkurpitsa, marja-aronia, ruusunmarja and juuripersilja — which is the
+  review the drafted names were written to get.
+- **`searchTermFi` is filled in for the first time.** Every English-named
+  addition carries its Finnish word, which is what the step 3 recipe search
+  shortcut needs. The 73 older ingredients still have none.
+- **Chives is filed as a herb, not an onion.** satokausi groups ruohosipuli
+  under Sipulit, but `docs/PLAN.md`'s test is whether it is bought fresh with a
+  season and used as a herb, which it is.
+
+## 2026-09-11 Smashed Brussels sprouts, and a recipe with no time
+
+Added from `satokausi.fi/lyttyruusukaalit/` by the paste-a-URL workflow in
+`docs/PLAN.md` section 3.
+
+- **The source states no quantities and no time.** Four ingredients, an oven
+  temperature, and "until crispy". So the entry carries no quantities and no
+  `timeMinutes`, because both would be invented rather than sourced. Two
+  assertions in `lib/data/recipes.test.ts` name this recipe as the exception,
+  and go back to strict once Tia says how long it takes in her oven.
+- **It is not a slice 5 recipe.** Slice 5 rebuilds ten chosen recipes already in
+  the Notion import. This is a new one Tia asked for, so it appears in the
+  rebuilt list without being part of that count.
+
+## 2026-09-11 Inline name editing (issue 009)
+
+- **The write route is absent from a production build, not disabled in one.**
+  `docs/PLAN.md` section 6 asks for absence. The file is `route.dev.ts`, and
+  `next.config.ts` counts `dev.ts` as a route extension only when `NODE_ENV` is
+  `development`, so `next build` never compiles it: the build output lists `/`
+  and `/_not-found` and nothing else. A `NODE_ENV` check inside the handler is
+  the second lock, for the day someone edits the config without reading it.
+- **Recipe titles are editable too, not just ingredient names.** Tia's call. The
+  plan files recipe-title editing under step 2, but the two writes are the same
+  write, and the ingredient panel already shows recipe titles. One route,
+  `/api/rename/:kind/:id`, covers both.
+- **Desktop clicks, touch screens press and hold.** From the issue. It also
+  settles a collision that arrives in step 2: a tap on a recipe title will mean
+  "open this recipe", so editing cannot own the tap. On desktop the click is
+  still free, and moves into the recipe panel when step 2 builds it.
+- **Clicking away saves.** Tia's call, matching renaming a file. Escape cancels,
+  and an empty name reverts rather than saving, on the grounds that a blank name
+  is a slip rather than an intention.
+- **The id is validated as a slug before it is ever joined onto a path.** So
+  `../../package` is refused as a malformed id rather than resolved into a file
+  outside `data/`. The route is development-only and single-user, but a path
+  built from a URL is worth closing off whatever the audience.
+- **The write logic lives in `lib/data/rename.ts`, not in the route.** It takes
+  the data directory as an argument, so its eleven tests run against a temporary
+  directory instead of the real content. The React side is checked by eye, per
+  the `tdd` skill.

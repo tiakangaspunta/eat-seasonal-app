@@ -1,0 +1,45 @@
+{
+  "id": "smashed-brussels-sprouts",
+  "title": "Smashed Brussels sprouts",
+  "source": {
+    "name": "satokausi.fi",
+    "url": "https://satokausi.fi/lyttyruusukaalit/"
+  },
+  "ingredients": [
+    {
+      "ingredientId": "brussels-sprout"
+    },
+    {
+      "freeText": "oil"
+    },
+    {
+      "freeText": "salt"
+    },
+    {
+      "ingredientId": "parmesan",
+      "substitutions": [
+        {
+          "use": {
+            "freeText": "nutritional yeast"
+          },
+          "reason": "vegan",
+          "ratio": "half the amount",
+          "note": {
+            "en": "Parmesan is the only thing here that is not vegan, and it is doing one job: salt and savour on a crisp edge. Nutritional yeast does that job, and less of it goes further.",
+            "fi": ""
+          }
+        }
+      ]
+    }
+  ],
+  "mealType": [
+    "side",
+    "snack"
+  ],
+  "tags": [
+    "vegetarian",
+    "gluten-free",
+    "oven"
+  ],
+  "effort": "easy"
+}

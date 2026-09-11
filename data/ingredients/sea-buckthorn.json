@@ -1,0 +1,15 @@
+{
+  "id": "sea-buckthorn",
+  "name": "Tyrnimarja",
+  "category": "berry",
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        9
+      ],
+      "storageMonths": []
+    }
+  },
+  "verified": false,
+  "similarTo": []
+}

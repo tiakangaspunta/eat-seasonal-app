@@ -1,6 +1,6 @@
 {
-  "id": "broad-bean",
-  "name": "Broad bean",
+  "id": "rocket",
+  "name": "Rucola",
   "category": "vegetable",
   "availability": {
     "domestic": {
@@ -13,10 +13,6 @@
       ]
     }
   },
-  "verified": true,
-  "similarTo": [],
-  "unverifiedMonths": [
-    9
-  ],
-  "searchTermFi": "härkäpapu"
+  "verified": false,
+  "similarTo": []
 }
