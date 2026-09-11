@@ -84,10 +84,11 @@ translation actually earns anything.
 
 The tradeoff, stated plainly: at the Finnish step, switching the interface to
 Finnish will not translate names, so a list will read half English and half
-Finnish. If that turns out to matter, names migrate to `{ en, fi }` at that point,
-with the existing single value going into whichever language it already is. That
-migration is a one-time pass over the data files, which is cheap. Paying for
-bilingual names now, before knowing whether the mixture bothers her, is not.
+Finnish. Tia confirmed on 2026-09-11 that this is fine, and that a Finnish name
+replaces the English one rather than sitting beside it. The `{ en, fi }`
+migration held in reserve here is therefore not happening: names stay a single
+string. Renaming an ingredient to Finnish loses the English, which is the
+intended behaviour, since the id it is stored under stays an English slug.
 
 ### Ingredient
 

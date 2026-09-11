@@ -564,3 +564,17 @@ Added from `satokausi.fi/lyttyruusukaalit/` by the paste-a-URL workflow in
   the data directory as an argument, so its eleven tests run against a temporary
   directory instead of the real content. The React side is checked by eye, per
   the `tdd` skill.
+
+## 2026-09-11 Names stay a single field, in Finnish where Tia prefers
+
+- **A Finnish name replaces the English one outright. No `{ en, fi }` pair for
+  names, now or later.** `docs/PLAN.md` left this open: names were a single
+  field, with a migration to a bilingual pair held in reserve "if that turns out
+  to matter". Tia's answer is that it does not. Navigating a list of English
+  produce names she does not recognise is the actual problem; a half-English,
+  half-Finnish list is not one. The reserve migration is now off the table, and
+  the section says so.
+- **This is what the rename feature is for.** Renaming writes over `name`, and
+  the English is not kept anywhere but the id. That is intended: the id stays an
+  English slug, so recipes and cooking history keep pointing at the right thing
+  however the display name is spelled.
