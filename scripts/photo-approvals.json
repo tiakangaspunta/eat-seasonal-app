@@ -1,0 +1,87 @@
+{
+  "updatedAt": "2026-09-11T10:54:58.360Z",
+  "decisions": {
+    "apple": {
+      "source": "Wikimedia Commons",
+      "title": "Golden Delicious apples.jpg",
+      "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Golden_Delicious_apples.jpg/500px-Golden_Delicious_apples.jpg",
+      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Golden_Delicious_apples.jpg",
+      "author": "Ivar Leidus",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Golden_Delicious_apples.jpg"
+    },
+    "aronia": null,
+    "avocado": {
+      "source": "Wikimedia Commons",
+      "title": "Lentil and vegetable soup with avocado (6964882187).jpg",
+      "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Lentil_and_vegetable_soup_with_avocado_%286964882187%29.jpg/500px-Lentil_and_vegetable_soup_with_avocado_%286964882187%29.jpg",
+      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/4/43/Lentil_and_vegetable_soup_with_avocado_%286964882187%29.jpg",
+      "author": "Jennifer from Vancouver, Canada",
+      "license": "CC BY 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lentil_and_vegetable_soup_with_avocado_(6964882187).jpg"
+    },
+    "banana": {
+      "source": "Wikimedia Commons",
+      "title": "Cavendish banana from Maracaibo.jpg",
+      "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Cavendish_banana_from_Maracaibo.jpg/500px-Cavendish_banana_from_Maracaibo.jpg",
+      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/3/31/Cavendish_banana_from_Maracaibo.jpg",
+      "author": "Wilfredor",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cavendish_banana_from_Maracaibo.jpg"
+    },
+    "bearberry": {
+      "source": "Wikimedia Commons",
+      "title": "Arctostaphylos uva-ursi 2 RF.jpg",
+      "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Arctostaphylos_uva-ursi_2_RF.jpg/500px-Arctostaphylos_uva-ursi_2_RF.jpg",
+      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Arctostaphylos_uva-ursi_2_RF.jpg",
+      "author": "Robert Flogaus-Faust",
+      "license": "CC BY 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Arctostaphylos_uva-ursi_2_RF.jpg"
+    },
+    "beef-tomato": {
+      "source": "Wikimedia Commons",
+      "title": "Beef Tomatoes - The Fruit Bowl, Brighton 2024-03-16.jpg",
+      "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Beef_Tomatoes_-_The_Fruit_Bowl%2C_Brighton_2024-03-16.jpg/500px-Beef_Tomatoes_-_The_Fruit_Bowl%2C_Brighton_2024-03-16.jpg",
+      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Beef_Tomatoes_-_The_Fruit_Bowl%2C_Brighton_2024-03-16.jpg",
+      "author": "Andy Li",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Beef_Tomatoes_-_The_Fruit_Bowl,_Brighton_2024-03-16.jpg"
+    },
+    "bell-pepper": {
+      "source": "Wikimedia Commons",
+      "title": "Red bell pepper.jpg",
+      "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Red_bell_pepper.jpg/500px-Red_bell_pepper.jpg",
+      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Red_bell_pepper.jpg",
+      "author": "AntanO",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Red_bell_pepper.jpg"
+    },
+    "black-salsify": {
+      "source": "Wikimedia Commons",
+      "title": "Schorseneer plant Scorzonera hispanica.jpg",
+      "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Schorseneer_plant_Scorzonera_hispanica.jpg/500px-Schorseneer_plant_Scorzonera_hispanica.jpg",
+      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/1/11/Schorseneer_plant_Scorzonera_hispanica.jpg",
+      "author": "Rasbak",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Schorseneer_plant_Scorzonera_hispanica.jpg"
+    },
+    "black-trumpet": {
+      "source": "Wikimedia Commons",
+      "title": "Craterellus cornucopioides Eestis.JPG",
+      "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Craterellus_cornucopioides_Eestis.JPG/500px-Craterellus_cornucopioides_Eestis.JPG",
+      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Craterellus_cornucopioides_Eestis.JPG",
+      "author": "Marko Vainu",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Craterellus_cornucopioides_Eestis.JPG"
+    },
+    "blackberry": {
+      "source": "Wikimedia Commons",
+      "title": "Blackberries (Rubus fruticosus).jpg",
+      "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Blackberries_%28Rubus_fruticosus%29.jpg/500px-Blackberries_%28Rubus_fruticosus%29.jpg",
+      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Blackberries_%28Rubus_fruticosus%29.jpg",
+      "author": "Ivar Leidus",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Blackberries_(Rubus_fruticosus).jpg"
+    }
+  }
+}

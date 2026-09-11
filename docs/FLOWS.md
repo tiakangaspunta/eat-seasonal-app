@@ -50,6 +50,37 @@ flowchart TD
     file --> refresh["router.refresh(): the panel and the cards behind it both show the new name"]
 ```
 
+## Approving a photo for an ingredient
+
+Built in issue 010. Development only, apart from the credits page: the contact
+sheet and its write route are not compiled into a production build at all, so
+`/photos` is a 404 there. Nothing enters `public/` or `data/` by clicking around
+the sheet; downloading is a separate, deliberate step run from the terminal.
+
+```mermaid
+flowchart TD
+    search["node scripts/photo-candidates.mjs: two Commons searches per ingredient, the plain name and the name plus its category"]
+    search --> limited{"Did both searches come back?"}
+    limited -->|"one was rate-limited"| flagged["The row is marked half-blind, and the sheet says so above its tiles"]
+    limited -->|"yes"| file
+    flagged --> file
+    file["scripts/photo-candidates.json: four candidates each, with author, licence and source url"]
+    file --> again["Re-running merges into this file: rows already searched are kept, half-blind rows are searched again"]
+    again -.-> file
+    file --> sheet["/photos: one row per ingredient, four tiles, captioned with licence and author"]
+    sheet -->|"click a tile"| post["POST /api/photos/approve"]
+    sheet -->|"None of these"| post
+    post --> guard{"Running in development?"}
+    guard -->|"no"| gone["404: the route was never built"]
+    guard -->|"yes"| validate{"Valid slug id, every attribution field present, https urls only?"}
+    validate -->|"no"| error["The tile reverts and says it could not save"]
+    validate -->|"yes"| approvals["scripts/photo-approvals.json: the whole candidate, or null for none of these"]
+    approvals --> download["node scripts/download-approved.mjs, run by hand"]
+    download --> public["public/images/ingredients/<id>.jpg, fetched at 800px"]
+    download --> data["The ingredient's image field: file, author, licence, source url"]
+    data --> credits["/credits: every photo in the app, derived from the data, and a real page in production"]
+```
+
 ## Not drawn yet
 
 The recipe panel (step 2), the month strip and the month view (step 3),

@@ -578,3 +578,79 @@ Added from `satokausi.fi/lyttyruusukaalit/` by the paste-a-URL workflow in
   the English is not kept anywhere but the id. That is intended: the id stays an
   English slug, so recipes and cooking history keep pointing at the right thing
   however the display name is spelled.
+
+## 2026-09-11 Photo candidates and approval (issue 010)
+
+- **Search terms come from the `id`, not the display name.** Ids are English
+  slugs and stay English through any rename, so "chioggia-beetroot" keeps
+  finding photos now that the name on screen is "Raita(puna)juuri". Searching
+  the display name would have quietly stopped working the moment a name became
+  Finnish.
+- **Two Commons searches per ingredient, blended.** The plain name, and the name
+  plus its category. The hint is not optional polish: "aronia" alone returns a
+  ship called Aronia S and two herbarium sheets. But it is not always an
+  improvement either: "avocado vegetable" returns avocado toast where "avocado"
+  returns avocados. Nothing in the data says which an ingredient will be, so
+  both searches run and the row shows some of each.
+- **Openverse only tops up what Commons was thin on.** Its results are markedly
+  noisier — a "lingonberry" search returns a pie and a cake — so it is a
+  fallback rather than a second opinion.
+- **Licences are filtered before the sheet, not on it.** Only CC0, public
+  domain, CC BY and CC BY-SA reach the contact sheet. Showing a licence Tia
+  cannot use and asking her to reject it wastes the review.
+- **Approving stores the whole candidate, not an index into the list.**
+  `scripts/photo-candidates.mjs` can be re-run at any time, and a stored index
+  would then point at a different photo without anything looking wrong.
+- **"None of these" is stored as `null`, not as an absence.** So an ingredient
+  Tia looked at and rejected everything for can be told apart from one she has
+  not reached yet, which is what makes the sheet resumable.
+- **Clicking the sheet never downloads anything.** The write route records a
+  decision; `scripts/download-approved.mjs` is run by hand afterwards. Approving
+  is reversible and cheap, downloading is neither.
+- **The sheet is `page.dev.tsx`, absent from a production build.** Same
+  mechanism as the rename route from issue 009, now covering pages as well as
+  routes. Verified: `next build` lists only `/`, `/_not-found` and `/credits`.
+- **`/credits` is a real production page.** It is the attribution the licences
+  require, and it is derived from the ingredient data, so a photo cannot be in
+  the app without appearing on it.
+- **Images are fetched at 800 pixels wide, via Commons' `Special:FilePath`.**
+  Originals are routinely several megabytes, which is far more than a card
+  needs.
+
+## 2026-09-11 Repairing a rate-limited photo run (issue 010)
+
+The trial run of ten lost two of its twenty Commons searches to 429 outright,
+after all its retries. Both were the *plain* search, so avocado and black-trumpet
+were each built from only the hinted search, and avocado's row was four
+photographs of lunch. Tia approved a lentil soup from it, because it was the best
+of four wrong choices.
+
+- **A half-blind row is the failure that does not look like one.** Four tiles,
+  normally captioned, all from whichever search survived — and the two searches
+  are wrong in opposite directions, which is the whole reason for running both.
+  So the row now carries `partial`, and the sheet says so above the tiles rather
+  than only in a log line nobody reads mid-review.
+- **Re-running repairs rather than restarts.** `photo-candidates.json` is merged
+  into, not overwritten, and a row whose searches all came back is skipped. A
+  99-ingredient run that loses twenty rows is fixed by running it again for a
+  couple of minutes, instead of putting 200 searches through Commons a second
+  time to recover twenty. This is what makes a full run safe to start at all.
+- **A row that all came back is not re-searched, even if it found nothing.**
+  Searching again would find nothing more slowly. Only a failed search is worth
+  repeating.
+- **Rows from the trial have no `searched` count, and count as needing a re-run.**
+  Repaired rather than trusted, since there is no way to tell from a row written
+  before the flag existed whether it was whole.
+- **`--ids` repairs rows on the sheet that exists.** It loads two ingredients and
+  must not therefore publish a sheet of two; the other rows, and Tia's place in
+  them, are left alone. A different `--month` does start over, because September's
+  rows sitting among October's would look reviewable.
+- **Backoff honours `Retry-After`, and waits far longer: 5, 15, 45, 90 seconds,
+  jittered.** The old 3, 6, 9 demonstrably was not enough. Commons' limit is a
+  burst limit rather than a quota — twenty searches back to back with no pause at
+  all answer 200 — so it wants a real pause, and jitter stops every ingredient
+  backing off in step with the one that tripped it.
+- **A re-searched row keeps the photo Tia already approved, shown first and
+  labelled.** Repairing avocado's row replaced the soup she had picked. Dropping
+  it silently would leave the row marked approved with nothing highlighted; it
+  stays visible so it can be compared with what the repaired search found.

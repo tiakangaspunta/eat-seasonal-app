@@ -48,6 +48,22 @@ exist yet. This file records what was actually built.
   one never collapses to a sliver. Both the name and the field it becomes are at
   least 44 pixels high at every size.
 
+- **Photo contact sheet** (`components/ContactSheet.tsx`, issue 010,
+  development only): one candidate tile per row on a phone, two from `sm:` up
+  and four from `lg:`, so a row of four is one glance on a laptop and a short
+  scroll on a phone. Tiles are a fixed height with `object-cover` rather than a
+  fixed width, so photos of any shape line up. Every tile, its source link and
+  the "None of these" button are at least 44 pixels high. Images are lazy
+  loaded, which matters because the full September sheet is around 400 of them.
+- **Half-blind row warning and carried-over choice** (`components/ContactSheet.tsx`,
+  issue 010): both are full-width blocks inside the row at every size, above and
+  within the tile grid rather than beside it, so nothing about them needs to
+  reflow. The warning wraps to as many lines as it needs and is never truncated,
+  since a truncated warning is worse than none.
+- **Photo credits** (`app/credits/page.tsx`, issue 010): one list at every size,
+  each entry wrapping to a second line rather than truncating, since an author
+  and licence line is the whole content and hiding it would defeat the page.
+
 ## Not built yet
 
 Month strip, combine control (its space is reserved in the panel, its logic is
