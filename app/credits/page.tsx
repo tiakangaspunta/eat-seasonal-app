@@ -11,13 +11,15 @@
 import Link from 'next/link'
 
 import { getIngredients } from '@/lib/data/ingredients'
+import { sortByName } from '@/lib/sort'
 
 export const metadata = { title: 'Photo credits' }
 
 export default function CreditsPage() {
-  const credited = getIngredients()
-    .filter((ingredient) => ingredient.image)
-    .sort((a, b) => a.name.localeCompare(b.name))
+  const credited = sortByName(
+    getIngredients().filter((ingredient) => ingredient.image),
+    (ingredient) => ingredient.name,
+  )
 
   return (
     <main className="mx-auto w-full max-w-3xl px-4 py-6">

@@ -48,7 +48,12 @@ flowchart TD
     validate -->|"no"| error["The old name comes back, with the reason beneath it"]
     validate -->|"yes"| file["The JSON file in data/ is rewritten: name only, id and verified untouched"]
     file --> refresh["router.refresh(): the panel and the cards behind it both show the new name"]
+    refresh --> reorder["The card moves to its new alphabetical place, Finnish letters included"]
 ```
+
+Lists are ordered by the name on screen, not by the id underneath, so renaming
+something moves it. Tia's call on 2026-09-17: ids stay English slugs forever, so
+id order stops being alphabetical the moment a name becomes Finnish.
 
 ## Approving a photo for an ingredient
 

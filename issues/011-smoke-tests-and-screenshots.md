@@ -18,13 +18,13 @@ what matters before they're relied on as the safety net for later steps.
 
 ## Acceptance criteria
 
-- [ ] Home smoke flow passes: current month name and at least one ingredient
+- [x] Home smoke flow passes: current month name and at least one ingredient
       name are visible
-- [ ] Panel smoke flow passes: clicking an ingredient shows its name and at
+- [x] Panel smoke flow passes: clicking an ingredient shows its name and at
       least one recipe title in the panel
-- [ ] Filter smoke flow passes: toggling imported changes the ingredient count
-- [ ] Desktop and mobile screenshots are saved and reviewed
-- [ ] No assertion depends on a CSS class name or a pixel coordinate
+- [x] Filter smoke flow passes: toggling imported changes the ingredient count
+- [x] Desktop and mobile screenshots are saved and reviewed
+- [x] No assertion depends on a CSS class name or a pixel coordinate
 
 ## Tests
 

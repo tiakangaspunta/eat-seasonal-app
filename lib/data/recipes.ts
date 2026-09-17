@@ -219,3 +219,33 @@ export function countByMealType(): Record<MealType, number> {
   }
   return counts
 }
+
+/**
+ * Every recipe grouped by the ingredients it uses, built in one pass.
+ *
+ * The home page needs this for all ~120 seasonal ingredients at once, and
+ * calling recipesUsingIngredient() in that loop meant re-reading and
+ * re-validating every recipe file, and every ingredient file behind it, once
+ * per ingredient. In development, where nothing is cached because the files
+ * change under the running server, that turned one page render into tens of
+ * thousands of file reads and took the better part of a minute.
+ *
+ * Same rule about substitutions as recipesUsingIngredient(), which this is
+ * tested against: a recipe that only offers an ingredient as a swap does not
+ * count as using it.
+ */
+export function recipesByIngredient(): Map<string, Recipe[]> {
+  const index = new Map<string, Recipe[]>()
+  for (const recipe of getRecipes()) {
+    // A recipe naming the same ingredient on two lines is listed once.
+    const used = new Set(
+      recipe.ingredients.map((line) => line.ingredientId).filter((id): id is string => !!id),
+    )
+    for (const id of used) {
+      const existing = index.get(id)
+      if (existing) existing.push(recipe)
+      else index.set(id, [recipe])
+    }
+  }
+  return index
+}

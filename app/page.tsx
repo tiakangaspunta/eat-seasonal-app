@@ -1,5 +1,5 @@
 import { getIngredients } from '@/lib/data/ingredients'
-import { recipesUsingIngredient } from '@/lib/data/recipes'
+import { recipesByIngredient } from '@/lib/data/recipes'
 import {
   domesticAvailability,
   importedAvailability,
@@ -7,6 +7,7 @@ import {
   seasonLabel,
 } from '@/lib/season/availability'
 import { MONTH_NAMES } from '@/lib/months'
+import { sortByName } from '@/lib/sort'
 import { ProduceGrid } from '@/components/ProduceGrid'
 import type { HomeIngredient } from '@/components/types'
 import { SEASONAL_CATEGORIES } from '@/lib/types'
@@ -26,6 +27,10 @@ export default function HomePage() {
   // "similar" suggestion pointing at a pantry ingredient is dropped rather
   // than rendered as a button that opens nothing.
   const names = new Map(seasonal.map((ingredient) => [ingredient.id, ingredient.name]))
+  // Built once for the whole page. Asking for one ingredient's recipes at a
+  // time re-read and re-validated every content file on each call, which is
+  // cheap once and ruinous 120 times over.
+  const recipesForIngredient = recipesByIngredient()
 
   const ingredients: HomeIngredient[] = seasonal.map((ingredient) => ({
     ...originIn(ingredient, month),
@@ -43,17 +48,25 @@ export default function HomePage() {
     importedMonths: ingredient.availability.imported?.months ?? [],
     notes: ingredient.notes?.en || undefined,
     warning: ingredient.warning?.en || undefined,
-    similar: ingredient.similarTo
-      .filter((id) => names.has(id))
-      .map((id) => ({ id, name: names.get(id)! })),
-    recipes: recipesUsingIngredient(ingredient.id).map((recipe) => ({
-      id: recipe.id,
-      title: recipe.title,
-      mealType: recipe.mealType,
-      effort: recipe.effort,
-      timeMinutes: recipe.timeMinutes,
-    })),
+    similar: sortByName(
+      ingredient.similarTo.filter((id) => names.has(id)).map((id) => ({ id, name: names.get(id)! })),
+      (similar) => similar.name,
+    ),
+    recipes: sortByName(
+      (recipesForIngredient.get(ingredient.id) ?? []).map((recipe) => ({
+        id: recipe.id,
+        title: recipe.title,
+        mealType: recipe.mealType,
+        effort: recipe.effort,
+        timeMinutes: recipe.timeMinutes,
+      })),
+      (recipe) => recipe.title,
+    ),
   }))
+
+  // Sorted by what the card says, not by the id underneath. Renaming an
+  // ingredient moves it to its new alphabetical place, which is the point.
+  const byName = sortByName(ingredients, (ingredient) => ingredient.name)
 
   return (
     <main className="p-6 md:p-10">
@@ -64,7 +77,7 @@ export default function HomePage() {
       <p className="mt-4 text-neutral-700">In season this month.</p>
 
       <div className="mt-8">
-        <ProduceGrid ingredients={ingredients} month={month} />
+        <ProduceGrid ingredients={byName} month={month} />
       </div>
     </main>
   )

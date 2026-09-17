@@ -654,3 +654,61 @@ of four wrong choices.
   labelled.** Repairing avocado's row replaced the soup she had picked. Dropping
   it silently would leave the row marked approved with nothing highlighted; it
   stays visible so it can be compared with what the repaired search found.
+
+## 2026-09-17 Smoke tests assert on content, not on copy (issue 011)
+
+- **The placeholder smoke test had been failing for four commits.** It looked
+  for a heading "Eat seasonal" that issue 007 removed when the real home page
+  was built. Nothing ran Playwright, so nothing noticed. That is the argument
+  for the `test:e2e` script and for running it: a safety net nobody pulls is
+  decoration.
+- **No assertion is on a sentence.** The month name comes from the clock, the
+  ingredient and its recipe come from the data, and the counts come from the
+  same season logic the page uses. Prose gets reworded, and a test that fails
+  because a sentence improved is a test people learn to ignore. Tia shortening
+  the home page's subtitle in `1dde393` is exactly the case that would have
+  broken a lazier test.
+- **The fixtures read the real data rather than naming an ingredient.** Names
+  are editable now, and a test naming "Garlic" would break the first time it
+  became "Valkosipuli". `e2e/fixtures.ts` picks whichever in-season ingredient
+  has the most recipes, so renaming and the month turning both leave it true.
+- **Screenshots are a separate script from the smoke flows.** They write into
+  `docs/screenshots/`, so running them dirties the working tree. Worth doing
+  deliberately, not on every test run.
+
+## 2026-09-17 The home page was quadratic, and nothing noticed (issue 011)
+
+- **Rendering the home page took 13 to 49 seconds.** `app/page.tsx` asked for
+  one ingredient's recipes at a time, and outside production neither loader
+  caches, so each of ~120 calls re-read and re-validated all 31 recipe files
+  and all 174 ingredient files behind them: roughly 25,000 file reads per page.
+  `recipesByIngredient()` builds the same answer in one pass.
+- **The smoke tests found it within minutes of existing.** Playwright timed out
+  at 30 seconds on `page.goto`. Nothing else would have caught it: Vitest does
+  not render the page, and by eye a slow dev server reads as a slow laptop.
+  That is the case for end-to-end tests stated better than the issue stated it.
+- **The no-cache-in-development decision is not at fault, but it set the trap.**
+  Re-reading on every call is right while the files change under the server; it
+  just makes an accidentally quadratic call pattern expensive rather than merely
+  wasteful. The fix belongs at the call site, not in the cache.
+
+## 2026-09-17 Lists are sorted by the name on screen, not the id underneath
+
+- **Tia's call, asked for directly: everything alphabetical, and renaming
+  something moves it.** The grid had been sorted by `id`, which is fine while
+  every name matches its slug and nonsense afterwards: once `chicory` displays
+  as Salaattisikuri, it sits between Cauliflower and Cucumber. Ids stay English
+  slugs forever by design, so id order and alphabetical order diverge with every
+  rename. The reshuffle on rename is the intended behaviour, not a side effect.
+- **Finnish collation, not English.** `Intl.Collator('fi')` puts å, ä and ö
+  after z, where the Finnish alphabet has them. A plain `.sort()` would be wrong
+  twice over: every capital before every lowercase letter, and every accented
+  letter after both. `localeCompare` with no locale, which the credits page was
+  using, gets it wrong on whatever machine runs it. One comparator now, in
+  `lib/sort.ts`, tested.
+- **Applied to every list that shows a name**, not only the grid: the panel's
+  recipe list, its similar-ingredient chips, and the photo credits. "Everything
+  alphabetically" was the instruction.
+- **The loaders still sort by id.** They are the data layer and their output
+  feeds scripts and tests, where stable, machine-independent order is worth
+  more than readability. Display order belongs to the view.

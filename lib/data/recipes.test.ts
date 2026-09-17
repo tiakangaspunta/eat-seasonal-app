@@ -8,11 +8,13 @@
 import { describe, expect, it } from 'vitest'
 
 import { getIngredients } from './ingredients'
+import type { Recipe } from '@/lib/types'
 import {
   countByMealType,
   getRecipe,
   getRecipes,
   parseRecipe,
+  recipesByIngredient,
   recipesUsingIngredient,
   recipesWithoutTime,
 } from './recipes'
@@ -188,5 +190,64 @@ describe('recipe data', () => {
 
   it('accepts a recipe with no time, since the un-rebuilt ones have none', () => {
     expect(parseRecipe(valid, 'tacos.json').timeMinutes).toBeUndefined()
+  })
+})
+
+/**
+ * Recipes are compared by id, not by identity. Outside a production build the
+ * loaders re-read the files on every call, so two calls return equal recipes
+ * that are different objects, and toContain would compare the wrong thing.
+ */
+const idsOf = (recipes: Recipe[]) => recipes.map((recipe) => recipe.id)
+
+describe('recipesByIngredient', () => {
+  const index = recipesByIngredient()
+  const recipes = getRecipes()
+
+  it('groups every recipe under each ingredient it uses', () => {
+    for (const recipe of recipes) {
+      for (const line of recipe.ingredients) {
+        if (!line.ingredientId) continue
+        expect(idsOf(index.get(line.ingredientId) ?? [])).toContain(recipe.id)
+      }
+    }
+  })
+
+  it('agrees with recipesUsingIngredient, for ingredients used and unused', () => {
+    // Every ingredient any recipe names, plus one that no recipe names, rather
+    // than all 174: recipesUsingIngredient reloads the data on each call, and
+    // sweeping the whole list is the very cost this index exists to remove.
+    const used = new Set(
+      recipes.flatMap((recipe) =>
+        recipe.ingredients.map((line) => line.ingredientId).filter((id): id is string => !!id),
+      ),
+    )
+    const unused = getIngredients().find((ingredient) => !used.has(ingredient.id))!
+
+    for (const id of [...used, unused.id]) {
+      expect(idsOf(index.get(id) ?? [])).toEqual(idsOf(recipesUsingIngredient(id)))
+    }
+  })
+
+  it('leaves out an ingredient only named as a substitution', () => {
+    const substitutionOnly = recipes.flatMap((recipe) =>
+      recipe.ingredients.flatMap((line) =>
+        (line.substitutions ?? [])
+          .map((substitution) => substitution.use.ingredientId)
+          .filter((id): id is string => !!id)
+          .filter((id) => !recipe.ingredients.some((other) => other.ingredientId === id)),
+      ),
+    )
+
+    expect(substitutionOnly.length).toBeGreaterThan(0)
+    for (const id of substitutionOnly) {
+      expect(idsOf(index.get(id) ?? [])).not.toContain(
+        recipes.find((recipe) =>
+          recipe.ingredients.some((line) =>
+            line.substitutions?.some((s) => s.use.ingredientId === id),
+          ),
+        )!.id,
+      )
+    }
   })
 })
