@@ -4,6 +4,15 @@ Read `docs/PLAN.md` before doing anything. It is the brief.
 
 ## Ways of working
 
+- Run `git fetch` and compare against `origin/main` before starting any work,
+  and read the log of anything that came in. Tia works on this project from more
+  than one machine and does not always pull first. A whole issue was once
+  rebuilt from scratch because a finished version of it was already sitting on
+  GitHub, unpulled. If the branch is behind, say so and ask before starting,
+  rather than building on a stale tree.
+- Check the issue file against what is actually in the repository before
+  building. An unticked acceptance box is not proof the work is missing; the
+  code and the git log are.
 - Build in the steps listed in `docs/PLAN.md`. One step at a time. Do not start
   work belonging to a later step.
 - Step 1 is sliced into issue files under `issues/`, numbered in dependency
@@ -119,6 +128,17 @@ Narrow on purpose. Full rules in the `tdd` skill.
 - `write-a-prd`: only for something `docs/PLAN.md` does not already cover.
 
 `docs/PLAN.md` is the source of scope. A PRD is the exception, not the routine.
+
+## Checks that run by themselves
+
+`.githooks/` holds two git hooks, enabled with `npm run hooks:install` (once per
+clone, since git does not track its own hooks directory).
+
+- `pre-commit`: `npm run typecheck` and `npm test`. Around ten seconds.
+- `pre-push`: `npm run test:e2e`, the Playwright smoke flows.
+
+Never bypass them with `--no-verify`. A failing hook is the point of the hook:
+fix the cause, or say plainly why the check is wrong and change the check.
 
 <!-- BEGIN:nextjs-agent-rules -->
 

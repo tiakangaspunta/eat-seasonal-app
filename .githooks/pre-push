@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# The slow checks, before anything leaves the machine: the Playwright smoke
+# flows, which start their own dev server if one is not already running.
+#
+# This is the hook that would have caught the placeholder smoke test failing
+# for four commits.
+set -e
+
+echo "pre-push: smoke flows"
+npm run --silent test:e2e

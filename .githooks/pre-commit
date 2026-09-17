@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# Fast checks, before every commit: types and the Vitest suite.
+#
+# Fast on purpose, around ten seconds. A hook slow enough to resent is a hook
+# that gets bypassed, and the browser flows run on push instead.
+#
+# These check the working tree, not the staged snapshot. With everything staged
+# that is the same thing; with a partial commit it is a near-enough answer, and
+# the push hook covers the rest.
+set -e
+
+echo "pre-commit: typecheck"
+npm run --silent typecheck
+
+echo "pre-commit: unit tests"
+npm run --silent test
