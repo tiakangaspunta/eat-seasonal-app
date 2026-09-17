@@ -15,5 +15,11 @@
   },
   "verified": false,
   "similarTo": [],
-  "searchTermFi": "karhunvatukka"
+  "searchTermFi": "karhunvatukka",
+  "image": {
+    "file": "/images/ingredients/blackberry.jpg",
+    "author": "Ivar Leidus",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Blackberries_(Rubus_fruticosus).jpg"
+  }
 }

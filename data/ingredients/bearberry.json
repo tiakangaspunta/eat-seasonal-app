@@ -11,5 +11,11 @@
     }
   },
   "verified": false,
-  "similarTo": []
+  "similarTo": [],
+  "image": {
+    "file": "/images/ingredients/bearberry.jpg",
+    "author": "Robert Flogaus-Faust",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Arctostaphylos_uva-ursi_2_RF.jpg"
+  }
 }

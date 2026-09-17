@@ -18,5 +18,11 @@
     }
   },
   "verified": false,
-  "similarTo": []
+  "similarTo": [],
+  "image": {
+    "file": "/images/ingredients/black-salsify.jpg",
+    "author": "Rasbak",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Schorseneer_plant_Scorzonera_hispanica.jpg"
+  }
 }

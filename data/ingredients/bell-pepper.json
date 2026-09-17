@@ -11,5 +11,11 @@
     }
   },
   "verified": false,
-  "similarTo": []
+  "similarTo": [],
+  "image": {
+    "file": "/images/ingredients/bell-pepper.jpg",
+    "author": "AntanO",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Red_bell_pepper.jpg"
+  }
 }

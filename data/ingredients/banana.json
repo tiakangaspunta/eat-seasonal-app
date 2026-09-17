@@ -31,5 +31,11 @@
   "similarTo": [],
   "unverifiedMonths": [
     9
-  ]
+  ],
+  "image": {
+    "file": "/images/ingredients/banana.jpg",
+    "author": "Wilfredor",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cavendish_banana_from_Maracaibo.jpg"
+  }
 }

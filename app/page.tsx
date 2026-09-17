@@ -46,6 +46,13 @@ export default function HomePage() {
     freshMonths: ingredient.availability.domestic?.freshMonths ?? [],
     storageMonths: ingredient.availability.domestic?.storageMonths ?? [],
     importedMonths: ingredient.availability.imported?.months ?? [],
+    image: ingredient.image
+      ? {
+          file: ingredient.image.file,
+          author: ingredient.image.author,
+          license: ingredient.image.license,
+        }
+      : undefined,
     notes: ingredient.notes?.en || undefined,
     warning: ingredient.warning?.en || undefined,
     similar: sortByName(

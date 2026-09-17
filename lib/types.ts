@@ -29,7 +29,7 @@ export const SEASONAL_CATEGORIES = [
 export type Month = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
 
 export type IngredientImage = {
-  /** Path under public/images/ingredients/ */
+  /** Root-relative URL, e.g. "/images/ingredients/apple.jpg", ready to use in src. */
   file: string
   author: string
   /** "CC BY-SA 4.0", "public domain" */

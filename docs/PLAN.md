@@ -122,7 +122,7 @@ type Ingredient = {
 }
 
 type IngredientImage = {
-  file: string                   // path under public/images/ingredients/
+  file: string                   // root-relative URL, "/images/ingredients/apple.jpg"
   author: string
   license: string                // "CC BY-SA 4.0", "public domain"
   sourceUrl: string

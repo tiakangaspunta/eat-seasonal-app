@@ -133,7 +133,19 @@ function IngredientCard({
           to carry the season facts; the photo is how you recognise the
           ingredient without reading, which a small square does as well as a
           large one and in a third of the height. */}
-      <div className="h-16 w-16 shrink-0 rounded-md bg-neutral-100 sm:h-20 sm:w-20" aria-hidden />
+      {ingredient.image ? (
+        // eslint-disable-next-line @next/next/no-img-element -- a fixed-size local
+        // thumbnail, already downloaded at card width; next/image would add a
+        // round trip and a config for no gain.
+        <img
+          src={ingredient.image.file}
+          alt=""
+          loading="lazy"
+          className="h-16 w-16 shrink-0 rounded-md bg-neutral-100 object-cover sm:h-20 sm:w-20"
+        />
+      ) : (
+        <div className="h-16 w-16 shrink-0 rounded-md bg-neutral-100 sm:h-20 sm:w-20" aria-hidden />
+      )}
       <div className="min-w-0 flex-1">
         <div className="flex items-start justify-between gap-2">
           <span className="font-medium">{ingredient.name}</span>

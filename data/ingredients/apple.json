@@ -19,5 +19,11 @@
   "similarTo": [],
   "unverifiedMonths": [
     9
-  ]
+  ],
+  "image": {
+    "file": "/images/ingredients/apple.jpg",
+    "author": "Ivar Leidus",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Golden_Delicious_apples.jpg"
+  }
 }

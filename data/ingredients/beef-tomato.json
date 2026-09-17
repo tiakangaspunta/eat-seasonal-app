@@ -15,5 +15,11 @@
   },
   "verified": false,
   "similarTo": [],
-  "searchTermFi": "pihvitomaatti"
+  "searchTermFi": "pihvitomaatti",
+  "image": {
+    "file": "/images/ingredients/beef-tomato.jpg",
+    "author": "Andy Li",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Beef_Tomatoes_-_The_Fruit_Bowl,_Brighton_2024-03-16.jpg"
+  }
 }

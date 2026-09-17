@@ -33,6 +33,12 @@ export type HomeIngredient = {
   /** English prose for now; the fi fields fill at the localization step. */
   notes?: string
   warning?: string
+  /**
+   * The approved photo, if this ingredient has one yet. Undefined is the
+   * ordinary case for now: the card draws its placeholder and the layout does
+   * not move when the photo arrives.
+   */
+  image?: { file: string; author: string; license: string }
   /** Ingredients that can stand in for this one, already resolved to names. */
   similar: { id: string; name: string }[]
   recipes: PanelRecipe[]
