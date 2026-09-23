@@ -14,5 +14,11 @@
     }
   },
   "verified": false,
-  "similarTo": []
+  "similarTo": [],
+  "image": {
+    "file": "/images/ingredients/lambs-lettuce.jpg",
+    "author": "Schwäbin",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ackersalat02.jpg"
+  }
 }

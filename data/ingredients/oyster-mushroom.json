@@ -14,5 +14,11 @@
   "similarTo": [],
   "unverifiedMonths": [
     9
-  ]
+  ],
+  "image": {
+    "file": "/images/ingredients/oyster-mushroom.jpg",
+    "author": "Zinnmann",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20210718_Pleurotus_ostreatus_21-35.jpg"
+  }
 }

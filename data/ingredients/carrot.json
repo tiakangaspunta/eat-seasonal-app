@@ -21,5 +21,11 @@
   "similarTo": [],
   "unverifiedMonths": [
     9
-  ]
+  ],
+  "image": {
+    "file": "/images/ingredients/carrot.jpg",
+    "author": "W.carter",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Preparing_and_slicing_carrots.jpg"
+  }
 }

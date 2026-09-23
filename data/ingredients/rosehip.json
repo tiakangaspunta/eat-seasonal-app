@@ -11,5 +11,11 @@
     }
   },
   "verified": false,
-  "similarTo": []
+  "similarTo": [],
+  "image": {
+    "file": "/images/ingredients/rosehip.jpg",
+    "author": "Dilaxe321",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Autumn_Rosehip_Berries_in_Bia%C5%82ystok_Forest.jpg"
+  }
 }

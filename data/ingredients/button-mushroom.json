@@ -14,5 +14,11 @@
   "similarTo": [],
   "unverifiedMonths": [
     9
-  ]
+  ],
+  "image": {
+    "file": "/images/ingredients/button-mushroom.jpg",
+    "author": "0x010C",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2016-01_Agaricus_bisporus_07.jpg"
+  }
 }

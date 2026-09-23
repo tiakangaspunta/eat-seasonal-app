@@ -17,5 +17,11 @@
   "similarTo": [],
   "unverifiedMonths": [
     9
-  ]
+  ],
+  "image": {
+    "file": "/images/ingredients/red-chili.jpg",
+    "author": "Selimee",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Red_chili_pepper.jpg"
+  }
 }

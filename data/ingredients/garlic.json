@@ -19,5 +19,11 @@
     }
   },
   "verified": false,
-  "similarTo": []
+  "similarTo": [],
+  "image": {
+    "file": "/images/ingredients/garlic.jpg",
+    "author": "Ivar Leidus",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Garlic_bulbs_and_cloves.jpg"
+  }
 }

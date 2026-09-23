@@ -15,5 +15,11 @@
   },
   "verified": false,
   "similarTo": [],
-  "searchTermFi": "puolukka"
+  "searchTermFi": "puolukka",
+  "image": {
+    "file": "/images/ingredients/lingonberry.jpg",
+    "author": "Jonas Bergsten",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cowberry.jpg"
+  }
 }

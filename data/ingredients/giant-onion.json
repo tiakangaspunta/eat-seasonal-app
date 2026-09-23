@@ -11,5 +11,11 @@
     }
   },
   "verified": false,
-  "similarTo": []
+  "similarTo": [],
+  "image": {
+    "file": "/images/ingredients/giant-onion.jpg",
+    "author": "Sandwell Council",
+    "license": "CC BY-SA 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Onions_(6096010693).jpg"
+  }
 }

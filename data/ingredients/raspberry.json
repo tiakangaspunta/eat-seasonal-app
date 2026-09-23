@@ -15,5 +15,11 @@
   },
   "verified": false,
   "similarTo": [],
-  "searchTermFi": "vadelma"
+  "searchTermFi": "vadelma",
+  "image": {
+    "file": "/images/ingredients/raspberry.jpg",
+    "author": "Ivar Leidus",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Raspberries_(Rubus_idaeus).jpg"
+  }
 }

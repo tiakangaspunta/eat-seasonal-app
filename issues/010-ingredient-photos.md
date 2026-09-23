@@ -29,7 +29,25 @@ earlier decision that nothing enters the project unreviewed.
 
 ## Where this got to
 
-Paused on 2026-09-17, part way through. What exists:
+**2026-09-23:** every September ingredient has been through the contact sheet.
+99 decided: 66 approved and downloaded, with attribution on the ingredient and
+on `/credits`; 33 marked "none suitable". Aronia found a usable photo this
+time. Tia looked again at beef-tomato and black-salsify and kept both.
+
+The 33 rejections include some of the most photographed vegetables there are
+(broccoli, kale, leek, spinach, white cabbage), which points at the search
+terms rather than a lack of photos. Next: re-search those with better terms.
+
+Also fixed along the way: `photo-candidates.mjs` now writes after every
+ingredient, so a run is resumable and the sheet can be reviewed while it is
+still going; `download-approved.mjs` skips photos already downloaded and waits
+out Wikimedia's 429s instead of failing on them; the screenshot spec waits for
+lazy-loaded photos before capturing.
+
+Open, not part of this issue: whether the four lettuces (leaf, head, iceberg,
+ice) should merge into one ingredient. Tia's call.
+
+### Earlier: paused on 2026-09-17, part way through. What existed then:
 
 - 9 ingredients decided and downloaded: apple, avocado, banana, bearberry,
   beef-tomato, bell-pepper, black-salsify, black-trumpet, blackberry. Their

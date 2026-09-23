@@ -17,5 +17,11 @@
   "similarTo": [],
   "unverifiedMonths": [
     9
-  ]
+  ],
+  "image": {
+    "file": "/images/ingredients/red-cabbage.jpg",
+    "author": "Friedrich Haag",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abstrakte_Fotografie_001_2012_10_16.jpg"
+  }
 }

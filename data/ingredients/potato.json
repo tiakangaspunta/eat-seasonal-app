@@ -21,5 +21,11 @@
   "similarTo": [],
   "unverifiedMonths": [
     9
-  ]
+  ],
+  "image": {
+    "file": "/images/ingredients/potato.jpg",
+    "author": "Samsing Haui MAENMIN Haujng",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:HK_WC_%E7%81%A3%E4%BB%94%E9%81%93_Road_market_shop_vegetable_potato_night_October_2023_R12S.jpg"
+  }
 }

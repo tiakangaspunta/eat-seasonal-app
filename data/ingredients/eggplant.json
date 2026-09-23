@@ -17,5 +17,11 @@
   "similarTo": [],
   "unverifiedMonths": [
     9
-  ]
+  ],
+  "image": {
+    "file": "/images/ingredients/eggplant.jpg",
+    "author": "Ashoka Jegroo",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Italian_Eggplants_On_Sale_In_Fruit_and_Vegetable_Store.jpg"
+  }
 }

@@ -16,5 +16,11 @@
   "similarTo": [],
   "unverifiedMonths": [
     9
-  ]
+  ],
+  "image": {
+    "file": "/images/ingredients/red-onion.jpg",
+    "author": "Kritzolina",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Market_at_Hildegardplatz_in_Kempten_03.jpg"
+  }
 }

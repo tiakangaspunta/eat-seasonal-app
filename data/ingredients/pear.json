@@ -16,5 +16,11 @@
   "similarTo": [],
   "unverifiedMonths": [
     9
-  ]
+  ],
+  "image": {
+    "file": "/images/ingredients/pear.jpg",
+    "author": "Rhododendrites",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:D%27anjou_pear.jpg"
+  }
 }

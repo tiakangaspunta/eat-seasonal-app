@@ -12,5 +12,11 @@
   },
   "verified": false,
   "similarTo": [],
-  "searchTermFi": "savoijinkaali"
+  "searchTermFi": "savoijinkaali",
+  "image": {
+    "file": "/images/ingredients/savoy-cabbage.jpg",
+    "author": "Sheila Sund",
+    "license": "CC BY 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Savoy_Cabbage_wrinkles.jpg"
+  }
 }

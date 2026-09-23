@@ -15,5 +15,11 @@
   },
   "verified": false,
   "similarTo": [],
-  "searchTermFi": "hokkaidokurpitsa"
+  "searchTermFi": "hokkaidokurpitsa",
+  "image": {
+    "file": "/images/ingredients/hokkaido-squash.jpg",
+    "author": "George Chernilevsky",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cucurbita_2018_G3.jpg"
+  }
 }

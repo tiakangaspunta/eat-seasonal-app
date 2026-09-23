@@ -374,17 +374,6 @@ async function main() {
       `${kept ? `, keeping ${kept} already done` : ''}...`,
   )
 
-  const results = new Map(previous)
-  for (const ingredient of todo) {
-    const result = await candidatesFor(ingredient)
-    results.set(result.id, result)
-    const count = result.candidates.length
-    const half = result.partial ? ' (HALF-BLIND: one search failed)' : ''
-    console.log(`  ${result.id}: ${count} candidate${count === 1 ? '' : 's'}${half}`)
-    // The pause between searches is inside candidatesFor, so there is nothing
-    // more to wait for here.
-  }
-
   // Every row the sheet had, in the order it had them, plus any ingredient
   // this run is seeing for the first time. Built from the previous sheet rather
   // than from `ingredients`, because `--ids avocado` loads one ingredient and
@@ -392,16 +381,36 @@ async function main() {
   // of the sheet, and Tia's place in it, alone.
   const order = [...previous.keys()]
   for (const ingredient of ingredients) if (!previous.has(ingredient.id)) order.push(ingredient.id)
-  const ordered = order.map((id) => results.get(id)).filter(Boolean)
 
-  const output = {
-    generatedAt: new Date().toISOString(),
-    // `--ids` repairs rows on whatever sheet exists; it does not redefine which
-    // month that sheet is for.
-    month: args.ids ? (previous.size ? month : null) : args.month,
-    ingredients: ordered,
+  const results = new Map(previous)
+  let ordered = []
+  function writeSheet() {
+    ordered = order.map((id) => results.get(id)).filter(Boolean)
+    const output = {
+      generatedAt: new Date().toISOString(),
+      // `--ids` repairs rows on whatever sheet exists; it does not redefine which
+      // month that sheet is for.
+      month: args.ids ? (previous.size ? month : null) : args.month,
+      ingredients: ordered,
+    }
+    fs.writeFileSync(OUT_FILE, JSON.stringify(output, null, 2) + '\n')
   }
-  fs.writeFileSync(OUT_FILE, JSON.stringify(output, null, 2) + '\n')
+
+  for (const ingredient of todo) {
+    const result = await candidatesFor(ingredient)
+    results.set(result.id, result)
+    // Written after every ingredient, not once at the end. At Commons' rate
+    // limit a full run is over an hour, and writing once meant a run that died
+    // at ingredient 90 lost all 90. Now a re-run skips what is already on the
+    // sheet, and `/photos` can be reviewed while the run is still going.
+    writeSheet()
+    const count = result.candidates.length
+    const half = result.partial ? ' (HALF-BLIND: one search failed)' : ''
+    console.log(`  ${result.id}: ${count} candidate${count === 1 ? '' : 's'}${half}`)
+    // The pause between searches is inside candidatesFor, so there is nothing
+    // more to wait for here.
+  }
+  writeSheet()
 
   const empty = ordered.filter((row) => row.candidates.length === 0)
   const partial = ordered.filter((row) => row.partial)

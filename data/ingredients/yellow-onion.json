@@ -17,5 +17,11 @@
   "similarTo": [],
   "unverifiedMonths": [
     9
-  ]
+  ],
+  "image": {
+    "file": "/images/ingredients/yellow-onion.jpg",
+    "author": "Jon Sullivan",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yellow_onions_vegetables.jpg"
+  }
 }

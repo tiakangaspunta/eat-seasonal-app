@@ -15,5 +15,11 @@
   "similarTo": [],
   "unverifiedMonths": [
     9
-  ]
+  ],
+  "image": {
+    "file": "/images/ingredients/brussels-sprout.jpg",
+    "author": "Eric Hunt",
+    "license": "CC BY 2.5",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Brussels_sprout_closeup.jpg"
+  }
 }

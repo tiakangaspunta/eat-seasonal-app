@@ -15,5 +15,11 @@
     }
   },
   "verified": false,
-  "similarTo": []
+  "similarTo": [],
+  "image": {
+    "file": "/images/ingredients/chioggia-beetroot.jpg",
+    "author": "Adam Tinworth",
+    "license": "CC BY-ND 2.0",
+    "sourceUrl": "https://www.flickr.com/photos/44124385392@N01/6041350255"
+  }
 }

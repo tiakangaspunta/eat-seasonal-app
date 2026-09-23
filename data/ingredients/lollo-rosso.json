@@ -14,5 +14,11 @@
     }
   },
   "verified": false,
-  "similarTo": []
+  "similarTo": [],
+  "image": {
+    "file": "/images/ingredients/lollo-rosso.jpg",
+    "author": "August Geyler",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ein_Blattsalat_der_Sorte_Lollo_Rosso_auf_dem_Linke_Hof.jpg"
+  }
 }

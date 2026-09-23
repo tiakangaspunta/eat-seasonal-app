@@ -8,16 +8,33 @@
  *
  * Run them with `npm run screenshots`.
  */
-import { test } from '@playwright/test'
+import { type Page, test } from '@playwright/test'
 
 import { ingredientWithRecipes } from './fixtures'
 
 const OUT = 'docs/screenshots'
 
+/**
+ * Waits for the card photos actually on screen. They are `loading="lazy"`, so
+ * a heading being visible says nothing about them, and a screenshot taken then
+ * shows grey squares where the photos go.
+ */
+async function photosOnScreen(page: Page) {
+  await page.waitForFunction(() =>
+    [...document.images]
+      .filter((img) => {
+        const box = img.getBoundingClientRect()
+        return box.bottom > 0 && box.top < window.innerHeight
+      })
+      .every((img) => img.complete && img.naturalWidth > 0),
+  )
+}
+
 test.describe('screenshots', () => {
   test('home view', async ({ page }, testInfo) => {
     await page.goto('/')
     await page.getByRole('heading', { level: 1 }).waitFor()
+    await photosOnScreen(page)
     await page.screenshot({ path: `${OUT}/home-${testInfo.project.name}.png`, fullPage: false })
   })
 
@@ -26,6 +43,7 @@ test.describe('screenshots', () => {
     await page.goto('/')
     await page.locator('button[aria-expanded]').filter({ hasText: name }).first().click()
     await page.getByRole('dialog', { name: `${name} details` }).waitFor()
+    await photosOnScreen(page)
     await page.screenshot({ path: `${OUT}/panel-${testInfo.project.name}.png`, fullPage: false })
   })
 })

@@ -35,5 +35,11 @@
   "similarTo": [],
   "unverifiedMonths": [
     9
-  ]
+  ],
+  "image": {
+    "file": "/images/ingredients/mango.jpg",
+    "author": "Ivar Leidus",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mangos_-_single_and_halved.jpg"
+  }
 }

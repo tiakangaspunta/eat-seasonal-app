@@ -15,5 +15,11 @@
   },
   "verified": false,
   "similarTo": [],
-  "searchTermFi": "minttu"
+  "searchTermFi": "minttu",
+  "image": {
+    "file": "/images/ingredients/mint.jpg",
+    "author": "Commonists",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mint_leaves_(Mentha_spicata).jpg"
+  }
 }

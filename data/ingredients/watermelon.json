@@ -12,5 +12,11 @@
   },
   "verified": false,
   "similarTo": [],
-  "searchTermFi": "vesimeloni"
+  "searchTermFi": "vesimeloni",
+  "image": {
+    "file": "/images/ingredients/watermelon.jpg",
+    "author": "Fred Hsu ( Wikipedia:User:Fred Hsu on en.wikipedia )",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Taiwan_2009_Tainan_City_Organic_Farm_Watermelon_FRD_7962.jpg"
+  }
 }

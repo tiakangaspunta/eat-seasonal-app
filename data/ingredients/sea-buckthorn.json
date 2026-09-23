@@ -11,5 +11,11 @@
     }
   },
   "verified": false,
-  "similarTo": []
+  "similarTo": [],
+  "image": {
+    "file": "/images/ingredients/sea-buckthorn.jpg",
+    "author": "Виталий Уайлд",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hippophae_(Novogrudinina).jpg"
+  }
 }

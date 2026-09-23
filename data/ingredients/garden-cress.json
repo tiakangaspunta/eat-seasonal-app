@@ -15,5 +15,11 @@
   },
   "verified": false,
   "similarTo": [],
-  "searchTermFi": "vihanneskrassi"
+  "searchTermFi": "vihanneskrassi",
+  "image": {
+    "file": "/images/ingredients/garden-cress.jpg",
+    "author": "Optograph",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Garden_Cress.jpg"
+  }
 }

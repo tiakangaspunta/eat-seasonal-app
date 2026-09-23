@@ -11,5 +11,11 @@
     }
   },
   "verified": false,
-  "similarTo": []
+  "similarTo": [],
+  "image": {
+    "file": "/images/ingredients/bolete.jpg",
+    "author": "George Chernilevsky",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Edible_fungi_in_basket_2012_G1.jpg"
+  }
 }

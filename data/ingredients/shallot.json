@@ -16,5 +16,11 @@
   "similarTo": [],
   "unverifiedMonths": [
     9
-  ]
+  ],
+  "image": {
+    "file": "/images/ingredients/shallot.jpg",
+    "author": "Robert Kerton, CSIRO",
+    "license": "CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:CSIRO_ScienceImage_2812_Shallots.jpg"
+  }
 }

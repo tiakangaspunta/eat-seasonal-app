@@ -19,5 +19,11 @@
     }
   },
   "verified": false,
-  "similarTo": []
+  "similarTo": [],
+  "image": {
+    "file": "/images/ingredients/parsley.jpg",
+    "author": "H. Zell",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Petroselinum_crispum_003.JPG"
+  }
 }

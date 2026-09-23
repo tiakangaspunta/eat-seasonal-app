@@ -48,9 +48,27 @@ function extensionOf(candidate, contentType) {
   return fromTitle === '.jpeg' ? '.jpg' : fromTitle || '.jpg'
 }
 
+/**
+ * Waits out a 429 rather than failing on it, as `photo-candidates.mjs` does.
+ * Commons' limit is a burst limit: a run of 65 downloads trips it around the
+ * 55th, and what it wants is a real pause.
+ */
+const BACKOFF = [5000, 15000, 45000, 90000]
+
+async function fetchPatiently(url) {
+  for (let attempt = 0; ; attempt += 1) {
+    const response = await fetch(url, { headers: { 'User-Agent': USER_AGENT } })
+    if (response.status !== 429 || attempt === BACKOFF.length) return response
+    const told = Number(response.headers.get('retry-after')) * 1000
+    const wait = Number.isFinite(told) && told > 0 ? told : BACKOFF[attempt] * (1 + Math.random())
+    console.log(`    429, waiting ${Math.round(wait / 1000)}s`)
+    await new Promise((resolve) => setTimeout(resolve, wait))
+  }
+}
+
 async function download(id, candidate) {
   const url = downloadUrl(candidate)
-  const response = await fetch(url, { headers: { 'User-Agent': USER_AGENT } })
+  const response = await fetchPatiently(url)
   if (!response.ok) throw new Error(`${url} answered ${response.status}`)
 
   const contentType = (response.headers.get('content-type') ?? '').split(';')[0]
@@ -100,6 +118,16 @@ async function main() {
   for (const [id, candidate] of approved) {
     if (!fs.existsSync(path.join(INGREDIENTS, `${id}.json`))) {
       console.log(`  ${id}: no such ingredient, skipped`)
+      continue
+    }
+    // Already downloaded, and still the photo that was approved: nothing to do.
+    // A changed approval has a different sourceUrl, so it downloads again.
+    const current = JSON.parse(fs.readFileSync(path.join(INGREDIENTS, `${id}.json`), 'utf8')).image
+    if (
+      current?.sourceUrl === candidate.sourceUrl &&
+      fs.existsSync(path.join(process.cwd(), 'public', current.file))
+    ) {
+      done += 1
       continue
     }
     if (dryRun) {

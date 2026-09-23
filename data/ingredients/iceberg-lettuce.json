@@ -12,5 +12,11 @@
   },
   "verified": false,
   "similarTo": [],
-  "searchTermFi": "jäävuorisalaatti"
+  "searchTermFi": "jäävuorisalaatti",
+  "image": {
+    "file": "/images/ingredients/iceberg-lettuce.jpg",
+    "author": "Rasbak 13:13, 20 May 2007 (UTC)",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Iceberg_lettuce_(IJssla_krop).jpg"
+  }
 }
