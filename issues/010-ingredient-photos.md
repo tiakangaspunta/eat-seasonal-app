@@ -20,12 +20,12 @@ earlier decision that nothing enters the project unreviewed.
 
 ## Acceptance criteria
 
-- [ ] Every September ingredient has at least one candidate on the contact sheet,
+- [x] Every September ingredient has at least one candidate on the contact sheet,
       or is explicitly noted as unavailable
-- [ ] Every candidate shows author, license, and source URL
-- [ ] Only images Tia approved are downloaded
-- [ ] Approved images have complete `IngredientImage` data on their ingredient
-- [ ] An attribution list is renderable somewhere in the app
+- [x] Every candidate shows author, license, and source URL
+- [x] Only images Tia approved are downloaded
+- [x] Approved images have complete `IngredientImage` data on their ingredient
+- [x] An attribution list is renderable somewhere in the app
 
 ## Where this got to
 
@@ -36,7 +36,13 @@ time. Tia looked again at beef-tomato and black-salsify and kept both.
 
 The 33 rejections include some of the most photographed vegetables there are
 (broccoli, kale, leek, spinach, white cabbage), which points at the search
-terms rather than a lack of photos. Next: re-search those with better terms.
+terms rather than a lack of photos. So they were re-searched the same day with
+hand-written terms (`SEARCH_TERMS` in `photo-candidates.mjs`, run with
+`--rejected`), showing only photos not already turned down. Tia approved 25 of
+the 33, which brings it to **91 of 99 with a photo**.
+
+Still without one: bok-choy, chicory, courgette, endive, ice-lettuce,
+pointed-pepper, portobello, romanesco. They keep the grey placeholder.
 
 Also fixed along the way: `photo-candidates.mjs` now writes after every
 ingredient, so a run is resumable and the sheet can be reviewed while it is

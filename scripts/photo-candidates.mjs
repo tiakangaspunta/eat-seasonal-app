@@ -19,6 +19,8 @@
  *   node scripts/photo-candidates.mjs --ids kale,leek # named ingredients only
  *   node scripts/photo-candidates.mjs --month 10      # a different month
  *   node scripts/photo-candidates.mjs --force         # re-search rows already done
+ *   node scripts/photo-candidates.mjs --rejected      # re-search "none of these" rows,
+ *                                                     # new photos only, moved to the top
  *
  * Re-running is the intended way to repair a run. Rows already searched cleanly
  * are kept and skipped; only rows a search failed on are searched again. See
@@ -45,7 +47,13 @@ const OPENVERSE_TOPUP = 2
 const ALLOWED = /^(cc0|cc[- ]?by([- ]sa)?|public domain|pdm|no restrictions)/i
 
 function parseArgs(argv) {
-  const args = { month: 9, limit: Infinity, ids: null, force: argv.includes('--force') }
+  const args = {
+    month: 9,
+    limit: Infinity,
+    ids: null,
+    force: argv.includes('--force'),
+    rejected: argv.includes('--rejected'),
+  }
   for (let i = 0; i < argv.length; i += 1) {
     const value = argv[i + 1]
     if (argv[i] === '--month') args.month = Number(value)
@@ -99,6 +107,53 @@ const CATEGORY_HINT = {
   herb: 'herb',
   nut: 'nut',
   other: '',
+}
+
+/**
+ * Hand-written searches, for ingredients the id-based search failed.
+ *
+ * Written 2026-09-23 after Tia rejected every candidate for these 33. The
+ * failures were of three kinds: the word means something else ("rocket" found
+ * Soyuz launches, "white cabbage" the cabbage white butterfly), the search
+ * found the plant rather than the food (parsnip in flower, broad bean
+ * seedlings), or a neighbour crowded it out ("broccoli" returned four
+ * Romanescos). Each pair aims at the produce as it is bought. These are search
+ * wording only, not content, so they live here and not in `data/`.
+ */
+const SEARCH_TERMS = {
+  'bok-choy': ['pak choi', 'bok choy heads'],
+  'broad-bean': ['broad beans pods', 'fava beans shelled'],
+  broccoli: ['broccoli head', 'broccoli florets'],
+  celeriac: ['celeriac root', 'celeriac tuber'],
+  celery: ['celery stalks', 'celery bunch'],
+  chicory: ['Belgian endive', 'witloof chicory'],
+  chives: ['chives bunch', 'fresh chives'],
+  courgette: ['zucchini', 'courgettes'],
+  cranberry: ['Vaccinium oxycoccos berries', 'fresh cranberries'],
+  crowberry: ['crowberries', 'Empetrum nigrum berries'],
+  cucumber: ['cucumbers', 'cucumber sliced'],
+  dill: ['dill bunch', 'fresh dill'],
+  endive: ['frisee lettuce', 'escarole'],
+  fennel: ['fennel bulb', 'Florence fennel'],
+  horseradish: ['horseradish root', 'grated horseradish'],
+  'ice-lettuce': ['crisphead lettuce', 'jääsalaatti'],
+  'jerusalem-artichoke': ['Jerusalem artichoke tubers', 'sunchokes'],
+  kale: ['curly kale', 'kale leaves'],
+  kohlrabi: ['kohlrabi bulb', 'kohlrabi vegetables'],
+  leek: ['leeks', 'leek stalks'],
+  parsnip: ['parsnips', 'parsnip root'],
+  'pointed-pepper': ['sweet pointed pepper', 'Romano pepper'],
+  portobello: ['portobello mushrooms', 'portobello mushroom cap'],
+  'potato-onion': ['multiplier onion', 'Allium cepa aggregatum'],
+  rocket: ['arugula', 'rocket salad leaves'],
+  romanesco: ['Romanesco cauliflower', 'romanesco head'],
+  'root-parsley': ['parsley root', 'Hamburg parsley'],
+  spinach: ['spinach leaves', 'fresh spinach'],
+  'spring-onion': ['scallions', 'green onions bunch'],
+  'sprouting-broccoli': ['purple sprouting broccoli', 'broccolini'],
+  'white-beet': ['white beetroot', 'white beets'],
+  'white-cabbage': ['cabbage head', 'white cabbage heads'],
+  'yellow-beet': ['golden beetroot', 'yellow beetroot'],
 }
 
 /** "chioggia-beetroot" + vegetable -> "chioggia beetroot vegetable" */
@@ -262,9 +317,10 @@ function interleave(first, second, wanted) {
   return merged
 }
 
-async function candidatesFor(ingredient) {
-  const plain = ingredient.id.replace(/-/g, ' ')
-  const hinted = searchTerm(ingredient)
+async function candidatesFor(ingredient, alreadySeen = new Set()) {
+  const custom = SEARCH_TERMS[ingredient.id]
+  const plain = custom ? custom[0] : ingredient.id.replace(/-/g, ' ')
+  const hinted = custom ? custom[1] : searchTerm(ingredient)
   const term = hinted === plain ? plain : `${plain} / ${hinted}`
   const notes = []
 
@@ -280,7 +336,8 @@ async function candidatesFor(ingredient) {
   let failed = 0
   for (const query of queries) {
     try {
-      results.push(await fromCommons(query))
+      // A photo Tia already turned down is not a new choice.
+      results.push((await fromCommons(query)).filter((c) => !alreadySeen.has(c.fullUrl)))
     } catch (error) {
       results.push([])
       failed += 1
@@ -303,7 +360,8 @@ async function candidatesFor(ingredient) {
   // competing for space on every row.
   if (candidates.length < COMMONS_WANTED) {
     try {
-      candidates = [...candidates, ...(await fromOpenverse(plain))]
+      const topUp = (await fromOpenverse(plain)).filter((c) => !alreadySeen.has(c.fullUrl))
+      candidates = [...candidates, ...topUp]
     } catch (error) {
       notes.push(`Openverse search failed: ${error.message}`)
     }
@@ -353,8 +411,22 @@ function needsSearch(row) {
   return !row || row.of === undefined || row.searched < row.of
 }
 
+/**
+ * Ids Tia answered "none of these" for on the contact sheet. `null` in the
+ * approvals file means exactly that: reviewed, nothing usable, ask again.
+ */
+function rejectedIds() {
+  const file = path.join(process.cwd(), 'scripts', 'photo-approvals.json')
+  if (!fs.existsSync(file)) return []
+  const { decisions } = JSON.parse(fs.readFileSync(file, 'utf8'))
+  return Object.entries(decisions)
+    .filter(([, decision]) => decision === null)
+    .map(([id]) => id)
+}
+
 async function main() {
   const args = parseArgs(process.argv.slice(2))
+  if (args.rejected) args.ids = rejectedIds()
   const ingredients = loadIngredients(args)
   const previous = existingRows(args)
   const month = fs.existsSync(OUT_FILE)
@@ -379,8 +451,14 @@ async function main() {
   // than from `ingredients`, because `--ids avocado` loads one ingredient and
   // must not therefore publish a sheet of one: repairing a row leaves the rest
   // of the sheet, and Tia's place in it, alone.
-  const order = [...previous.keys()]
+  let order = [...previous.keys()]
   for (const ingredient of ingredients) if (!previous.has(ingredient.id)) order.push(ingredient.id)
+  // Re-searched rejections go to the top, so they can be reviewed without
+  // scrolling past 66 rows already settled.
+  if (args.rejected) {
+    const again = new Set(todo.map((ingredient) => ingredient.id))
+    order = [...order.filter((id) => again.has(id)), ...order.filter((id) => !again.has(id))]
+  }
 
   const results = new Map(previous)
   let ordered = []
@@ -397,7 +475,8 @@ async function main() {
   }
 
   for (const ingredient of todo) {
-    const result = await candidatesFor(ingredient)
+    const shown = new Set((previous.get(ingredient.id)?.candidates ?? []).map((c) => c.fullUrl))
+    const result = await candidatesFor(ingredient, args.rejected ? shown : undefined)
     results.set(result.id, result)
     // Written after every ingredient, not once at the end. At Commons' rate
     // limit a full run is over an hour, and writing once meant a run that died

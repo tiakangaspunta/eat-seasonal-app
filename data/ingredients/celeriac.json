@@ -19,5 +19,11 @@
   "similarTo": [],
   "unverifiedMonths": [
     9
-  ]
+  ],
+  "image": {
+    "file": "/images/ingredients/celeriac.jpg",
+    "author": "Jamain",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Celeriac_J1.jpg"
+  }
 }

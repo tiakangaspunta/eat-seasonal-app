@@ -14,5 +14,11 @@
   "similarTo": [],
   "unverifiedMonths": [
     9
-  ]
+  ],
+  "image": {
+    "file": "/images/ingredients/spinach.jpg",
+    "author": "Nillerdk",
+    "license": "CC BY 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Spinach_leaves.jpg"
+  }
 }

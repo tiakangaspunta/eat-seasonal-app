@@ -20,5 +20,11 @@
   "similarTo": [],
   "unverifiedMonths": [
     9
-  ]
+  ],
+  "image": {
+    "file": "/images/ingredients/yellow-beet.jpg",
+    "author": "Beet man",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Uncommon_beetroot_colours.jpg"
+  }
 }

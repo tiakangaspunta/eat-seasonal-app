@@ -14,5 +14,11 @@
     }
   },
   "verified": false,
-  "similarTo": []
+  "similarTo": [],
+  "image": {
+    "file": "/images/ingredients/root-parsley.jpg",
+    "author": "SarKaLay စာကလေး",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Parsley_Leaves_(92974).jpg"
+  }
 }

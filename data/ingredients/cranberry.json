@@ -15,5 +15,11 @@
   },
   "verified": false,
   "similarTo": [],
-  "searchTermFi": "karpalo"
+  "searchTermFi": "karpalo",
+  "image": {
+    "file": "/images/ingredients/cranberry.jpg",
+    "author": "Post of the Soviet Union ( V. V. Zavyalov ).",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Soviet_Union_1964_CPA_3132_stamp_(Wild_Berries._Cranberry_or_common_cranberry_(Vaccinium_oxycoccos)).jpg"
+  }
 }

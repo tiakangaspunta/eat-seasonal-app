@@ -15,5 +15,11 @@
   },
   "verified": false,
   "similarTo": [],
-  "searchTermFi": "tilli"
+  "searchTermFi": "tilli",
+  "image": {
+    "file": "/images/ingredients/dill.jpg",
+    "author": "HaJunkiyada",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Fresh_Dill.jpg"
+  }
 }

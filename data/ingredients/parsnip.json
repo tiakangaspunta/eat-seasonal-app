@@ -20,5 +20,11 @@
   "similarTo": [],
   "unverifiedMonths": [
     9
-  ]
+  ],
+  "image": {
+    "file": "/images/ingredients/parsnip.jpg",
+    "author": "Quadell",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Parsnips-1.jpg"
+  }
 }

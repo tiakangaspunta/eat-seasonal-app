@@ -14,5 +14,11 @@
   "similarTo": [],
   "unverifiedMonths": [
     9
-  ]
+  ],
+  "image": {
+    "file": "/images/ingredients/spring-onion.jpg",
+    "author": "Kritzolina",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gem%C3%BCse_auf_einem_Markt_in_Gallicano_01.jpg"
+  }
 }

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-23T15:02:11.833Z",
+  "updatedAt": "2026-09-23T15:17:09.115Z",
   "decisions": {
     "apple": {
       "source": "Wikimedia Commons",
@@ -110,8 +110,24 @@
       "license": "Public domain",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Edible_fungi_in_basket_2012_G1.jpg"
     },
-    "broad-bean": null,
-    "broccoli": null,
+    "broad-bean": {
+      "source": "Wikimedia Commons",
+      "title": "Broad bean pods (3).jpg",
+      "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Broad_bean_pods_%283%29.jpg/500px-Broad_bean_pods_%283%29.jpg",
+      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/7/73/Broad_bean_pods_%283%29.jpg",
+      "author": "Fumikas Sagisavas",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Broad_bean_pods_(3).jpg"
+    },
+    "broccoli": {
+      "source": "Wikimedia Commons",
+      "title": "Broccoli DSC00861.png",
+      "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Broccoli_DSC00861.png/500px-Broccoli_DSC00861.png",
+      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Broccoli_DSC00861.png",
+      "author": "David Monniaux",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Broccoli_DSC00861.png"
+    },
     "brussels-sprout": {
       "source": "Wikimedia Commons",
       "title": "Brussels sprout closeup.jpg",
@@ -148,8 +164,24 @@
       "license": "CC BY-SA 4.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Brassica_oleracea_var._botrytis_(Coliflor).jpg"
     },
-    "celeriac": null,
-    "celery": null,
+    "celeriac": {
+      "source": "Wikimedia Commons",
+      "title": "Celeriac J1.jpg",
+      "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Celeriac_J1.jpg/500px-Celeriac_J1.jpg",
+      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/5/51/Celeriac_J1.jpg",
+      "author": "Jamain",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Celeriac_J1.jpg"
+    },
+    "celery": {
+      "source": "Wikimedia Commons",
+      "title": "Celery bunches stacked.jpg",
+      "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Celery_bunches_stacked.jpg/500px-Celery_bunches_stacked.jpg",
+      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Celery_bunches_stacked.jpg",
+      "author": "Jeffery Martin",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Celery_bunches_stacked.jpg"
+    },
     "cherry-tomato": {
       "source": "Wikimedia Commons",
       "title": "Liat Portal for Foodie Disorder - Cherry tomatoes on the vine.jpg",
@@ -169,11 +201,43 @@
       "license": "CC BY-ND 2.0",
       "sourceUrl": "https://www.flickr.com/photos/44124385392@N01/6041350255"
     },
-    "chives": null,
+    "chives": {
+      "source": "Wikimedia Commons",
+      "title": "DFC 3942 Tightly bundled bunches of fresh green herbs with tiny buds arranged in a circular pattern.jpg",
+      "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/DFC_3942_Tightly_bundled_bunches_of_fresh_green_herbs_with_tiny_buds_arranged_in_a_circular_pattern.jpg/500px-DFC_3942_Tightly_bundled_bunches_of_fresh_green_herbs_with_tiny_buds_arranged_in_a_circular_pattern.jpg",
+      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a1/DFC_3942_Tightly_bundled_bunches_of_fresh_green_herbs_with_tiny_buds_arranged_in_a_circular_pattern.jpg",
+      "author": "PattayaPatrol",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:DFC_3942_Tightly_bundled_bunches_of_fresh_green_herbs_with_tiny_buds_arranged_in_a_circular_pattern.jpg"
+    },
     "courgette": null,
-    "cranberry": null,
-    "crowberry": null,
-    "cucumber": null,
+    "cranberry": {
+      "source": "Wikimedia Commons",
+      "title": "The Soviet Union 1964 CPA 3132 stamp (Wild Berries. Cranberry or common cranberry (Vaccinium oxycoccos)).jpg",
+      "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/The_Soviet_Union_1964_CPA_3132_stamp_%28Wild_Berries._Cranberry_or_common_cranberry_%28Vaccinium_oxycoccos%29%29.jpg/500px-The_Soviet_Union_1964_CPA_3132_stamp_%28Wild_Berries._Cranberry_or_common_cranberry_%28Vaccinium_oxycoccos%29%29.jpg",
+      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/9/99/The_Soviet_Union_1964_CPA_3132_stamp_%28Wild_Berries._Cranberry_or_common_cranberry_%28Vaccinium_oxycoccos%29%29.jpg",
+      "author": "Post of the Soviet Union ( V. V. Zavyalov ).",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Soviet_Union_1964_CPA_3132_stamp_(Wild_Berries._Cranberry_or_common_cranberry_(Vaccinium_oxycoccos)).jpg"
+    },
+    "crowberry": {
+      "source": "Wikimedia Commons",
+      "title": "Abuluntu Empetrum nigrum.jpg",
+      "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Abuluntu_Empetrum_nigrum.jpg/500px-Abuluntu_Empetrum_nigrum.jpg",
+      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/3/31/Abuluntu_Empetrum_nigrum.jpg",
+      "author": "Abuluntu",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abuluntu_Empetrum_nigrum.jpg"
+    },
+    "cucumber": {
+      "source": "Wikimedia Commons",
+      "title": "Cucumber Slices (Alabama Extension).jpg",
+      "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Cucumber_Slices_%28Alabama_Extension%29.jpg/500px-Cucumber_Slices_%28Alabama_Extension%29.jpg",
+      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Cucumber_Slices_%28Alabama_Extension%29.jpg",
+      "author": "Alabama Extension",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cucumber_Slices_(Alabama_Extension).jpg"
+    },
     "damson": {
       "source": "Wikimedia Commons",
       "title": "RipeDamsons.JPG",
@@ -183,7 +247,15 @@
       "license": "CC BY-SA 4.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:RipeDamsons.JPG"
     },
-    "dill": null,
+    "dill": {
+      "source": "Wikimedia Commons",
+      "title": "Liat Portal for Foodie Disorder - Fresh Dill.jpg",
+      "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Liat_Portal_for_Foodie_Disorder_-_Fresh_Dill.jpg/500px-Liat_Portal_for_Foodie_Disorder_-_Fresh_Dill.jpg",
+      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/5/58/Liat_Portal_for_Foodie_Disorder_-_Fresh_Dill.jpg",
+      "author": "HaJunkiyada",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Fresh_Dill.jpg"
+    },
     "eggplant": {
       "source": "Wikimedia Commons",
       "title": "Italian Eggplants On Sale In Fruit and Vegetable Store.jpg",
@@ -194,7 +266,15 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Italian_Eggplants_On_Sale_In_Fruit_and_Vegetable_Store.jpg"
     },
     "endive": null,
-    "fennel": null,
+    "fennel": {
+      "source": "Wikimedia Commons",
+      "title": "Fennel bulb from Brazil.jpg",
+      "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Fennel_bulb_from_Brazil.jpg/500px-Fennel_bulb_from_Brazil.jpg",
+      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/2/23/Fennel_bulb_from_Brazil.jpg",
+      "author": "Mauro Cateb",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fennel_bulb_from_Brazil.jpg"
+    },
     "funnel-chanterelle": {
       "source": "Wikimedia Commons",
       "title": "Cantharellus tubaeformis G28.JPG",
@@ -267,7 +347,15 @@
       "license": "Public domain",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cucurbita_2018_G3.jpg"
     },
-    "horseradish": null,
+    "horseradish": {
+      "source": "Wikimedia Commons",
+      "title": "Hren (Horseradish) (25955939202).jpg",
+      "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Hren_%28Horseradish%29_%2825955939202%29.jpg/500px-Hren_%28Horseradish%29_%2825955939202%29.jpg",
+      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/4/43/Hren_%28Horseradish%29_%2825955939202%29.jpg",
+      "author": "Amanda Slater from Coventry, West Midlands, UK",
+      "license": "CC BY-SA 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hren_(Horseradish)_(25955939202).jpg"
+    },
     "ice-lettuce": null,
     "iceberg-lettuce": {
       "source": "Wikimedia Commons",
@@ -278,7 +366,15 @@
       "license": "CC BY-SA 3.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Iceberg_lettuce_(IJssla_krop).jpg"
     },
-    "jerusalem-artichoke": null,
+    "jerusalem-artichoke": {
+      "source": "Wikimedia Commons",
+      "title": "Jerusalem Artichokes tubers.jpg",
+      "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Jerusalem_Artichokes_tubers.jpg/500px-Jerusalem_Artichokes_tubers.jpg",
+      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Jerusalem_Artichokes_tubers.jpg",
+      "author": "Christian Guthier",
+      "license": "CC BY 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jerusalem_Artichokes_tubers.jpg"
+    },
     "juniper-berry": {
       "source": "Openverse",
       "title": "And God gave us Juniper berries so that we might have nice gins",
@@ -288,8 +384,24 @@
       "license": "CC BY-NC 2.0",
       "sourceUrl": "https://www.flickr.com/photos/30070299@N06/5680966545"
     },
-    "kale": null,
-    "kohlrabi": null,
+    "kale": {
+      "source": "Wikimedia Commons",
+      "title": "Kale-Bundle.jpg",
+      "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Kale-Bundle.jpg/500px-Kale-Bundle.jpg",
+      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Kale-Bundle.jpg",
+      "author": "Evan-Amos",
+      "license": "CC0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kale-Bundle.jpg"
+    },
+    "kohlrabi": {
+      "source": "Wikimedia Commons",
+      "title": "Kohlrabi Rüsselkäfer-Platzer-Josef Schlaghecken.jpg",
+      "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Kohlrabi_R%C3%BCsselk%C3%A4fer-Platzer-Josef_Schlaghecken.jpg/500px-Kohlrabi_R%C3%BCsselk%C3%A4fer-Platzer-Josef_Schlaghecken.jpg",
+      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Kohlrabi_R%C3%BCsselk%C3%A4fer-Platzer-Josef_Schlaghecken.jpg",
+      "author": "Schlaghecken Josef",
+      "license": "CC BY 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kohlrabi_R%C3%BCsselk%C3%A4fer-Platzer-Josef_Schlaghecken.jpg"
+    },
     "lambs-lettuce": {
       "source": "Wikimedia Commons",
       "title": "Ackersalat02.jpg",
@@ -308,7 +420,15 @@
       "license": "CC BY-SA 3.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Romaine_lettuce.jpg"
     },
-    "leek": null,
+    "leek": {
+      "source": "Wikimedia Commons",
+      "title": "Liat Portal for Foodie Disorder - Leek.jpg",
+      "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Liat_Portal_for_Foodie_Disorder_-_Leek.jpg/500px-Liat_Portal_for_Foodie_Disorder_-_Leek.jpg",
+      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Liat_Portal_for_Foodie_Disorder_-_Leek.jpg",
+      "author": "HaJunkiyada",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Leek.jpg"
+    },
     "lingonberry": {
       "source": "Wikimedia Commons",
       "title": "Cowberry.jpg",
@@ -390,7 +510,15 @@
       "license": "CC BY-SA 3.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Petroselinum_crispum_003.JPG"
     },
-    "parsnip": null,
+    "parsnip": {
+      "source": "Wikimedia Commons",
+      "title": "Parsnips-1.jpg",
+      "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Parsnips-1.jpg",
+      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Parsnips-1.jpg",
+      "author": "Quadell",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Parsnips-1.jpg"
+    },
     "pattypan-squash": {
       "source": "Wikimedia Commons",
       "title": "-2020-05-20 Pumpkins (Cucurbita), Trimingham, Norfolk (1).JPG",
@@ -429,7 +557,15 @@
       "license": "CC BY-SA 4.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:HK_WC_%E7%81%A3%E4%BB%94%E9%81%93_Road_market_shop_vegetable_potato_night_October_2023_R12S.jpg"
     },
-    "potato-onion": null,
+    "potato-onion": {
+      "source": "Wikimedia Commons",
+      "title": "Allium cepa aggregatum - Diversi fenotipi di cipolla patata.jpg",
+      "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Allium_cepa_aggregatum_-_Diversi_fenotipi_di_cipolla_patata.jpg/500px-Allium_cepa_aggregatum_-_Diversi_fenotipi_di_cipolla_patata.jpg",
+      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Allium_cepa_aggregatum_-_Diversi_fenotipi_di_cipolla_patata.jpg",
+      "author": "Ide64",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Allium_cepa_aggregatum_-_Diversi_fenotipi_di_cipolla_patata.jpg"
+    },
     "pumpkin": {
       "source": "Wikimedia Commons",
       "title": "Cucurbita 2011 G1.jpg",
@@ -475,9 +611,25 @@
       "license": "CC BY-SA 4.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Market_at_Hildegardplatz_in_Kempten_03.jpg"
     },
-    "rocket": null,
+    "rocket": {
+      "source": "Wikimedia Commons",
+      "title": "Eruca sativa 1 IP0206101.jpg",
+      "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Eruca_sativa_1_IP0206101.jpg/500px-Eruca_sativa_1_IP0206101.jpg",
+      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/7/79/Eruca_sativa_1_IP0206101.jpg",
+      "author": "Leo Michels",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Eruca_sativa_1_IP0206101.jpg"
+    },
     "romanesco": null,
-    "root-parsley": null,
+    "root-parsley": {
+      "source": "Wikimedia Commons",
+      "title": "Parsley Leaves (92974).jpg",
+      "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Parsley_Leaves_%2892974%29.jpg/500px-Parsley_Leaves_%2892974%29.jpg",
+      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/7/74/Parsley_Leaves_%2892974%29.jpg",
+      "author": "SarKaLay စာကလေး",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Parsley_Leaves_(92974).jpg"
+    },
     "rosehip": {
       "source": "Wikimedia Commons",
       "title": "Autumn Rosehip Berries in Białystok Forest.jpg",
@@ -559,9 +711,33 @@
       "license": "CC BY 3.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Starr_070730-7822_Cucurbita_pepo.jpg"
     },
-    "spinach": null,
-    "spring-onion": null,
-    "sprouting-broccoli": null,
+    "spinach": {
+      "source": "Wikimedia Commons",
+      "title": "Spinach leaves.jpg",
+      "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Spinach_leaves.jpg/500px-Spinach_leaves.jpg",
+      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Spinach_leaves.jpg",
+      "author": "Nillerdk",
+      "license": "CC BY 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Spinach_leaves.jpg"
+    },
+    "spring-onion": {
+      "source": "Wikimedia Commons",
+      "title": "Gemüse auf einem Markt in Gallicano 01.jpg",
+      "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Gem%C3%BCse_auf_einem_Markt_in_Gallicano_01.jpg/500px-Gem%C3%BCse_auf_einem_Markt_in_Gallicano_01.jpg",
+      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Gem%C3%BCse_auf_einem_Markt_in_Gallicano_01.jpg",
+      "author": "Kritzolina",
+      "license": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gem%C3%BCse_auf_einem_Markt_in_Gallicano_01.jpg"
+    },
+    "sprouting-broccoli": {
+      "source": "Wikimedia Commons",
+      "title": "Broccolini.jpg",
+      "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Broccolini.jpg/500px-Broccolini.jpg",
+      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Broccolini.jpg",
+      "author": "User Agriffin on en.wikipedia",
+      "license": "CC BY 1.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Broccolini.jpg"
+    },
     "stone-bramble": {
       "source": "Wikimedia Commons",
       "title": "Rubus saxatilis RF.jpg",
@@ -607,9 +783,33 @@
       "license": "CC BY-SA 4.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Green_Beans_1.jpg"
     },
-    "white-beet": null,
-    "white-cabbage": null,
-    "yellow-beet": null,
+    "white-beet": {
+      "source": "Wikimedia Commons",
+      "title": "Uncommon beetroot colours.jpg",
+      "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Uncommon_beetroot_colours.jpg/500px-Uncommon_beetroot_colours.jpg",
+      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Uncommon_beetroot_colours.jpg",
+      "author": "Beet man",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Uncommon_beetroot_colours.jpg"
+    },
+    "white-cabbage": {
+      "source": "Wikimedia Commons",
+      "title": "Brassica oleracea 2011 G1.jpg",
+      "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Brassica_oleracea_2011_G1.jpg/500px-Brassica_oleracea_2011_G1.jpg",
+      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Brassica_oleracea_2011_G1.jpg",
+      "author": "George Chernilevsky",
+      "license": "Public domain",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Brassica_oleracea_2011_G1.jpg"
+    },
+    "yellow-beet": {
+      "source": "Wikimedia Commons",
+      "title": "Uncommon beetroot colours.jpg",
+      "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Uncommon_beetroot_colours.jpg/500px-Uncommon_beetroot_colours.jpg",
+      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Uncommon_beetroot_colours.jpg",
+      "author": "Beet man",
+      "license": "CC BY-SA 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Uncommon_beetroot_colours.jpg"
+    },
     "yellow-onion": {
       "source": "Wikimedia Commons",
       "title": "Yellow onions vegetables.jpg",

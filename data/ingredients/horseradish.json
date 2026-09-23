@@ -16,5 +16,11 @@
   "similarTo": [],
   "unverifiedMonths": [
     9
-  ]
+  ],
+  "image": {
+    "file": "/images/ingredients/horseradish.jpg",
+    "author": "Amanda Slater from Coventry, West Midlands, UK",
+    "license": "CC BY-SA 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hren_(Horseradish)_(25955939202).jpg"
+  }
 }

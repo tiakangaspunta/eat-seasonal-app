@@ -14,5 +14,11 @@
     }
   },
   "verified": false,
-  "similarTo": []
+  "similarTo": [],
+  "image": {
+    "file": "/images/ingredients/rocket.jpg",
+    "author": "Leo Michels",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Eruca_sativa_1_IP0206101.jpg"
+  }
 }

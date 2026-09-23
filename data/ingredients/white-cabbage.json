@@ -21,5 +21,11 @@
   "similarTo": [],
   "unverifiedMonths": [
     9
-  ]
+  ],
+  "image": {
+    "file": "/images/ingredients/white-cabbage.jpg",
+    "author": "George Chernilevsky",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Brassica_oleracea_2011_G1.jpg"
+  }
 }

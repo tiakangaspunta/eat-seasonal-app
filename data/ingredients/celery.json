@@ -12,5 +12,11 @@
   },
   "verified": false,
   "similarTo": [],
-  "searchTermFi": "varsiselleri"
+  "searchTermFi": "varsiselleri",
+  "image": {
+    "file": "/images/ingredients/celery.jpg",
+    "author": "Jeffery Martin",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Celery_bunches_stacked.jpg"
+  }
 }

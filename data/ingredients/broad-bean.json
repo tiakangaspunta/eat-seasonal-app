@@ -18,5 +18,11 @@
   "unverifiedMonths": [
     9
   ],
-  "searchTermFi": "härkäpapu"
+  "searchTermFi": "härkäpapu",
+  "image": {
+    "file": "/images/ingredients/broad-bean.jpg",
+    "author": "Fumikas Sagisavas",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Broad_bean_pods_(3).jpg"
+  }
 }

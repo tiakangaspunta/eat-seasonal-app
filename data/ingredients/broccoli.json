@@ -19,5 +19,11 @@
     }
   },
   "verified": false,
-  "similarTo": []
+  "similarTo": [],
+  "image": {
+    "file": "/images/ingredients/broccoli.png",
+    "author": "David Monniaux",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Broccoli_DSC00861.png"
+  }
 }

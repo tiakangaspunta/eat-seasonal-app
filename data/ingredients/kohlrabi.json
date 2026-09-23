@@ -15,5 +15,11 @@
   },
   "verified": false,
   "similarTo": [],
-  "searchTermFi": "kyssäkaali"
+  "searchTermFi": "kyssäkaali",
+  "image": {
+    "file": "/images/ingredients/kohlrabi.jpg",
+    "author": "Schlaghecken Josef",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kohlrabi_R%C3%BCsselk%C3%A4fer-Platzer-Josef_Schlaghecken.jpg"
+  }
 }

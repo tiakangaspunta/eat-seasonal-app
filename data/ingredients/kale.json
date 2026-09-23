@@ -18,5 +18,11 @@
   "similarTo": [],
   "unverifiedMonths": [
     9
-  ]
+  ],
+  "image": {
+    "file": "/images/ingredients/kale.jpg",
+    "author": "Evan-Amos",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kale-Bundle.jpg"
+  }
 }
