@@ -26,6 +26,21 @@ exist yet. This file records what was actually built.
   long, with the dot staying on the first line. Cards show only "Imported", so
   the tag is one short line at every width; the panel opts in and lists the
   countries, where a wrap costs nothing.
+- **Page header and view switch** (`components/PageHeader.tsx`,
+  `components/ViewSwitch.tsx`, step 2): on mobile the month heading sits above
+  the Ingredients / Recipes switch; from `md:` up they share one row, heading
+  left and switch right. The switch is two 44-pixel-high links at every size.
+- **Recipe grid** (`app/recipes/page.tsx`, `components/RecipeGrid.tsx`, step
+  2): the same column steps as the home grid, one on mobile up to four on a wide
+  screen, in meal-type sections. Cards have no photo, so they are text only and
+  wrap a long title rather than widening.
+- **Recipe side panel** (`components/RecipePanel.tsx`, step 2): the same frame
+  as the ingredient panel (`components/SidePanel.tsx`), bottom sheet on mobile
+  and right-hand panel from `md:`. The method link is a full-width button at
+  every size. Ingredient rows keep the amount in a fixed-width first column
+  (`w-20`, a text column rather than a layout container) with the name
+  wrapping beside it; swaps sit indented under their line, and every ingredient
+  link is 44 pixels high.
 - **Ingredient side panel** (`components/IngredientPanel.tsx`, issue 008): a
   bottom sheet on mobile, anchored to the bottom of the screen and starting
   below the top of the viewport so the grid stays visible above it; from `md:`

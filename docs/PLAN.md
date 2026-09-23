@@ -35,7 +35,7 @@ model should not make it impossible later.
 | Saved data | Browser local storage first, behind an async interface, hosted database later |
 | Sync | Same data on every device eventually, so a single-user login is coming |
 | Database | Deliberately undecided |
-| Navigation | Clicking an ingredient opens a side panel, not a new page |
+| Navigation | Two views, ingredients and recipes, chosen on the front page. Clicking an item opens a side panel, not a new page |
 | Combine | Pick two or more in-season ingredients, see recipes using all of them |
 
 ## 3. Recipe content and sourcing
@@ -241,11 +241,19 @@ two clean filters, `mealType` and `tags`, instead of guessing which strings in o
 flat list mean what. A recipe can have more than one meal type, since a soup can
 be lunch and dinner both.
 
-A recipe's own seasonality is derived, never stored: the months in which all of
-its non-optional, mapped ingredients are available. A recipe that misses the
-current month by one ingredient is still offered when that ingredient has a
-seasonal substitution, marked as swapped. That near-miss rule is what makes
-substitutions earn their place.
+A recipe's own seasonality is derived, never stored. Tia's rule since
+2026-09-23: a recipe is in season in a month when **at least one** of its
+non-optional ingredients is available from Finland that month, fresh or from
+storage. Imported-only ingredients and pantry ingredients never count, and a
+recipe with no ingredient list is never in season. The recipe card names the
+ingredients that put it in season.
+
+This replaced an earlier "all ingredients available" rule, and the near-miss
+rule below was written for that one: a recipe that misses the current month by
+one ingredient is still offered when that ingredient has a seasonal
+substitution, marked as swapped. Under "one is enough" that rescue has little
+left to do, so what substitutions contribute to season matching is an open
+question for step 5 (section 11).
 
 ### User data
 
@@ -316,7 +324,19 @@ deferred.
 
 ## 7. Screens and flows
 
-### Home
+### Two views
+
+The front page has two views, chosen with a switch at the top: **ingredients**
+and **recipes**. Each has its own URL, so a reload, a bookmark or the back
+button keeps the view.
+
+- In the ingredient view, an ingredient opens in the side panel, and the recipes
+  listed there are links.
+- In the recipe view, a recipe opens in the side panel, and the ingredients
+  listed there are links.
+- Following a link switches to the other view with that item's panel open.
+
+### Home (the ingredient view)
 
 1. Opens on the current month, named and labeled with its season.
 2. Monthly completion progress at the top.
@@ -360,10 +380,14 @@ selected ingredients, near-misses included and marked.
 
 ### Month view
 
-Clicking a month shows recipes whose ingredients are all in season that month,
-sorted by how many seasonal ingredients they use. Same filters as elsewhere.
+Clicking a month shows recipes in season that month (section 4), sorted by how
+many seasonal ingredients they use. Same filters as elsewhere.
 
-### Recipe card and recipe panel
+### Recipe view, recipe card and recipe panel
+
+The recipe view lists every recipe, in meal-type sections, with the ones in
+season this month marked (one in-season ingredient is enough, section 4). It is not narrowed to in-season
+recipes, because most recipes have no ingredient list yet and would drop out.
 
 Card: title, time, effort, meal type, tags, and which seasonal ingredients it hits.
 Panel: full ingredient list with substitutions inline, personal notes, a prominent
@@ -451,7 +475,8 @@ and listing recipes. Other months are deliberately thin. This is the step to rea
 to before anything else is built.
 
 **Step 2: recipes and editing**
-Recipe panel, ingredient list with substitutions inline, personal notes, source
+The ingredient and recipe views with the switch between them, recipe panel,
+links between ingredients and recipes, ingredient list with substitutions inline, personal notes, source
 link opening in a new tab, editable recipe titles and notes, and the paste-a-URL
 workflow documented in `docs/ADDING-RECIPES.md`.
 
@@ -481,6 +506,8 @@ migrate what is in browser storage.
 
 ## 11. Open questions
 
+- What the near-miss rule and seasonal substitutions do in step 5, now that one
+  in-season ingredient is enough to put a recipe in season.
 - Which database, and which host. Deferred on purpose until step 8.
 - What the Notion export actually contains. Until it is in `data/`, assume the
   calendar needs drafting and flagging.

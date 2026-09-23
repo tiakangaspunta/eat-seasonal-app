@@ -55,3 +55,45 @@ test('including imported produce adds ingredients to the page', async ({ page })
   expect(withImported).toBe(domesticOnly + importedOnlyCount())
   expect(withImported).toBeGreaterThan(domesticOnly)
 })
+
+test('the switch leads to the recipe view, where a recipe opens with a link to its method', async ({
+  page,
+}) => {
+  const { recipeTitle } = ingredientWithRecipes()
+  await page.goto('/')
+
+  await page.getByRole('navigation', { name: 'View' }).getByRole('link', { name: 'Recipes' }).click()
+  await expect(page).toHaveURL(/\/recipes$/)
+
+  await cards(page).filter({ hasText: recipeTitle }).first().click()
+
+  const panel = page.getByRole('dialog', { name: `${recipeTitle} recipe` })
+  await expect(panel).toBeVisible()
+  // The method is never copied in, so the link out is the one thing it must have.
+  await expect(panel.getByRole('link', { name: /open the method/i })).toHaveAttribute('target', '_blank')
+
+  // The panel is in the address, so a reload keeps it open.
+  await page.reload()
+  await expect(panel).toBeVisible()
+})
+
+test('a recipe in an ingredient panel leads to that recipe, and its ingredient leads back', async ({
+  page,
+}) => {
+  const { name, recipeTitle } = ingredientWithRecipes()
+  await page.goto('/')
+
+  await cards(page).filter({ hasText: name }).first().click()
+  await page
+    .getByRole('dialog', { name: `${name} details` })
+    .getByRole('link', { name: recipeTitle })
+    .click()
+
+  const recipePanel = page.getByRole('dialog', { name: `${recipeTitle} recipe` })
+  await expect(recipePanel).toBeVisible()
+  await expect(page).toHaveURL(/\/recipes\?open=/)
+
+  await recipePanel.getByRole('link', { name, exact: true }).first().click()
+  await expect(page.getByRole('dialog', { name: `${name} details` })).toBeVisible()
+  await expect(page).toHaveURL(/\/\?open=/)
+})

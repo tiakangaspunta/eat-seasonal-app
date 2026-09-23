@@ -1,3 +1,5 @@
+import { connection } from 'next/server'
+
 import { getIngredients } from '@/lib/data/ingredients'
 import { recipesByIngredient } from '@/lib/data/recipes'
 import {
@@ -6,18 +8,17 @@ import {
   originIn,
   seasonLabel,
 } from '@/lib/season/availability'
-import { MONTH_NAMES } from '@/lib/months'
+import { currentMonth } from '@/lib/months'
 import { sortByName } from '@/lib/sort'
+import { PageHeader } from '@/components/PageHeader'
 import { ProduceGrid } from '@/components/ProduceGrid'
 import type { HomeIngredient } from '@/components/types'
 import { SEASONAL_CATEGORIES } from '@/lib/types'
-import type { Month } from '@/lib/types'
 
-function currentMonth(): Month {
-  return (new Date().getMonth() + 1) as Month
-}
-
-export default function HomePage() {
+/** The ingredient view. The recipe view is app/recipes/page.tsx. */
+export default async function HomePage() {
+  // Rendered per request: the month is today's, and the open panel is in the URL.
+  await connection()
   const month = currentMonth()
 
   const seasonal = getIngredients().filter((ingredient) =>
@@ -76,10 +77,7 @@ export default function HomePage() {
 
   return (
     <main className="p-6 md:p-10">
-      <h1 className="text-2xl font-semibold md:text-3xl">
-        {MONTH_NAMES[month]}
-        <span className="ml-2 font-normal capitalize text-neutral-500">{seasonLabel([month])}</span>
-      </h1>
+      <PageHeader month={month} view="ingredients" />
       <p className="mt-4 text-neutral-700">In season this month.</p>
 
       <div className="mt-8">

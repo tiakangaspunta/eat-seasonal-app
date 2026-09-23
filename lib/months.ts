@@ -28,3 +28,12 @@ export const MONTH_NAMES: Record<Month, string> = {
 export function monthInitial(month: Month): string {
   return MONTH_NAMES[month].charAt(0)
 }
+
+/**
+ * Today's month. Only meaningful at request time: a page calling this has to
+ * `await connection()` first, or a production build would prerender it once
+ * and show the month it was built in forever.
+ */
+export function currentMonth(): Month {
+  return (new Date().getMonth() + 1) as Month
+}

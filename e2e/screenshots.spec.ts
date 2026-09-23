@@ -1,5 +1,5 @@
 /**
- * The visual record: the home view and the open panel, at both viewports.
+ * The visual record: both views and both panels, at both viewports.
  *
  * These assert nothing. They are here so a layout change can be reviewed by
  * looking, and so step 7's mobile pass has a before to compare against. They
@@ -45,5 +45,22 @@ test.describe('screenshots', () => {
     await page.getByRole('dialog', { name: `${name} details` }).waitFor()
     await photosOnScreen(page)
     await page.screenshot({ path: `${OUT}/panel-${testInfo.project.name}.png`, fullPage: false })
+  })
+
+  test('recipe view', async ({ page }, testInfo) => {
+    await page.goto('/recipes')
+    await page.getByRole('heading', { level: 1 }).waitFor()
+    await page.screenshot({ path: `${OUT}/recipes-${testInfo.project.name}.png`, fullPage: false })
+  })
+
+  test('recipe panel open', async ({ page }, testInfo) => {
+    const { recipeTitle } = ingredientWithRecipes()
+    await page.goto('/recipes')
+    await page.locator('button[aria-expanded]').filter({ hasText: recipeTitle }).first().click()
+    await page.getByRole('dialog', { name: `${recipeTitle} recipe` }).waitFor()
+    await page.screenshot({
+      path: `${OUT}/recipe-panel-${testInfo.project.name}.png`,
+      fullPage: false,
+    })
   })
 })

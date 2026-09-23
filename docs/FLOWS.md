@@ -4,9 +4,32 @@ Mermaid flowcharts of what the app actually does, updated in the same change
 that alters a flow, so a flow can be reviewed by reading rather than by clicking
 through the app. Anything not drawn here is not built yet.
 
+## Choosing a view
+
+Built in step 2. The front page has two views, each its own address, and the
+side panel's contents are in the address too, as `?open=<id>`. So a reload
+keeps the panel open, Back undoes the last thing opened, and the links between
+the views land with the right panel showing.
+
+```mermaid
+flowchart TD
+    open([Open the app]) --> ingredients["Ingredient view, /"]
+    ingredients <-->|"Ingredients / Recipes switch"| recipes["Recipe view, /recipes"]
+
+    ingredients -->|"click a card"| ipanel["Ingredient panel, /?open=carrot"]
+    recipes -->|"click a card"| rpanel["Recipe panel, /recipes?open=aubergine-pasta"]
+
+    ipanel -->|"click a recipe in its list"| rpanel
+    rpanel -->|"click a seasonal ingredient in its list"| ipanel
+    rpanel -.->|"pantry ingredients and free text are not links"| rpanel
+
+    ipanel -->|"close, Escape, or Back"| ingredients
+    rpanel -->|"close, Escape, or Back"| recipes
+```
+
 ## Browsing the current month, and opening an ingredient
 
-Built in issues 007 and 008.
+Built in issues 007 and 008. Recipes in the panel became links in step 2.
 
 ```mermaid
 flowchart TD
@@ -20,7 +43,7 @@ flowchart TD
     card -->|"click"| panel["Ingredient panel opens, the grid stays visible and clickable"]
 
     panel --> months["Twelve-month bar: fresh, from storage, not available, this month ringed"]
-    panel --> recipes["Recipes using this ingredient, filtered by meal type"]
+    panel --> recipes["Recipes using this ingredient, filtered by meal type, each a link into the recipe view"]
     panel --> similar["Similar ingredients"]
     panel --> combine["Combine: space reserved, logic is step 5"]
 
@@ -29,14 +52,36 @@ flowchart TD
     panel -->|"close button or Escape"| grid
 ```
 
+## Browsing recipes, and opening one
+
+Built in step 2.
+
+```mermaid
+flowchart TD
+    recipes["Recipe view: every recipe, in breakfast, lunch, dinner, dessert, side and snack sections"]
+    recipes --> card["Card: title, effort, time, tags, a note when the ingredient list is not added yet"]
+    card --> season{"At least one non-optional ingredient available from Finland this month?"}
+    season -->|"yes"| marked["Marked in season, naming those ingredients"]
+    season -->|"no, or no ingredient list"| unmarked["Not marked"]
+    card -->|"click"| panel["Recipe panel opens, the grid stays visible and clickable"]
+    panel --> method["Open the method: the source page, in a new tab"]
+    panel --> notes["Personal notes, when there are any"]
+    panel --> list{"Has an ingredient list?"}
+    list -->|"no"| empty["Says so, and points at the method link"]
+    list -->|"yes"| lines["Each line: amount, name, optional marker"]
+    lines --> swaps["Swaps indented under their line: the replacement, why, the ratio, and the note"]
+    panel -->|"close button or Escape"| recipes
+```
+
 ## Renaming an ingredient or a recipe
 
-Built in issue 009. Development only: in a production build the write route is
+Built in issue 009. Since step 2 a recipe title is renamed in the recipe panel;
+in the ingredient panel it is a link instead. Development only: in a production build the write route is
 not compiled at all, and every name renders as plain text with nothing to click.
 
 ```mermaid
 flowchart TD
-    panel["Ingredient panel: the ingredient's name, and the titles of the recipes using it"]
+    panel["Ingredient panel: the ingredient's name. Recipe panel: the recipe's title"]
     panel -->|"click, or press and hold on a touch screen"| field["The name becomes a field, its text selected"]
     field -->|"Escape"| panel
     field -->|"Enter, or clicking away"| check{"Is the new name usable?"}

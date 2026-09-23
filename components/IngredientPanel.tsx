@@ -1,18 +1,19 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import Link from 'next/link'
+import { useState } from 'react'
 
 import { MONTHS, MONTH_NAMES, monthInitial } from '@/lib/months'
 import { EditableName } from '@/components/EditableName'
+import { MEAL_TYPE_ORDER } from '@/components/labels'
 import { OriginTag } from '@/components/OriginTag'
+import { SidePanel } from '@/components/SidePanel'
 import type { HomeIngredient, PanelRecipe } from '@/components/types'
 import type { MealType, Month } from '@/lib/types'
 
 /**
- * The ingredient side panel: a right-hand panel on desktop, a bottom sheet on
- * mobile. Deliberately not modal. The plan wants the grid visible and usable
- * behind it, so there is no backdrop swallowing clicks, and closing is Escape
- * or the close button rather than a click outside.
+ * The ingredient side panel, in the ingredient view. Its recipes are links into
+ * the recipe view, which opens with that recipe's panel showing.
  */
 export function IngredientPanel({
   ingredient,
@@ -25,30 +26,13 @@ export function IngredientPanel({
   onClose: () => void
   onSelectIngredient: (id: string) => void
 }) {
-  const panel = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    panel.current?.focus()
-  }, [ingredient.id])
-
-  useEffect(() => {
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') onClose()
-    }
-    document.addEventListener('keydown', onKeyDown)
-    return () => document.removeEventListener('keydown', onKeyDown)
-  }, [onClose])
-
   return (
-    <div
-      ref={panel}
-      tabIndex={-1}
-      role="dialog"
-      aria-label={`${ingredient.name} details`}
-      className="fixed inset-x-0 bottom-0 top-20 z-30 flex flex-col overflow-y-auto rounded-t-2xl border border-neutral-200 bg-white shadow-2xl outline-none md:inset-y-0 md:left-auto md:right-0 md:w-full md:max-w-md md:rounded-none md:border-y-0"
-    >
-      <div className="flex items-start justify-between gap-3 border-b border-neutral-200 p-5">
-        <div>
+    <SidePanel
+      label={`${ingredient.name} details`}
+      focusKey={ingredient.id}
+      onClose={onClose}
+      header={
+        <>
           <h2>
             <EditableName
               kind="ingredient"
@@ -64,62 +48,52 @@ export function IngredientPanel({
           <div className="mt-2">
             <OriginTag origin={ingredient.origin} countries={ingredient.countries} showCountries />
           </div>
-        </div>
-        <button
-          type="button"
-          onClick={onClose}
-          aria-label="Close"
-          className="-mr-2 -mt-2 flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-2xl leading-none text-neutral-500"
-        >
-          ×
-        </button>
-      </div>
+        </>
+      }
+    >
+      {ingredient.unverified && (
+        <p className="rounded-md bg-amber-50 px-3 py-2 text-sm text-amber-900">
+          These months are drafted from satokausi.fi and not yet confirmed.
+        </p>
+      )}
 
-      <div className="space-y-6 p-5">
-        {ingredient.unverified && (
-          <p className="rounded-md bg-amber-50 px-3 py-2 text-sm text-amber-900">
-            These months are drafted from satokausi.fi and not yet confirmed.
-          </p>
-        )}
+      {ingredient.notes && <p className="text-sm text-neutral-700">{ingredient.notes}</p>}
 
-        {ingredient.notes && <p className="text-sm text-neutral-700">{ingredient.notes}</p>}
+      <section>
+        <h3 className="text-sm font-semibold text-neutral-900">Through the year</h3>
+        <MonthBar
+          freshMonths={ingredient.freshMonths}
+          storageMonths={ingredient.storageMonths}
+          importedMonths={ingredient.importedMonths}
+          currentMonth={month}
+        />
+      </section>
 
+      <section>
+        <h3 className="text-sm font-semibold text-neutral-900">Recipes using {ingredient.name}</h3>
+        <RecipeList recipes={ingredient.recipes} />
+      </section>
+
+      <CombinePlaceholder name={ingredient.name} />
+
+      {ingredient.similar.length > 0 && (
         <section>
-          <h3 className="text-sm font-semibold text-neutral-900">Through the year</h3>
-          <MonthBar
-            freshMonths={ingredient.freshMonths}
-            storageMonths={ingredient.storageMonths}
-            importedMonths={ingredient.importedMonths}
-            currentMonth={month}
-          />
+          <h3 className="text-sm font-semibold text-neutral-900">Similar ingredients</h3>
+          <div className="mt-2 flex flex-wrap gap-2">
+            {ingredient.similar.map((similar) => (
+              <button
+                key={similar.id}
+                type="button"
+                onClick={() => onSelectIngredient(similar.id)}
+                className="min-h-11 rounded-full border border-neutral-300 px-4 text-sm"
+              >
+                {similar.name}
+              </button>
+            ))}
+          </div>
         </section>
-
-        <section>
-          <h3 className="text-sm font-semibold text-neutral-900">Recipes using {ingredient.name}</h3>
-          <RecipeList recipes={ingredient.recipes} />
-        </section>
-
-        <CombinePlaceholder name={ingredient.name} />
-
-        {ingredient.similar.length > 0 && (
-          <section>
-            <h3 className="text-sm font-semibold text-neutral-900">Similar ingredients</h3>
-            <div className="mt-2 flex flex-wrap gap-2">
-              {ingredient.similar.map((similar) => (
-                <button
-                  key={similar.id}
-                  type="button"
-                  onClick={() => onSelectIngredient(similar.id)}
-                  className="min-h-11 rounded-full border border-neutral-300 px-4 text-sm"
-                >
-                  {similar.name}
-                </button>
-              ))}
-            </div>
-          </section>
-        )}
-      </div>
-    </div>
+      )}
+    </SidePanel>
   )
 }
 
@@ -196,8 +170,6 @@ function Swatch({ className, children }: { className: string; children: string }
   )
 }
 
-const MEAL_TYPE_ORDER: MealType[] = ['breakfast', 'lunch', 'dinner', 'dessert', 'side', 'snack']
-
 function RecipeList({ recipes }: { recipes: PanelRecipe[] }) {
   const [mealType, setMealType] = useState<MealType | 'all'>('all')
 
@@ -237,20 +209,25 @@ function RecipeList({ recipes }: { recipes: PanelRecipe[] }) {
 
       <ul className="mt-3 space-y-2">
         {visible.map((recipe) => (
-          <li key={recipe.id} className="rounded-lg border border-neutral-200 p-3">
-            <EditableName
-              kind="recipe"
-              id={recipe.id}
-              name={recipe.title}
-              className="font-medium"
-            />
-            <p className="mt-1 text-sm text-neutral-600">
+          <li key={recipe.id}>
+            {/* A link into the recipe view, not a rename field: the title is
+                edited in the recipe's own panel, where a tap here would
+                otherwise have to mean two things. */}
+            <Link
+              href={`/recipes?open=${recipe.id}`}
+              className="block min-h-11 rounded-lg border border-neutral-200 p-3"
+            >
+              <span className="font-medium underline decoration-neutral-300 underline-offset-2">
+                {recipe.title}
+              </span>
+              <span className="mt-1 block text-sm text-neutral-600">
               {/* capitalize sits on the words, not the line: "40 min" is not a proper noun. */}
               <span className="capitalize">
                 {recipe.mealType.join(', ')} · {recipe.effort}
               </span>
               {recipe.timeMinutes !== undefined && ` · ${recipe.timeMinutes} min`}
-            </p>
+              </span>
+            </Link>
           </li>
         ))}
       </ul>

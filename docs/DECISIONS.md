@@ -713,7 +713,7 @@ of four wrong choices.
   feeds scripts and tests, where stable, machine-independent order is worth
   more than readability. Display order belongs to the view.
 
-## 2026-09-23 No warnings, and two lettuces
+## 2026-09-23 No warnings, two lettuces, and two ways into the app
 
 - **The `warning` field is gone.** Tia's call: almost no ingredient needs one,
   so it was not worth a field, a validation rule and a red box in the panel for
@@ -729,3 +729,23 @@ of four wrong choices.
   photo was deleted with its ingredient. `scripts/september-additions.mjs` still
   lists all four, as the record of what was read on 2026-09-11; rerunning it
   would bring the two back.
+- **Only ingredient notes and personal recipe notes are editable in the app.**
+  Substitution notes are written with Claude when a recipe is added, so they
+  stay in the data files.
+- **Ingredients and recipes are two views of the front page, chosen with a
+  switch.** In the ingredient view an ingredient opens in the side panel and its
+  recipes are links; in the recipe view a recipe opens in the side panel and its
+  ingredients are links. A link switches to the other view with that item open.
+  Each view has its own URL, so reload, bookmarks and the back button all keep
+  the view. The recipe view lists every recipe in meal-type sections, with the
+  ones in season this month marked, since only 5 of 31 have ingredient lists
+  yet and an in-season-only list would be nearly empty.
+- **A recipe is in season when one of its ingredients is.** Tia's rule: one
+  in-season ingredient is enough, fresh or from Finnish storage. Optional lines,
+  imported-only ingredients and pantry ingredients do not count, and a recipe
+  with no ingredient list is never in season. The earlier "every ingredient
+  available" definition in the plan is replaced. It was what the step 5
+  near-miss rule was built on, so that rule is now an open question rather than
+  a guessed-at adaptation. The card names the ingredients that put the recipe in
+  season, since "in season" on a recipe with one seasonal onion would otherwise
+  overclaim.

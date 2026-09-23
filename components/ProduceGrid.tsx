@@ -4,6 +4,7 @@ import { useRef, useState } from 'react'
 
 import { IngredientPanel } from '@/components/IngredientPanel'
 import { OriginTag } from '@/components/OriginTag'
+import { useOpenParam } from '@/components/useOpenParam'
 import type { HomeIngredient } from '@/components/types'
 import type { Category, Month } from '@/lib/types'
 
@@ -30,7 +31,7 @@ export function ProduceGrid({
   month: Month
 }) {
   const [includeImported, setIncludeImported] = useState(false)
-  const [selectedId, setSelectedId] = useState<string | null>(null)
+  const [selectedId, setSelectedId] = useOpenParam()
   // Where focus goes when the panel closes: back to the card that opened it,
   // so keyboard use does not restart at the top of the grid.
   const opener = useRef<HTMLElement | null>(null)
