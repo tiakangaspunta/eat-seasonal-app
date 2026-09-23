@@ -60,7 +60,10 @@ test('the switch leads to the recipe view, where a recipe opens with a link to i
   page,
 }) => {
   const { recipeTitle } = ingredientWithRecipes()
-  await page.goto('/')
+  // Wait for the page to finish starting up before clicking the switch. On a
+  // busy dev server a click that lands earlier is lost: 4 in 12 runs failed
+  // that way, and all 12 passed with this wait.
+  await page.goto('/', { waitUntil: 'networkidle' })
 
   await page.getByRole('navigation', { name: 'View' }).getByRole('link', { name: 'Recipes' }).click()
   await expect(page).toHaveURL(/\/recipes$/)
