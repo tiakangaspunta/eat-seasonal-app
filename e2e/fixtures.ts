@@ -8,7 +8,7 @@
  * needs editing when the content changes is a test that gets deleted.
  */
 import { getIngredients } from '../lib/data/ingredients'
-import { recipesUsingIngredient } from '../lib/data/recipes'
+import { recipesByIngredient } from '../lib/data/recipes'
 import { MONTH_NAMES } from '../lib/months'
 import { domesticAvailability } from '../lib/season/availability'
 import { SEASONAL_CATEGORIES } from '../lib/types'
@@ -32,8 +32,12 @@ const inSeasonNow = () =>
  * the choice stays stable as recipes are added.
  */
 export function ingredientWithRecipes(): { name: string; recipeTitle: string } {
+  // One pass over the recipes, not one per ingredient: asking each ingredient
+  // separately re-read every data file ~100 times and took 25 of the test's
+  // 30 seconds, the same trap the home page fell into (DECISIONS.md).
+  const byIngredient = recipesByIngredient()
   const candidates = inSeasonNow()
-    .map((ingredient) => ({ ingredient, recipes: recipesUsingIngredient(ingredient.id) }))
+    .map((ingredient) => ({ ingredient, recipes: byIngredient.get(ingredient.id) ?? [] }))
     .filter(({ recipes }) => recipes.length > 0)
     .sort((a, b) => b.recipes.length - a.recipes.length)
 
