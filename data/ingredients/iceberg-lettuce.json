@@ -1,6 +1,6 @@
 {
   "id": "iceberg-lettuce",
-  "name": "Iceberg lettuce",
+  "name": "Jäävuorisalaatti",
   "category": "vegetable",
   "availability": {
     "domestic": {
@@ -12,7 +12,6 @@
   },
   "verified": false,
   "similarTo": [],
-  "searchTermFi": "jäävuorisalaatti",
   "image": {
     "file": "/images/ingredients/iceberg-lettuce.jpg",
     "author": "Rasbak 13:13, 20 May 2007 (UTC)",

@@ -41,7 +41,7 @@ hand-written terms (`SEARCH_TERMS` in `photo-candidates.mjs`, run with
 `--rejected`), showing only photos not already turned down. Tia approved 25 of
 the 33, which brings it to **91 of 99 with a photo**.
 
-Still without one: bok-choy, chicory, courgette, endive, ice-lettuce,
+Still without one: bok-choy, chicory, courgette, endive,
 pointed-pepper, portobello, romanesco. They keep the grey placeholder.
 
 Also fixed along the way: `photo-candidates.mjs` now writes after every

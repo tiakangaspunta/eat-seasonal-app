@@ -712,3 +712,20 @@ of four wrong choices.
 - **The loaders still sort by id.** They are the data layer and their output
   feeds scripts and tests, where stable, machine-independent order is worth
   more than readability. Display order belongs to the view.
+
+## 2026-09-23 No warnings, and two lettuces
+
+- **The `warning` field is gone.** Tia's call: almost no ingredient needs one,
+  so it was not worth a field, a validation rule and a red box in the panel for
+  korvasieni alone. The korvasieni text was dropped with it, not moved into its
+  notes.
+- **Four lettuces became two.** satokausi.fi lists lehtisalaatti,
+  keräsalaatti, jäävuorisalaatti and jääsalaatti separately, which is finer
+  than Tia shops. Keräsalaatti and jääsalaatti folded into jäävuorisalaatti
+  (id `iceberg-lettuce`), leaving lehtisalaatti (id `leaf-lettuce`). Both
+  now show their Finnish names, so neither needs a `searchTermFi`. All four had
+  the same data (fresh in September, drafted), so nothing about the season was
+  lost. Lollo rosso, vuonankaali and rucola stay separate. The keräsalaatti
+  photo was deleted with its ingredient. `scripts/september-additions.mjs` still
+  lists all four, as the record of what was read on 2026-09-11; rerunning it
+  would bring the two back.

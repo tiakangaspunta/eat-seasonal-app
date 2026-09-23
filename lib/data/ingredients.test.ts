@@ -13,7 +13,7 @@ describe('ingredient data', () => {
   const ingredients = getIngredients()
 
   it('loads every file and validates its shape', () => {
-    expect(ingredients.length).toBe(174)
+    expect(ingredients.length).toBe(172)
   })
 
   it('prints counts by category', () => {
@@ -64,10 +64,6 @@ describe('ingredient data', () => {
     expect(getIngredient('funnel-chanterelle')?.unverifiedMonths).toBeUndefined()
   })
 
-  it('carries the false morel warning in the data', () => {
-    expect(getIngredient('false-morel')?.warning?.en).toMatch(/toxic/i)
-  })
-
   it('flags drafted origins as unverified', () => {
     const unverified = ingredients.filter((i) => !i.verified).map((i) => i.id).sort()
     expect(unverified).toEqual([
@@ -75,7 +71,7 @@ describe('ingredient data', () => {
       'blackberry', 'bog-bilberry', 'bolete', 'broccoli', 'celery', 'chanterelle',
       'cherry-tomato', 'chicory', 'chioggia-beetroot', 'chives', 'courgette', 'cranberry',
       'crowberry', 'damson', 'dill', 'endive', 'fennel', 'garden-cress', 'garlic', 'giant-onion',
-      'globe-artichoke', 'head-lettuce', 'hokkaido-squash', 'ice-lettuce', 'iceberg-lettuce',
+      'globe-artichoke', 'hokkaido-squash', 'iceberg-lettuce',
       'juniper-berry', 'kohlrabi', 'lambs-lettuce', 'leaf-lettuce', 'leek', 'lingonberry',
       'lollo-rosso', 'matsutake', 'mint', 'mooli', 'parsley', 'pattypan-squash', 'potato-onion',
       'raspberry', 'rocket', 'romanesco', 'root-parsley', 'rosehip', 'rowanberry',

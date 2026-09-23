@@ -136,7 +136,6 @@ const SEARCH_TERMS = {
   endive: ['frisee lettuce', 'escarole'],
   fennel: ['fennel bulb', 'Florence fennel'],
   horseradish: ['horseradish root', 'grated horseradish'],
-  'ice-lettuce': ['crisphead lettuce', 'jääsalaatti'],
   'jerusalem-artichoke': ['Jerusalem artichoke tubers', 'sunchokes'],
   kale: ['curly kale', 'kale leaves'],
   kohlrabi: ['kohlrabi bulb', 'kohlrabi vegetables'],

@@ -77,7 +77,7 @@ produce has no English name she knows, and being forced to invent one would make
 the app harder to use than the Notion system it replaces. So `name` and `title`
 are plain strings, and a mixed-language list is the accepted cost.
 
-**Prose is bilingual.** Notes, warnings, substitution notes, and any recipe steps
+**Prose is bilingual.** Notes, substitution notes, and any recipe steps
 are `{ en, fi }` objects, with `en` filled now and `fi` left empty, and an empty
 field falling back to the other language so nothing renders blank. This is where
 translation actually earns anything.
@@ -117,7 +117,6 @@ type Ingredient = {
   similarTo: string[]            // ingredient ids that can stand in for this one
   image?: IngredientImage
   notes?: { en: string; fi: string }
-  warning?: { en: string; fi: string }   // preparation that matters for safety
   searchTermFi?: string          // Finnish word, only needed if name isn't already Finnish
 }
 
@@ -170,10 +169,9 @@ fresh with a season, not what drawer it lives in.
 The seasonal produce is the priority. Non-seasonal ingredients are recorded
 because recipes need them, not because they're a feature in their own right.
 
-`warning` is for the small number of ingredients where preparation is a safety
-matter rather than a preference. Korvasieni, false morel, is the case in the
-existing data: toxic unless boiled properly, and the app should say so wherever it
-appears rather than treating it as an ordinary mushroom.
+There is no safety warning field. One was added for korvasieni and removed on
+2026-09-23: almost nothing needs one, so it earned no place in the model (see
+`DECISIONS.md`).
 
 `verified: false` renders a small marker wherever the ingredient appears, so a
 drafted month is never mistaken for a trusted one. Corrections are made by editing

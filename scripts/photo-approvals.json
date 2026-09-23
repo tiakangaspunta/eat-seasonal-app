@@ -329,15 +329,6 @@
       "license": "CC BY-SA 4.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Green_Beans_1.jpg"
     },
-    "head-lettuce": {
-      "source": "Wikimedia Commons",
-      "title": "Lettuce Mini Heads (7331119710).jpg",
-      "thumbUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Lettuce_Mini_Heads_%287331119710%29.jpg/500px-Lettuce_Mini_Heads_%287331119710%29.jpg",
-      "fullUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Lettuce_Mini_Heads_%287331119710%29.jpg",
-      "author": "Dwight Sipler from Stow, MA, USA",
-      "license": "CC BY 2.0",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lettuce_Mini_Heads_(7331119710).jpg"
-    },
     "hokkaido-squash": {
       "source": "Wikimedia Commons",
       "title": "Cucurbita 2018 G3.jpg",
@@ -356,7 +347,6 @@
       "license": "CC BY-SA 2.0",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hren_(Horseradish)_(25955939202).jpg"
     },
-    "ice-lettuce": null,
     "iceberg-lettuce": {
       "source": "Wikimedia Commons",
       "title": "Iceberg lettuce (IJssla krop).jpg",

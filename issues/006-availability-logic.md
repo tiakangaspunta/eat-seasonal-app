@@ -20,13 +20,13 @@ reviews the behaviors being pinned down, in plain language, before and during.
 
 ## Acceptance criteria
 
-- [ ] A fixture ingredient in season fresh in a given month returns `fresh`
-- [ ] A fixture ingredient available only from storage in a given month returns
+- [x] A fixture ingredient in season fresh in a given month returns `fresh`
+- [x] A fixture ingredient available only from storage in a given month returns
       `storage`, not `fresh`
-- [ ] A fixture ingredient with no data for a month returns unavailable
-- [ ] A derived season label is correct for a fixture spanning two calendar
+- [x] A fixture ingredient with no data for a month returns unavailable
+- [x] A derived season label is correct for a fixture spanning two calendar
       seasons
-- [ ] Imported and domestic availability are evaluated independently for the
+- [x] Imported and domestic availability are evaluated independently for the
       same ingredient
 
 ## Tests

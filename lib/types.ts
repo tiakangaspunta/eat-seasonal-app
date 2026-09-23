@@ -94,8 +94,6 @@ export type Ingredient = {
   similarTo: string[]
   image?: IngredientImage
   notes?: Bilingual
-  /** Preparation that matters for safety, not preference. */
-  warning?: Bilingual
   /**
    * Finnish word for the recipe search shortcut (step 3), which has to run in
    * Finnish on k-ruoka and the rest. Only needed when `name` is not already

@@ -54,7 +54,6 @@ export default function HomePage() {
         }
       : undefined,
     notes: ingredient.notes?.en || undefined,
-    warning: ingredient.warning?.en || undefined,
     similar: sortByName(
       ingredient.similarTo.filter((id) => names.has(id)).map((id) => ({ id, name: names.get(id)! })),
       (similar) => similar.name,

@@ -22,12 +22,12 @@ before anything else is built."
 
 ## Acceptance criteria
 
-- [ ] Loading the home page shows September, correctly labeled
-- [ ] Only domestic produce shows by default
-- [ ] Toggling to include imported changes the visible set
-- [ ] Ingredients are grouped into the five seasonal categories, not a flat list
-- [ ] An ingredient with `verified: false` shows a visible badge
-- [ ] Cards reserve space for a photo whether or not one exists yet
+- [x] Loading the home page shows September, correctly labeled
+- [x] Only domestic produce shows by default
+- [x] Toggling to include imported changes the visible set
+- [x] Ingredients are grouped into the five seasonal categories, not a flat list
+- [x] An ingredient with `verified: false` shows a visible badge
+- [x] Cards reserve space for a photo whether or not one exists yet
 
 ## Tests
 

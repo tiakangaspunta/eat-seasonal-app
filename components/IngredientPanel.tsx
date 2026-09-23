@@ -82,13 +82,6 @@ export function IngredientPanel({
           </p>
         )}
 
-        {ingredient.warning && (
-          <p className="rounded-md bg-red-50 px-3 py-2 text-sm text-red-900">
-            <span className="font-semibold">Preparation warning. </span>
-            {ingredient.warning}
-          </p>
-        )}
-
         {ingredient.notes && <p className="text-sm text-neutral-700">{ingredient.notes}</p>}
 
         <section>

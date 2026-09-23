@@ -1,6 +1,6 @@
 {
   "id": "leaf-lettuce",
-  "name": "Leaf lettuce",
+  "name": "Lehtisalaatti",
   "category": "vegetable",
   "availability": {
     "domestic": {
@@ -12,7 +12,6 @@
   },
   "verified": false,
   "similarTo": [],
-  "searchTermFi": "lehtisalaatti",
   "image": {
     "file": "/images/ingredients/leaf-lettuce.jpg",
     "author": "Rainer Zenz",

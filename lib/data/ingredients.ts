@@ -98,7 +98,6 @@ export function parseIngredient(raw: unknown, file: string): Ingredient {
     }
   }
   if (o.notes !== undefined && !isBilingual(o.notes)) fail('notes must be { en, fi }')
-  if (o.warning !== undefined && !isBilingual(o.warning)) fail('warning must be { en, fi }')
   if (o.searchTermFi !== undefined && typeof o.searchTermFi !== 'string') {
     fail('searchTermFi must be a string')
   }
