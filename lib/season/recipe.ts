@@ -2,7 +2,8 @@ import { domesticAvailability } from './availability'
 import type { Ingredient, Month, Recipe } from '@/lib/types'
 
 /**
- * The ingredients that put a recipe in season this month, in recipe order.
+ * The ingredients that put a recipe in season in any of the chosen months, in
+ * recipe order.
  *
  * Tia's rule, 2026-09-23: one is enough. A recipe is in season when at least
  * one of its ingredients is available from Finland this month, fresh or from
@@ -14,7 +15,7 @@ import type { Ingredient, Month, Recipe } from '@/lib/types'
 export function inSeasonIngredients(
   recipe: Recipe,
   calendar: Map<string, Ingredient>,
-  month: Month,
+  months: Month[],
 ): string[] {
   const ids = recipe.ingredients
     // Optional lines can be left out, so they cannot be what makes it seasonal.
@@ -23,7 +24,10 @@ export function inSeasonIngredients(
     .filter((id): id is string => id !== undefined)
     .filter((id) => {
       const ingredient = calendar.get(id)
-      return ingredient !== undefined && domesticAvailability(ingredient, month) !== 'unavailable'
+      return (
+        ingredient !== undefined &&
+        months.some((month) => domesticAvailability(ingredient, month) !== 'unavailable')
+      )
     })
   return [...new Set(ids)]
 }

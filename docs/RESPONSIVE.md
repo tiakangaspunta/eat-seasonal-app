@@ -29,6 +29,17 @@ exist yet. This file records what was actually built.
   `components/ViewSwitch.tsx`, step 2): on mobile the month heading sits above
   the Ingredients / Recipes switch; from `md:` up they share one row, heading
   left and switch right. The switch is two 44-pixel-high links at every size.
+- **Row of months** (`components/MonthRow.tsx`, issue 014): on mobile the
+  four season buttons share a row of their own, each a quarter of the width,
+  and the twelve months sit below them in a row that scrolls sideways, running
+  edge to edge, with the first chosen month scrolled to the middle when the
+  page opens. From `md:` the months stop scrolling and share the width
+  equally; from `lg:` the season buttons move beside them on one line. Every
+  month and season button is at least 44 by 44 pixels, and today's month is
+  marked with a dot rather than a colour, so it reads whether chosen or not.
+- **Card over several months** (`components/ProduceGrid.tsx`, issue 014): the
+  season line becomes "fresh Oct · storage Nov" and wraps onto a second line in
+  a narrow card rather than truncating, at every size.
 - **Recipe grid** (`app/recipes/page.tsx`, `components/RecipeGrid.tsx`, step
   2): the same column steps as the home grid, one on mobile up to four on a wide
   screen, in meal-type sections. Cards have no photo, so they are text only and
@@ -87,6 +98,6 @@ exist yet. This file records what was actually built.
 
 ## Not built yet
 
-Month strip, combine control (its space is reserved in the panel, its logic is
+Combine control (its space is reserved in the panel, its logic is
 step 5), and filters. See `docs/PLAN.md` section 8 for the
 intended mobile form of each.

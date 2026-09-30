@@ -10,7 +10,7 @@
 import { getIngredients } from '../lib/data/ingredients'
 import { recipesByIngredient } from '../lib/data/recipes'
 import { MONTH_NAMES } from '../lib/months'
-import { domesticAvailability } from '../lib/season/availability'
+import { CALENDAR_SEASONS, domesticAvailability } from '../lib/season/availability'
 import { SEASONAL_CATEGORIES } from '../lib/types'
 import type { Month } from '../lib/types'
 
@@ -61,4 +61,12 @@ export function importedOnlyCount(): number {
       domesticAvailability(ingredient, month) === 'unavailable' &&
       (ingredient.availability.imported?.months ?? []).includes(month),
   ).length
+}
+
+/**
+ * A season the current month is not in. Choosing today's own season would
+ * leave a heading that already named it, and prove nothing.
+ */
+export function anotherSeason(): string {
+  return CALENDAR_SEASONS.find((season) => !season.months.includes(currentMonth()))!.name
 }

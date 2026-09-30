@@ -7,6 +7,7 @@ import { EditableNotes } from '@/components/EditableNotes'
 import { SUBSTITUTION_REASON_LABEL, formatQuantity } from '@/components/labels'
 import { SidePanel } from '@/components/SidePanel'
 import type { RecipeLine, RecipeName, RecipeViewItem } from '@/components/types'
+import { useMonthsQuery } from '@/components/useMonthsQuery'
 
 /**
  * The recipe side panel, in the recipe view: the ingredient list with its
@@ -17,7 +18,16 @@ import type { RecipeLine, RecipeName, RecipeViewItem } from '@/components/types'
  * Seasonal ingredients are links into the ingredient view, which opens with
  * that ingredient's panel showing.
  */
-export function RecipePanel({ recipe, onClose }: { recipe: RecipeViewItem; onClose: () => void }) {
+export function RecipePanel({
+  recipe,
+  when,
+  onClose,
+}: {
+  recipe: RecipeViewItem
+  /** The chosen months in words: "this month", "in autumn". */
+  when: string
+  onClose: () => void
+}) {
   const facts = [
     recipe.mealType.join(', '),
     recipe.effort,
@@ -69,7 +79,7 @@ export function RecipePanel({ recipe, onClose }: { recipe: RecipeViewItem; onClo
 
       {recipe.inSeason.length > 0 && (
         <p className="rounded-md bg-emerald-50 px-3 py-2 text-sm text-emerald-900">
-          In season this month: {recipe.inSeason.map((ingredient) => ingredient.name).join(', ')}
+          In season {when}: {recipe.inSeason.map((ingredient) => ingredient.name).join(', ')}
         </p>
       )}
 
@@ -131,10 +141,11 @@ function IngredientLine({ line }: { line: RecipeLine }) {
 
 /** A seasonal ingredient is a link to its card in the ingredient view; anything else is text. */
 function NameOrLink({ name }: { name: RecipeName }) {
+  const monthsQuery = useMonthsQuery()
   if (!name.linkId) return <span>{name.name}</span>
   return (
     <Link
-      href={`/?open=${name.linkId}`}
+      href={`/?open=${name.linkId}${monthsQuery ? `&${monthsQuery}` : ''}`}
       className="inline-flex min-h-11 items-center font-medium underline decoration-neutral-300 underline-offset-2"
     >
       {name.name}

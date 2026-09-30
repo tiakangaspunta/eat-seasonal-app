@@ -7,9 +7,11 @@ import { MONTHS, MONTH_NAMES, monthInitial } from '@/lib/months'
 import { EditableName } from '@/components/EditableName'
 import { EditableNotes } from '@/components/EditableNotes'
 import { MEAL_TYPE_ORDER } from '@/components/labels'
+import { monthsAvailable } from '@/components/monthText'
 import { OriginTag } from '@/components/OriginTag'
 import { SidePanel } from '@/components/SidePanel'
 import type { HomeIngredient, PanelRecipe } from '@/components/types'
+import { useMonthsQuery } from '@/components/useMonthsQuery'
 import type { MealType, Month } from '@/lib/types'
 
 /**
@@ -18,12 +20,12 @@ import type { MealType, Month } from '@/lib/types'
  */
 export function IngredientPanel({
   ingredient,
-  month,
+  months,
   onClose,
   onSelectIngredient,
 }: {
   ingredient: HomeIngredient
-  month: Month
+  months: Month[]
   onClose: () => void
   onSelectIngredient: (id: string) => void
 }) {
@@ -46,6 +48,11 @@ export function IngredientPanel({
             {ingredient.category}
             {ingredient.seasonLabel && ` · ${ingredient.seasonLabel}`}
           </p>
+          {months.length > 1 && (ingredient.freshIn.length > 0 || ingredient.storageIn.length > 0) && (
+            <p className="mt-1 text-sm text-neutral-600">
+              {monthsAvailable(ingredient.freshIn, ingredient.storageIn)}
+            </p>
+          )}
           <div className="mt-2">
             <OriginTag origin={ingredient.origin} countries={ingredient.countries} showCountries />
           </div>
@@ -60,7 +67,7 @@ export function IngredientPanel({
           freshMonths={ingredient.freshMonths}
           storageMonths={ingredient.storageMonths}
           importedMonths={ingredient.importedMonths}
-          currentMonth={month}
+          chosenMonths={months}
         />
       </section>
 
@@ -112,12 +119,13 @@ function MonthBar({
   freshMonths,
   storageMonths,
   importedMonths,
-  currentMonth,
+  chosenMonths,
 }: {
   freshMonths: Month[]
   storageMonths: Month[]
   importedMonths: Month[]
-  currentMonth: Month
+  /** Ringed, so the bar shows where the chosen months fall in the year. */
+  chosenMonths: Month[]
 }) {
   // Domestic first, for the same reason originIn prefers it: if Finland has it
   // that month, that is the answer, and the imported window is a footnote.
@@ -138,7 +146,7 @@ function MonthBar({
               key={month}
               className={`flex h-9 flex-1 items-center justify-center rounded text-xs font-medium ${
                 MONTH_STATE_STYLE[state]
-              } ${month === currentMonth ? 'ring-2 ring-neutral-900 ring-offset-1' : ''}`}
+              } ${chosenMonths.includes(month) ? 'ring-2 ring-neutral-900 ring-offset-1' : ''}`}
             >
               <span aria-hidden>{monthInitial(month)}</span>
               <span className="sr-only">{`${MONTH_NAMES[month]}: ${MONTH_STATE_LABEL[state]}`}</span>
@@ -166,6 +174,7 @@ function Swatch({ className, children }: { className: string; children: string }
 }
 
 function RecipeList({ recipes }: { recipes: PanelRecipe[] }) {
+  const monthsQuery = useMonthsQuery()
   const [mealType, setMealType] = useState<MealType | 'all'>('all')
 
   const present = MEAL_TYPE_ORDER.filter((meal) => recipes.some((r) => r.mealType.includes(meal)))
@@ -209,7 +218,7 @@ function RecipeList({ recipes }: { recipes: PanelRecipe[] }) {
                 edited in the recipe's own panel, where a tap here would
                 otherwise have to mean two things. */}
             <Link
-              href={`/recipes?open=${recipe.id}`}
+              href={`/recipes?open=${recipe.id}${monthsQuery ? `&${monthsQuery}` : ''}`}
               className="block min-h-11 rounded-lg border border-neutral-200 p-3"
             >
               <span className="font-medium underline decoration-neutral-300 underline-offset-2">

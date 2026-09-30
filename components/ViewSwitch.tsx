@@ -10,15 +10,16 @@ const VIEWS: { view: View; href: string; label: string }[] = [
 /**
  * The switch between the two views of the front page. Links, not buttons: each
  * view is its own URL, so the switch is navigation, and the back button and a
- * bookmark both treat it that way.
+ * bookmark both treat it that way. The chosen months go along; the open panel
+ * does not, since it belongs to the view being left.
  */
-export function ViewSwitch({ current }: { current: View }) {
+export function ViewSwitch({ current, monthsQuery }: { current: View; monthsQuery: string }) {
   return (
     <nav aria-label="View" className="inline-flex rounded-full border border-neutral-300 p-1">
       {VIEWS.map(({ view, href, label }) => (
         <Link
           key={view}
-          href={href}
+          href={monthsQuery ? `${href}?${monthsQuery}` : href}
           aria-current={view === current ? 'page' : undefined}
           className={`flex min-h-11 items-center rounded-full px-5 text-sm font-medium ${
             view === current ? 'bg-neutral-900 text-white' : 'text-neutral-700'

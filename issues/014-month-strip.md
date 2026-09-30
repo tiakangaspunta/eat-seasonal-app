@@ -36,17 +36,17 @@ AFK. The choices above are settled; the season split is Tia's, confirmed.
 
 ## Acceptance criteria
 
-- [ ] The row of months and the four season buttons on both views
-- [ ] One or several months can be chosen; a season chooses its three
-- [ ] The ingredient view shows produce available in any chosen month
-- [ ] The recipe view marks recipes in season in any chosen month
-- [ ] `?months=` holds the choice; invalid or missing values fall back to the
+- [x] The row of months and the four season buttons on both views
+- [x] One or several months can be chosen; a season chooses its three
+- [x] The ingredient view shows produce available in any chosen month
+- [x] The recipe view marks recipes in season in any chosen month
+- [x] `?months=` holds the choice; invalid or missing values fall back to the
       current month rather than erroring
-- [ ] Switching views and following panel links keep the choice
-- [ ] Cards over several months name the months they are available in
-- [ ] A smoke flow: choose a season, see the heading change, reload, still
+- [x] Switching views and following panel links keep the choice
+- [x] Cards over several months name the months they are available in
+- [x] A smoke flow: choose a season, see the heading change, reload, still
       there
-- [ ] `docs/FLOWS.md` and `docs/RESPONSIVE.md` updated
+- [x] `docs/FLOWS.md` and `docs/RESPONSIVE.md` updated
 
 ## Tests
 

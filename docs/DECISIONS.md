@@ -819,3 +819,26 @@ of four wrong choices.
   replaces them: January carrots are from storage, not fresh. The months stay
   marked as Tia's, since she made the call. Where a page gives no origin flag
   for a month, her Notion month is kept.
+
+## 2026-09-30 The row of months (issue 014)
+
+- **Tapping a month adds it or takes it out; a season button replaces the
+  choice.** Tia's call. The other option, tap to jump and a "+" to add, is one
+  tap quicker for jumping but doubles the targets in a row that already holds
+  sixteen buttons. The last chosen month cannot be taken out, so the view is
+  never empty.
+- **Choosing months is a real navigation, opening a panel is not.** What is in
+  season is worked out on the server, so a new choice has to render the page
+  again; the panel only shows data the page already has, so it stays a
+  `pushState`. Both live in the address, and changing one keeps the other.
+- **A run through the new year is named first.** December, January and
+  February read in that order, in the heading and on the cards. Anything not
+  running through the new year is calendar order, which is the least
+  surprising rule for a choice like March, October and November.
+- **Over several months, Finnish wins, as it does for one.** An ingredient is
+  tagged Finnish if Finland has it in any chosen month; otherwise imported,
+  naming every country recorded for any chosen month, and still never a guessed
+  one.
+- **New interface words are `{ en, fi }` in `lib/strings.ts`.** The older
+  labels are still plain English in their components, which already bent the
+  rule; they move at the Finnish step rather than inside this issue.

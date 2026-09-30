@@ -3,6 +3,7 @@
 import { useRef, useState } from 'react'
 
 import { IngredientPanel } from '@/components/IngredientPanel'
+import { monthsAvailable } from '@/components/monthText'
 import { OriginTag } from '@/components/OriginTag'
 import { useOpenParam } from '@/components/useOpenParam'
 import type { HomeIngredient } from '@/components/types'
@@ -25,10 +26,10 @@ function isVisible(ingredient: HomeIngredient, includeImported: boolean): boolea
 
 export function ProduceGrid({
   ingredients,
-  month,
+  months,
 }: {
   ingredients: HomeIngredient[]
-  month: Month
+  months: Month[]
 }) {
   const [includeImported, setIncludeImported] = useState(false)
   const [selectedId, setSelectedId] = useOpenParam()
@@ -79,6 +80,7 @@ export function ProduceGrid({
                     // Finnish and a tag on each one says nothing 46 times. The
                     // tag earns its place only once the grid holds both.
                     showOrigin={includeImported}
+                    severalMonths={months.length > 1}
                     onOpen={open}
                   />
                 ))}
@@ -92,7 +94,7 @@ export function ProduceGrid({
         <IngredientPanel
           key={selected.id}
           ingredient={selected}
-          month={month}
+          months={months}
           onClose={close}
           onSelectIngredient={(id) => setSelectedId(id)}
         />
@@ -105,17 +107,21 @@ function IngredientCard({
   ingredient,
   selected,
   showOrigin,
+  severalMonths,
   onOpen,
 }: {
   ingredient: HomeIngredient
   selected: boolean
   showOrigin: boolean
+  /** Over several months the card names them: "fresh Oct · storage Nov". */
+  severalMonths: boolean
   onOpen: (id: string, element: HTMLElement | null) => void
 }) {
   // Fresh or from storage is a claim about Finnish produce. An imported card
   // has neither, and the origin tag carries the whole answer there.
-  const statusLabel =
-    ingredient.domesticStatus === 'fresh'
+  const statusLabel = severalMonths
+    ? monthsAvailable(ingredient.freshIn, ingredient.storageIn) || undefined
+    : ingredient.domesticStatus === 'fresh'
       ? 'Fresh'
       : ingredient.domesticStatus === 'storage'
         ? 'From storage'

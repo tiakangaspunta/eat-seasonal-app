@@ -27,22 +27,52 @@ flowchart TD
     rpanel -->|"close, Escape, or Back"| recipes
 ```
 
+## Choosing months
+
+Built in issue 014. The same row of months is on both views. The choice is
+`?months=` in the address, next to `open`, so a reload, a bookmark and Back
+keep it, and the view switch and the links between panels carry it across.
+
+```mermaid
+flowchart TD
+    open([Open either view]) --> param{"?months= in the address?"}
+    param -->|"no, or nothing valid in it"| today["Today's month"]
+    param -->|"yes"| chosen["The months it names, duplicates and junk dropped"]
+    today --> row["Row of months: chosen months dark, today dotted"]
+    chosen --> row
+    row -->|"tap an unchosen month"| add["Added to the choice"]
+    row -->|"tap a chosen month"| last{"Is it the last one?"}
+    last -->|"no"| remove["Taken out"]
+    last -->|"yes"| row
+    row -->|"tap Winter, Spring, Summer or Autumn"| season["The choice becomes that season's three months"]
+    add --> render["The page renders again for the new choice; an open panel stays open"]
+    remove --> render
+    season --> render
+    render --> heading{"How many months?"}
+    heading -->|"one"| one["Heading: March, spring. Cards: fresh or from storage"]
+    heading -->|"exactly a season"| whole["Heading: Autumn"]
+    heading -->|"any other set"| list["Heading: October and November"]
+    whole --> several["Cards name their months: fresh Oct · storage Nov"]
+    list --> several
+    render --> views["Ingredient view: produce from Finland in any chosen month. Recipe view: recipes in season in any chosen month are marked"]
+```
+
 ## Browsing the current month, and opening an ingredient
 
 Built in issues 007 and 008. Recipes in the panel became links in step 2.
 
 ```mermaid
 flowchart TD
-    open([Open the app]) --> home["Home: the current month, named and labelled with its season"]
+    open([Open the app]) --> home["Home: the chosen months, today's by default, named in the heading"]
     home --> filter{"Include imported produce?"}
-    filter -->|"no, the default"| domestic["Only produce with Finnish fresh or storage months this month"]
-    filter -->|"yes"| both["Also produce with imported months this month"]
+    filter -->|"no, the default"| domestic["Only produce with Finnish fresh or storage months in a chosen month"]
+    filter -->|"yes"| both["Also produce with imported months in a chosen month"]
     domestic --> grid["Cards grouped into vegetable, fruit, berry, mushroom and herb"]
     both --> grid
     grid --> card["Card: name, season label, fresh or from storage"]
     card -->|"click"| panel["Ingredient panel opens, the grid stays visible and clickable"]
 
-    panel --> months["Twelve-month bar: fresh, from storage, not available, this month ringed"]
+    panel --> months["Twelve-month bar: fresh, from storage, not available, the chosen months ringed"]
     panel --> recipes["Recipes using this ingredient, filtered by meal type, each a link into the recipe view"]
     panel --> similar["Similar ingredients"]
     panel --> combine["Combine: space reserved, logic is step 5"]
@@ -60,7 +90,7 @@ Built in step 2.
 flowchart TD
     recipes["Recipe view: every recipe, in breakfast, lunch, dinner, dessert, side and snack sections"]
     recipes --> card["Card: title, effort, time, tags, a note when the ingredient list is not added yet"]
-    card --> season{"At least one non-optional ingredient available from Finland this month?"}
+    card --> season{"At least one non-optional ingredient available from Finland in a chosen month?"}
     season -->|"yes"| marked["Marked in season, naming those ingredients"]
     season -->|"no, or no ingredient list"| unmarked["Not marked"]
     card -->|"click"| panel["Recipe panel opens, the grid stays visible and clickable"]
@@ -161,5 +191,5 @@ flowchart TD
 
 ## Not drawn yet
 
-The month strip and the month view (step 3),
+The month view (step 3, issue 015),
 favourites, tried and monthly progress (step 4), and combine (step 5).

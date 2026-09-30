@@ -4,7 +4,9 @@ import { getIngredients } from '@/lib/data/ingredients'
 import { getRecipes } from '@/lib/data/recipes'
 import { currentMonth } from '@/lib/months'
 import { inSeasonIngredients } from '@/lib/season/recipe'
+import { formatMonths, parseMonths } from '@/lib/season/selection'
 import { sortByName } from '@/lib/sort'
+import { monthsPhrase } from '@/components/monthText'
 import { PageHeader } from '@/components/PageHeader'
 import { RecipeGrid } from '@/components/RecipeGrid'
 import type { RecipeName, RecipeViewItem } from '@/components/types'
@@ -12,26 +14,35 @@ import { SEASONAL_CATEGORIES } from '@/lib/types'
 import type { Ingredient, Month, Recipe } from '@/lib/types'
 
 /** The recipe view. The ingredient view is app/page.tsx. */
-export default async function RecipesPage() {
-  // Rendered per request: the month is today's, and the open panel is in the URL.
+export default async function RecipesPage({
+  searchParams,
+}: {
+  searchParams: Promise<Record<string, string | string[] | undefined>>
+}) {
+  // Rendered per request: today's month is the default, and the chosen months
+  // and the open panel are in the URL.
   await connection()
-  const month = currentMonth()
+  const today = currentMonth()
+  const query = await searchParams
+  const months = parseMonths(query.months, today)
+  const monthsQuery = query.months === undefined ? '' : `months=${formatMonths(months)}`
+  const when = monthsPhrase(months, today)
 
   const ingredients = new Map(getIngredients().map((ingredient) => [ingredient.id, ingredient]))
   const recipes = sortByName(
-    getRecipes().map((recipe) => toViewItem(recipe, ingredients, month)),
+    getRecipes().map((recipe) => toViewItem(recipe, ingredients, months)),
     (recipe) => recipe.title,
   )
 
   return (
     <main className="p-6 md:p-10">
-      <PageHeader month={month} view="recipes" />
-      <p className="mt-4 text-neutral-700">
-        Every recipe, by meal. The ones with something in season this month are marked.
+      <PageHeader months={months} today={today} view="recipes" monthsQuery={monthsQuery} />
+      <p className="mt-6 text-neutral-700">
+        Every recipe, by meal. The ones with something in season {when} are marked.
       </p>
 
       <div className="mt-8">
-        <RecipeGrid recipes={recipes} />
+        <RecipeGrid recipes={recipes} when={when} />
       </div>
     </main>
   )
@@ -59,7 +70,7 @@ function resolve(
 function toViewItem(
   recipe: Recipe,
   ingredients: Map<string, Ingredient>,
-  month: Month,
+  months: Month[],
 ): RecipeViewItem {
   return {
     id: recipe.id,
@@ -71,7 +82,7 @@ function toViewItem(
     servings: recipe.servings,
     source: recipe.source,
     ownNotes: recipe.ownNotes?.en || undefined,
-    inSeason: inSeasonIngredients(recipe, ingredients, month).map((id) =>
+    inSeason: inSeasonIngredients(recipe, ingredients, months).map((id) =>
       resolve({ ingredientId: id }, ingredients),
     ),
     lines: recipe.ingredients.map((line) => ({

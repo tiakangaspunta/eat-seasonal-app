@@ -20,9 +20,13 @@ export type HomeIngredient = {
   id: string
   name: string
   category: Category
+  /** Over the chosen months: fresh if fresh in any, else storage if in storage in any. */
   domesticStatus: 'fresh' | 'storage' | 'unavailable'
   importedStatus: 'available' | 'unavailable'
-  /** Where it comes from this month, and the countries if the data names any. */
+  /** Which of the chosen months it is fresh in, and from storage in. */
+  freshIn: Month[]
+  storageIn: Month[]
+  /** Where it comes from in the chosen months, and the countries if the data names any. */
   origin: 'domestic' | 'imported' | 'none'
   countries: string[]
   seasonLabel?: string
@@ -76,7 +80,7 @@ export type RecipeViewItem = {
   source?: { name: string; url: string }
   lines: RecipeLine[]
   /**
-   * The ingredients that put it in season this month, derived in lib/season/.
+   * The ingredients that put it in season in any chosen month, derived in lib/season/.
    * Empty means not in season: one is enough (Tia's rule, 2026-09-23).
    */
   inSeason: RecipeName[]

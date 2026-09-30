@@ -1,6 +1,14 @@
 import { describe, expect, it } from 'vitest'
 
-import { domesticAvailability, importedAvailability, originIn, seasonLabel } from './availability'
+import {
+  domesticAvailability,
+  domesticMonthsIn,
+  importedAvailability,
+  importedMonthsIn,
+  originIn,
+  originOver,
+  seasonLabel,
+} from './availability'
 import type { Ingredient } from '@/lib/types'
 
 function fixture(overrides: Partial<Ingredient> = {}): Ingredient {
@@ -154,5 +162,77 @@ describe('season label', () => {
 
   it('joins two calendar seasons in month order for a fixture spanning both', () => {
     expect(seasonLabel([2, 3, 4])).toBe('winter–spring')
+  })
+})
+
+describe('availability over several chosen months', () => {
+  const cabbage = fixture({
+    availability: {
+      domestic: { freshMonths: [8, 9, 10], storageMonths: [11, 12, 1, 2] },
+    },
+  })
+
+  it('names the chosen months it is fresh in and the ones it is from storage in', () => {
+    expect(domesticMonthsIn(cabbage, [10, 11])).toEqual({ fresh: [10], storage: [11] })
+  })
+
+  it('keeps the order the months were chosen in', () => {
+    expect(domesticMonthsIn(cabbage, [12, 1])).toEqual({ fresh: [], storage: [12, 1] })
+  })
+
+  it('never counts a fresh month as storage too', () => {
+    const overlapping = fixture({
+      availability: { domestic: { freshMonths: [9], storageMonths: [9, 10] } },
+    })
+    expect(domesticMonthsIn(overlapping, [9, 10])).toEqual({ fresh: [9], storage: [10] })
+  })
+
+  it('is empty for months it is not available from Finland in', () => {
+    expect(domesticMonthsIn(cabbage, [5, 6])).toEqual({ fresh: [], storage: [] })
+  })
+
+  it('names the chosen months it is imported in', () => {
+    const lemon = fixture({ availability: { imported: { months: [1, 2, 3] } } })
+    expect(importedMonthsIn(lemon, [12, 1, 2])).toEqual([1, 2])
+  })
+})
+
+describe('where the produce over several months comes from', () => {
+  it('is domestic when Finland has it in any chosen month', () => {
+    const apple = fixture({
+      availability: {
+        domestic: { freshMonths: [9], storageMonths: [] },
+        imported: { months: [5, 6], origins: [{ months: [5, 6], countries: ['Italy'] }] },
+      },
+    })
+    expect(originOver(apple, [6, 9])).toEqual({ origin: 'domestic', countries: [] })
+  })
+
+  it("is imported, with every chosen month's recorded countries once each", () => {
+    const avocado = fixture({
+      availability: {
+        imported: {
+          months: [3, 4, 9],
+          origins: [
+            { months: [3, 4], countries: ['Spain', 'Peru'] },
+            { months: [9], countries: ['Spain', 'Kenya'] },
+          ],
+        },
+      },
+    })
+    expect(originOver(avocado, [4, 9])).toEqual({
+      origin: 'imported',
+      countries: ['Spain', 'Peru', 'Kenya'],
+    })
+  })
+
+  it('names no country for a month with none recorded', () => {
+    const mango = fixture({ availability: { imported: { months: [2, 3] } } })
+    expect(originOver(mango, [2, 3])).toEqual({ origin: 'imported', countries: [] })
+  })
+
+  it('is none when no chosen month has it at all', () => {
+    const lemon = fixture({ availability: { imported: { months: [1] } } })
+    expect(originOver(lemon, [6, 7]).origin).toBe('none')
   })
 })

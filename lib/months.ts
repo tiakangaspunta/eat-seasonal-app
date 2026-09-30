@@ -24,6 +24,11 @@ export const MONTH_NAMES: Record<Month, string> = {
   12: 'December',
 }
 
+/** The three-letter name, for the row of months and a card naming several months. */
+export function monthShort(month: Month): string {
+  return MONTH_NAMES[month].slice(0, 3)
+}
+
 /** The single letter shown in the twelve-month bar, where a name will not fit. */
 export function monthInitial(month: Month): string {
   return MONTH_NAMES[month].charAt(0)

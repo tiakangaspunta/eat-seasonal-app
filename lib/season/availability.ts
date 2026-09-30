@@ -41,14 +41,55 @@ export function originIn(ingredient: Ingredient, month: Month): Origin {
   return { origin: 'none', countries: [] }
 }
 
-const CALENDAR_SEASONS: { name: string; months: Month[] }[] = [
+/**
+ * Which of the chosen months an ingredient is fresh in and which it is from
+ * Finnish storage in, in the order given. A month that is both counts as fresh,
+ * as domesticAvailability has it.
+ */
+export function domesticMonthsIn(
+  ingredient: Ingredient,
+  months: Month[],
+): { fresh: Month[]; storage: Month[] } {
+  const fresh: Month[] = []
+  const storage: Month[] = []
+  for (const month of months) {
+    const status = domesticAvailability(ingredient, month)
+    if (status === 'fresh') fresh.push(month)
+    else if (status === 'storage') storage.push(month)
+  }
+  return { fresh, storage }
+}
+
+/** Which of the chosen months imported stock is available in. */
+export function importedMonthsIn(ingredient: Ingredient, months: Month[]): Month[] {
+  return months.filter((month) => importedAvailability(ingredient, month) === 'available')
+}
+
+/**
+ * originIn over several months. Domestic if Finland has it in any of them, for
+ * the same reason a single month prefers it. Otherwise imported, naming each
+ * country recorded for any chosen month once, and still never a guessed one.
+ */
+export function originOver(ingredient: Ingredient, months: Month[]): Origin {
+  const origins = months.map((month) => originIn(ingredient, month))
+  if (origins.some((entry) => entry.origin === 'domestic')) return { origin: 'domestic', countries: [] }
+  if (origins.some((entry) => entry.origin === 'imported')) {
+    return { origin: 'imported', countries: [...new Set(origins.flatMap((entry) => entry.countries))] }
+  }
+  return { origin: 'none', countries: [] }
+}
+
+export type SeasonName = 'winter' | 'spring' | 'summer' | 'autumn'
+
+/** Tia's split, confirmed 2026-09-30. The season buttons in the row of months use it too. */
+export const CALENDAR_SEASONS: { name: SeasonName; months: Month[] }[] = [
   { name: 'winter', months: [12, 1, 2] },
   { name: 'spring', months: [3, 4, 5] },
   { name: 'summer', months: [6, 7, 8] },
   { name: 'autumn', months: [9, 10, 11] },
 ]
 
-function seasonOf(month: Month): string {
+function seasonOf(month: Month): SeasonName {
   return CALENDAR_SEASONS.find((season) => season.months.includes(month))!.name
 }
 

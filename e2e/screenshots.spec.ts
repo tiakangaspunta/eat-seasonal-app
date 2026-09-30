@@ -38,6 +38,13 @@ test.describe('screenshots', () => {
     await page.screenshot({ path: `${OUT}/home-${testInfo.project.name}.png`, fullPage: false })
   })
 
+  test('home view over several months', async ({ page }, testInfo) => {
+    await page.goto('/?months=10,11')
+    await page.getByRole('heading', { level: 1 }).waitFor()
+    await photosOnScreen(page)
+    await page.screenshot({ path: `${OUT}/home-months-${testInfo.project.name}.png`, fullPage: false })
+  })
+
   test('ingredient panel open', async ({ page }, testInfo) => {
     const { name } = ingredientWithRecipes()
     await page.goto('/')

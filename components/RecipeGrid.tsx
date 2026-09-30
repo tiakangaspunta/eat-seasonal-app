@@ -12,7 +12,7 @@ import { useOpenParam } from '@/components/useOpenParam'
  * panel. A recipe with two meal types sits in both sections, since a soup that
  * is lunch and dinner should be found by someone looking for either.
  */
-export function RecipeGrid({ recipes }: { recipes: RecipeViewItem[] }) {
+export function RecipeGrid({ recipes, when }: { recipes: RecipeViewItem[]; when: string }) {
   const [selectedId, setSelectedId] = useOpenParam()
   // Where focus goes when the panel closes: back to the card that opened it.
   const opener = useRef<HTMLElement | null>(null)
@@ -54,7 +54,7 @@ export function RecipeGrid({ recipes }: { recipes: RecipeViewItem[] }) {
         })}
       </div>
 
-      {selected && <RecipePanel key={selected.id} recipe={selected} onClose={close} />}
+      {selected && <RecipePanel key={selected.id} recipe={selected} when={when} onClose={close} />}
     </div>
   )
 }

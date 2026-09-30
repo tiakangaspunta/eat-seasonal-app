@@ -10,7 +10,7 @@
  */
 import { expect, test } from '@playwright/test'
 
-import { currentMonthName, importedOnlyCount, ingredientWithRecipes } from './fixtures'
+import { anotherSeason, currentMonthName, importedOnlyCount, ingredientWithRecipes } from './fixtures'
 
 /** Every ingredient card is a button that opens the panel, and says so. */
 const cards = (page: import('@playwright/test').Page) => page.locator('button[aria-expanded]')
@@ -99,4 +99,24 @@ test('a recipe in an ingredient panel leads to that recipe, and its ingredient l
   await recipePanel.getByRole('link', { name, exact: true }).first().click()
   await expect(page.getByRole('dialog', { name: `${name} details` })).toBeVisible()
   await expect(page).toHaveURL(/\/\?open=/)
+})
+
+test('choosing a season changes the heading, survives a reload, and carries to the other view', async ({
+  page,
+}) => {
+  const season = anotherSeason()
+  const heading = page.getByRole('heading', { level: 1 })
+  // The same wait as the switch flow: a click before the page is ready is lost.
+  await page.goto('/', { waitUntil: 'networkidle' })
+
+  await page.getByRole('group', { name: 'Seasons' }).getByRole('button', { name: season }).click()
+  await expect(page).toHaveURL(/months=/)
+  await expect(heading).toHaveText(new RegExp(`^${season}$`, 'i'))
+
+  await page.reload()
+  await expect(heading).toHaveText(new RegExp(`^${season}$`, 'i'))
+
+  await page.getByRole('navigation', { name: 'View' }).getByRole('link', { name: 'Recipes' }).click()
+  await expect(page).toHaveURL(/\/recipes\?months=/)
+  await expect(heading).toHaveText(new RegExp(`^${season}$`, 'i'))
 })
