@@ -8,7 +8,9 @@
         1,
         2,
         3,
-        4
+        4,
+        11,
+        12
       ],
       "origins": [
         {
@@ -26,10 +28,28 @@
             "Italy",
             "Greece"
           ]
+        },
+        {
+          "months": [
+            11,
+            12
+          ],
+          "countries": [
+            "Spain",
+            "Egypt",
+            "Morocco",
+            "Israel",
+            "Italy",
+            "Greece"
+          ]
         }
       ]
     }
   },
   "verified": true,
-  "similarTo": []
+  "similarTo": [],
+  "unverifiedMonths": [
+    11,
+    12
+  ]
 }

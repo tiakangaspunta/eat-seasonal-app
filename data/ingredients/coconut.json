@@ -5,7 +5,9 @@
   "availability": {
     "imported": {
       "months": [
-        1
+        1,
+        11,
+        12
       ],
       "origins": [
         {
@@ -16,10 +18,24 @@
             "Philippines",
             "Brazil"
           ]
+        },
+        {
+          "months": [
+            11,
+            12
+          ],
+          "countries": [
+            "Philippines",
+            "Brazil"
+          ]
         }
       ]
     }
   },
   "verified": true,
-  "similarTo": []
+  "similarTo": [],
+  "unverifiedMonths": [
+    11,
+    12
+  ]
 }

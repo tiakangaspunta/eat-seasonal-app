@@ -5,10 +5,11 @@ Those pages also cover January to April, which is the range Tia's Notion export
 already filled in and marked verified. In 28 cases the two disagree, and the
 disagreement is always the same one.
 
-**Nothing here has been changed.** Issue 004's rule is that existing verified
-months are untouched, so the data still says what Tia's Notion said. This file
-is the list to work through, most likely at step 3 when the full twelve-month
-calendar lands.
+**Settled on 2026-09-30 (issue 013).** Tia trusts satokausi.fi, so its split
+was applied to every case below; see `docs/DECISIONS.md`. The rest of this file
+is the record of what the disagreement was. When it was written, nothing had
+been changed, because issue 004's rule was that existing verified months are
+untouched.
 
 ## The disagreement
 

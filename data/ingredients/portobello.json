@@ -4,20 +4,27 @@
   "category": "mushroom",
   "availability": {
     "domestic": {
-      "freshMonths": [
+      "freshMonths": [],
+      "storageMonths": [
         1,
         2,
         3,
-        4
-      ],
-      "storageMonths": [
-        9
+        4,
+        8,
+        9,
+        10,
+        11,
+        12
       ]
     }
   },
   "verified": true,
   "similarTo": [],
   "unverifiedMonths": [
-    9
+    8,
+    9,
+    10,
+    11,
+    12
   ]
 }

@@ -9,7 +9,9 @@
         2,
         3,
         4,
-        9
+        9,
+        10,
+        12
       ],
       "origins": [
         {
@@ -35,6 +37,27 @@
             "Kenya",
             "South Africa"
           ]
+        },
+        {
+          "months": [
+            10
+          ],
+          "countries": [
+            "Spain",
+            "Kenya",
+            "South Africa"
+          ]
+        },
+        {
+          "months": [
+            12
+          ],
+          "countries": [
+            "Spain",
+            "Colombia",
+            "Peru",
+            "Mexico"
+          ]
         }
       ]
     }
@@ -42,7 +65,9 @@
   "verified": true,
   "similarTo": [],
   "unverifiedMonths": [
-    9
+    9,
+    10,
+    12
   ],
   "image": {
     "file": "/images/ingredients/avocado.jpg",

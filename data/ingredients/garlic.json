@@ -6,15 +6,25 @@
     "imported": {
       "months": [
         2
-      ]
+      ],
+      "origins": []
     },
     "domestic": {
       "freshMonths": [
-        9
+        6,
+        7,
+        8,
+        9,
+        10
       ],
-      "storageMonths": [],
+      "storageMonths": [
+        11,
+        12
+      ],
       "peakMonths": [
-        9
+        6,
+        9,
+        10
       ]
     }
   },

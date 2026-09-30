@@ -5,17 +5,34 @@
   "availability": {
     "domestic": {
       "freshMonths": [
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "storageMonths": [
+        1,
         2,
         3,
-        9
+        4,
+        12
       ],
-      "storageMonths": []
+      "peakMonths": [
+        10,
+        11
+      ]
     }
   },
   "verified": true,
   "similarTo": [],
   "unverifiedMonths": [
-    9
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
   ],
   "image": {
     "file": "/images/ingredients/shallot.jpg",

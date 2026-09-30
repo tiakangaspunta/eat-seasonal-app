@@ -7,7 +7,11 @@
       "months": [
         1,
         2,
-        3
+        3,
+        5,
+        10,
+        11,
+        12
       ],
       "origins": [
         {
@@ -21,10 +25,36 @@
             "Turkey",
             "United States"
           ]
+        },
+        {
+          "months": [
+            5,
+            10
+          ],
+          "countries": [
+            "South Africa"
+          ]
+        },
+        {
+          "months": [
+            11,
+            12
+          ],
+          "countries": [
+            "Spain",
+            "Turkey",
+            "United States"
+          ]
         }
       ]
     }
   },
   "verified": true,
-  "similarTo": []
+  "similarTo": [],
+  "unverifiedMonths": [
+    5,
+    10,
+    11,
+    12
+  ]
 }

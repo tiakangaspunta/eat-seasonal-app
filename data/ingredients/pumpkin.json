@@ -5,19 +5,28 @@
   "availability": {
     "domestic": {
       "freshMonths": [
-        1,
-        9
+        9,
+        10,
+        11
       ],
-      "storageMonths": [],
+      "storageMonths": [
+        1,
+        12
+      ],
       "peakMonths": [
-        9
+        9,
+        10,
+        11
       ]
     }
   },
   "verified": true,
   "similarTo": [],
   "unverifiedMonths": [
-    9
+    9,
+    10,
+    11,
+    12
   ],
   "image": {
     "file": "/images/ingredients/pumpkin.jpg",

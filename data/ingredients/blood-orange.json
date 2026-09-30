@@ -7,7 +7,8 @@
       "months": [
         2,
         3,
-        4
+        4,
+        12
       ],
       "origins": [
         {
@@ -20,10 +21,21 @@
             "Italy",
             "Spain"
           ]
+        },
+        {
+          "months": [
+            12
+          ],
+          "countries": [
+            "Italy"
+          ]
         }
       ]
     }
   },
   "verified": true,
-  "similarTo": []
+  "similarTo": [],
+  "unverifiedMonths": [
+    12
+  ]
 }

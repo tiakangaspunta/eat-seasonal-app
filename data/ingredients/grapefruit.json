@@ -5,7 +5,10 @@
   "availability": {
     "imported": {
       "months": [
-        2
+        2,
+        10,
+        11,
+        12
       ],
       "origins": [
         {
@@ -16,10 +19,26 @@
             "Spain",
             "Israel"
           ]
+        },
+        {
+          "months": [
+            10,
+            11,
+            12
+          ],
+          "countries": [
+            "Spain",
+            "Israel"
+          ]
         }
       ]
     }
   },
   "verified": true,
-  "similarTo": []
+  "similarTo": [],
+  "unverifiedMonths": [
+    10,
+    11,
+    12
+  ]
 }

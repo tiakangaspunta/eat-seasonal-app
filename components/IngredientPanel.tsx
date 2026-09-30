@@ -52,12 +52,6 @@ export function IngredientPanel({
         </>
       }
     >
-      {ingredient.unverified && (
-        <p className="rounded-md bg-amber-50 px-3 py-2 text-sm text-amber-900">
-          These months are drafted from satokausi.fi and not yet confirmed.
-        </p>
-      )}
-
       <EditableNotes kind="ingredient" id={ingredient.id} note={ingredient.notes} />
 
       <section>

@@ -5,18 +5,51 @@
   "availability": {
     "domestic": {
       "freshMonths": [
+        5,
+        6,
+        7,
+        8,
         9
       ],
       "storageMonths": [],
       "peakMonths": [
+        6,
+        7,
+        8,
         9
+      ]
+    },
+    "imported": {
+      "months": [
+        5,
+        10,
+        11
+      ],
+      "origins": [
+        {
+          "months": [
+            5,
+            10,
+            11
+          ],
+          "countries": [
+            "Spain",
+            "Netherlands"
+          ]
+        }
       ]
     }
   },
   "verified": true,
   "similarTo": [],
   "unverifiedMonths": [
-    9
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
   ],
   "image": {
     "file": "/images/ingredients/red-chili.jpg",

@@ -781,3 +781,41 @@ of four wrong choices.
   app writes (two-space JSON, one field per line). Before, the first save of a
   name or note on one of them expanded its compact one-line ingredient rows, so
   a one-word edit showed as an 80-line diff. The data is unchanged.
+
+## 2026-09-30 The rest of the year, from satokausi.fi
+
+- **May to August and October to December come from the same pages as
+  September.** One read per ingredient page, saved as `scripts/year-source.json`,
+  so a rerun of the apply script works from what was read rather than fetching
+  again. Every month added is drafted.
+- **A month the page does not settle is left empty, not filled.** Where a row
+  has no origin flag, it is not known whether the produce is Finnish or
+  imported, so nothing is written and the month is listed for Tia. That leaves
+  red cabbage with no June to December for now, which looks wrong on the home
+  view but is honest. The same goes for romanesco's "EPS" flag, most likely a
+  typo for Spain.
+- **"Grown year round" in words counts as a source.** Button and oyster
+  mushroom have a sentence instead of a table; it says Finland, all year, and is
+  used as such.
+
+## 2026-09-30 satokausi.fi is trusted, and months are filtered by
+
+- **Tia does not review sourced months one by one.** Compared with her own
+  Notion data for January to April, satokausi.fi agrees on 218 of 232
+  ingredient-months (94%), never says "not available" where she says
+  available, and differs only by listing some extra storage months. No
+  independent calendar was found to check it further: most Finnish calendars
+  online derive from it, and kasvikset.fi, Valio Aimo, kultainto.com and
+  Arktiset Aromit had no usable month data. So months read from satokausi.fi
+  are taken as they are, and mistakes are fixed when Tia finds them. Issue 012's
+  review step is dropped.
+- **Months and seasons are a filter on both views.** One or several months can
+  be picked, in the ingredient view and the recipe view alike. A season is its
+  three months as the app already defines them (winter December to February,
+  spring March to May, summer June to August, autumn September to November);
+  Tia confirmed that split.
+- **January to April follows satokausi.fi too** (issue 013). Tia's Notion
+  months could not tell fresh from storage, and satokausi can, so its reading
+  replaces them: January carrots are from storage, not fresh. The months stay
+  marked as Tia's, since she made the call. Where a page gives no origin flag
+  for a month, her Notion month is kept.

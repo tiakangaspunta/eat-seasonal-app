@@ -5,9 +5,14 @@
   "availability": {
     "domestic": {
       "freshMonths": [
-        9
+        8,
+        9,
+        10
       ],
-      "storageMonths": []
+      "storageMonths": [],
+      "peakMonths": [
+        8
+      ]
     }
   },
   "verified": false,

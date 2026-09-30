@@ -5,16 +5,33 @@
   "availability": {
     "domestic": {
       "freshMonths": [
-        1,
-        9
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
       ],
-      "storageMonths": []
+      "storageMonths": [
+        1,
+        12
+      ],
+      "peakMonths": [
+        6,
+        11
+      ]
     }
   },
   "verified": true,
   "similarTo": [],
   "unverifiedMonths": [
-    9
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
   ],
   "image": {
     "file": "/images/ingredients/pointed-cabbage.jpg",

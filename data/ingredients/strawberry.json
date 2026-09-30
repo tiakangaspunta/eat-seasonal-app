@@ -2,7 +2,22 @@
   "id": "strawberry",
   "name": "Strawberry",
   "category": "berry",
-  "availability": {},
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        7,
+        8
+      ],
+      "storageMonths": [],
+      "peakMonths": [
+        7
+      ]
+    }
+  },
   "verified": true,
-  "similarTo": []
+  "similarTo": [],
+  "unverifiedMonths": [
+    7,
+    8
+  ]
 }

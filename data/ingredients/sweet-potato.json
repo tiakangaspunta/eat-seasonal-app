@@ -8,7 +8,11 @@
         1,
         2,
         3,
-        4
+        4,
+        5,
+        10,
+        11,
+        12
       ],
       "origins": [
         {
@@ -31,6 +35,20 @@
           "countries": [
             "United States",
             "Israel"
+          ]
+        },
+        {
+          "months": [
+            5,
+            10,
+            11,
+            12
+          ],
+          "countries": [
+            "United States",
+            "Israel",
+            "Spain",
+            "Netherlands"
           ]
         }
       ]

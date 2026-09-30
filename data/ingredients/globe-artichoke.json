@@ -22,10 +22,12 @@
     },
     "domestic": {
       "freshMonths": [
+        8,
         9
       ],
       "storageMonths": [],
       "peakMonths": [
+        8,
         9
       ]
     }

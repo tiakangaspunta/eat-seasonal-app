@@ -6,7 +6,10 @@
     "imported": {
       "months": [
         3,
-        4
+        4,
+        10,
+        11,
+        12
       ],
       "origins": [
         {
@@ -17,10 +20,25 @@
           "countries": [
             "China"
           ]
+        },
+        {
+          "months": [
+            10,
+            11,
+            12
+          ],
+          "countries": [
+            "China"
+          ]
         }
       ]
     }
   },
   "verified": true,
-  "similarTo": []
+  "similarTo": [],
+  "unverifiedMonths": [
+    10,
+    11,
+    12
+  ]
 }

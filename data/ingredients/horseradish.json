@@ -5,17 +5,31 @@
   "availability": {
     "domestic": {
       "freshMonths": [
+        8,
+        9,
+        10
+      ],
+      "storageMonths": [
+        1,
+        2,
         3,
         4,
-        9
+        11,
+        12
       ],
-      "storageMonths": []
+      "peakMonths": [
+        10
+      ]
     }
   },
   "verified": true,
   "similarTo": [],
   "unverifiedMonths": [
-    9
+    8,
+    9,
+    10,
+    11,
+    12
   ],
   "image": {
     "file": "/images/ingredients/horseradish.jpg",

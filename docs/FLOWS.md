@@ -39,7 +39,7 @@ flowchart TD
     filter -->|"yes"| both["Also produce with imported months this month"]
     domestic --> grid["Cards grouped into vegetable, fruit, berry, mushroom and herb"]
     both --> grid
-    grid --> card["Card: name, season label, fresh or from storage, unverified badge if the months are drafted"]
+    grid --> card["Card: name, season label, fresh or from storage"]
     card -->|"click"| panel["Ingredient panel opens, the grid stays visible and clickable"]
 
     panel --> months["Twelve-month bar: fresh, from storage, not available, this month ringed"]

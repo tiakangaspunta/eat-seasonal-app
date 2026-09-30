@@ -7,7 +7,11 @@
       "months": [
         2,
         3,
-        4
+        4,
+        5,
+        10,
+        11,
+        12
       ],
       "origins": [
         {
@@ -20,10 +24,28 @@
             "Ecuador",
             "Costa Rica"
           ]
+        },
+        {
+          "months": [
+            5,
+            10,
+            11,
+            12
+          ],
+          "countries": [
+            "Ecuador",
+            "Costa Rica"
+          ]
         }
       ]
     }
   },
   "verified": true,
-  "similarTo": []
+  "similarTo": [],
+  "unverifiedMonths": [
+    5,
+    10,
+    11,
+    12
+  ]
 }

@@ -5,15 +5,26 @@
   "availability": {
     "domestic": {
       "freshMonths": [
+        6,
+        7,
         9
       ],
-      "storageMonths": []
+      "storageMonths": [
+        10
+      ],
+      "peakMonths": [
+        6,
+        7
+      ]
     }
   },
   "verified": true,
   "similarTo": [],
   "unverifiedMonths": [
-    9
+    6,
+    7,
+    9,
+    10
   ],
   "image": {
     "file": "/images/ingredients/spring-onion.jpg",

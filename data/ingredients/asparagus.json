@@ -5,7 +5,8 @@
   "availability": {
     "imported": {
       "months": [
-        4
+        4,
+        5
       ],
       "origins": [
         {
@@ -15,7 +16,26 @@
           "countries": [
             "Spain"
           ]
+        },
+        {
+          "months": [
+            5
+          ],
+          "countries": [
+            "Spain",
+            "Italy"
+          ]
         }
+      ]
+    },
+    "domestic": {
+      "freshMonths": [
+        5,
+        6
+      ],
+      "storageMonths": [],
+      "peakMonths": [
+        6
       ]
     }
   },
@@ -24,5 +44,9 @@
   "notes": {
     "en": "Spanish asparagus runs April and May. Finnish asparagus is May and June, so the domestic months belong in the full-year calendar.",
     "fi": ""
-  }
+  },
+  "unverifiedMonths": [
+    5,
+    6
+  ]
 }

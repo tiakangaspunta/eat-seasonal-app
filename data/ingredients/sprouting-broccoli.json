@@ -5,7 +5,9 @@
   "availability": {
     "imported": {
       "months": [
-        4
+        4,
+        5,
+        6
       ],
       "origins": [
         {
@@ -15,15 +17,28 @@
           "countries": [
             "Spain"
           ]
+        },
+        {
+          "months": [
+            5,
+            6
+          ],
+          "countries": [
+            "Spain"
+          ]
         }
       ]
     },
     "domestic": {
       "freshMonths": [
+        7,
+        8,
         9
       ],
       "storageMonths": [],
       "peakMonths": [
+        7,
+        8,
         9
       ]
     }

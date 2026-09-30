@@ -51,15 +51,20 @@ describe('ingredient data', () => {
 
   it('merged the domestic and imported rows for apple onto one ingredient', () => {
     const apple = getIngredient('apple')
-    expect(apple?.availability.domestic?.freshMonths).toEqual([1, 2, 9])
+    // Fresh August to October, then from storage November to February: Tia's
+    // Notion months, split into fresh and storage by satokausi (issues 004,
+    // 012 and 013).
+    expect(apple?.availability.domestic?.freshMonths).toEqual([8, 9, 10])
+    expect(apple?.availability.domestic?.storageMonths).toEqual([1, 2, 11, 12])
     expect(ingredients.filter((i) => i.name === 'Apple')).toHaveLength(1)
   })
 
-  it('marks September drafted wherever it came from satokausi.fi', () => {
-    // September is issue 004's slice: sourced, but not yet confirmed by Tia.
+  it('marks every month from satokausi.fi drafted, and none of Tia’s own', () => {
+    // September (issue 004) and August to December (issue 012) are sourced,
+    // but not yet confirmed by Tia. January and February are hers.
     const apple = getIngredient('apple')
     expect(apple?.verified).toBe(true)
-    expect(apple?.unverifiedMonths).toEqual([9])
+    expect(apple?.unverifiedMonths).toEqual([8, 9, 10, 11, 12])
     // An ingredient Tia had already verified for September keeps its clean record.
     expect(getIngredient('funnel-chanterelle')?.unverifiedMonths).toBeUndefined()
   })

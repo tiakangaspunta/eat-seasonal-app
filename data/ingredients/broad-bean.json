@@ -5,18 +5,39 @@
   "availability": {
     "domestic": {
       "freshMonths": [
-        9
+        8,
+        9,
+        10
       ],
       "storageMonths": [],
       "peakMonths": [
+        8,
         9
+      ]
+    },
+    "imported": {
+      "months": [
+        10
+      ],
+      "origins": [
+        {
+          "months": [
+            10
+          ],
+          "countries": [
+            "Spain",
+            "Italy"
+          ]
+        }
       ]
     }
   },
   "verified": true,
   "similarTo": [],
   "unverifiedMonths": [
-    9
+    8,
+    9,
+    10
   ],
   "searchTermFi": "härkäpapu",
   "image": {

@@ -6,7 +6,9 @@
     "imported": {
       "months": [
         1,
-        2
+        2,
+        11,
+        12
       ],
       "origins": [
         {
@@ -18,15 +20,29 @@
             "Spain",
             "Italy"
           ]
+        },
+        {
+          "months": [
+            11,
+            12
+          ],
+          "countries": [
+            "Spain",
+            "Italy"
+          ]
         }
       ]
     },
     "domestic": {
       "freshMonths": [
+        8,
         9
       ],
-      "storageMonths": [],
+      "storageMonths": [
+        10
+      ],
       "peakMonths": [
+        8,
         9
       ]
     }

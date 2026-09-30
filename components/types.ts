@@ -26,7 +26,6 @@ export type HomeIngredient = {
   origin: 'domestic' | 'imported' | 'none'
   countries: string[]
   seasonLabel?: string
-  unverified: boolean
   freshMonths: Month[]
   storageMonths: Month[]
   importedMonths: Month[]

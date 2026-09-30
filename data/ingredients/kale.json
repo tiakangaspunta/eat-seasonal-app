@@ -5,19 +5,27 @@
   "availability": {
     "domestic": {
       "freshMonths": [
-        1,
-        9
+        8,
+        9,
+        11
       ],
-      "storageMonths": [],
+      "storageMonths": [
+        1,
+        12
+      ],
       "peakMonths": [
-        9
+        9,
+        11
       ]
     }
   },
   "verified": true,
   "similarTo": [],
   "unverifiedMonths": [
-    9
+    8,
+    9,
+    11,
+    12
   ],
   "image": {
     "file": "/images/ingredients/kale.jpg",

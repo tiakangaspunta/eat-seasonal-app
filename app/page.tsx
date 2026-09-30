@@ -43,7 +43,6 @@ export default async function HomePage() {
     seasonLabel: ingredient.availability.domestic
       ? seasonLabel(ingredient.availability.domestic.freshMonths)
       : undefined,
-    unverified: ingredient.verified === false || (ingredient.unverifiedMonths?.includes(month) ?? false),
     freshMonths: ingredient.availability.domestic?.freshMonths ?? [],
     storageMonths: ingredient.availability.domestic?.storageMonths ?? [],
     importedMonths: ingredient.availability.imported?.months ?? [],

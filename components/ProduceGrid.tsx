@@ -148,17 +148,7 @@ function IngredientCard({
         <div className="h-16 w-16 shrink-0 rounded-md bg-neutral-100 sm:h-20 sm:w-20" aria-hidden />
       )}
       <div className="min-w-0 flex-1">
-        <div className="flex items-start justify-between gap-2">
-          <span className="font-medium">{ingredient.name}</span>
-          {ingredient.unverified && (
-            <span
-              className="mt-0.5 shrink-0 rounded-full bg-amber-100 px-2 py-0.5 text-xs text-amber-800"
-              title="This season data is drafted, not yet confirmed"
-            >
-              unverified
-            </span>
-          )}
-        </div>
+        <span className="font-medium">{ingredient.name}</span>
         {showOrigin && (
           <div className="mt-1.5">
             <OriginTag origin={ingredient.origin} countries={ingredient.countries} />

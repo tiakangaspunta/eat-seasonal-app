@@ -7,7 +7,11 @@
       "months": [
         2,
         3,
-        9
+        5,
+        9,
+        10,
+        11,
+        12
       ],
       "origins": [
         {
@@ -21,7 +25,26 @@
         },
         {
           "months": [
+            5
+          ],
+          "countries": [
+            "Brazil"
+          ]
+        },
+        {
+          "months": [
             9
+          ],
+          "countries": [
+            "Spain",
+            "Israel"
+          ]
+        },
+        {
+          "months": [
+            10,
+            11,
+            12
           ],
           "countries": [
             "Spain",
@@ -34,7 +57,11 @@
   "verified": true,
   "similarTo": [],
   "unverifiedMonths": [
-    9
+    5,
+    9,
+    10,
+    11,
+    12
   ],
   "image": {
     "file": "/images/ingredients/mango.jpg",

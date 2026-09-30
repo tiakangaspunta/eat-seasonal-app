@@ -18,8 +18,7 @@ exist yet. This file records what was actually built.
 - **Ingredient card** (`components/ProduceGrid.tsx`, issue 008): a thumbnail on
   the left, 64 pixels square and 80 from `sm:` up, with name, origin tag and
   season line filling the rest of the row. The text column is `min-w-0` so a
-  long name wraps instead of pushing the card wider, and the unverified badge
-  sits at the end of the name row and never shrinks.
+  long name wraps instead of pushing the card wider.
 
 - **Origin tag** (`components/OriginTag.tsx`, issue 008): the same pill at every
   size, wrapping to a second line rather than overflowing when a country list is

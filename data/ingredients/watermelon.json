@@ -5,9 +5,35 @@
   "availability": {
     "domestic": {
       "freshMonths": [
+        8,
         9
       ],
-      "storageMonths": []
+      "storageMonths": [
+        10
+      ]
+    },
+    "imported": {
+      "months": [
+        5,
+        6,
+        7,
+        8,
+        10
+      ],
+      "origins": [
+        {
+          "months": [
+            5,
+            6,
+            7,
+            8,
+            10
+          ],
+          "countries": [
+            "Spain"
+          ]
+        }
+      ]
     }
   },
   "verified": false,

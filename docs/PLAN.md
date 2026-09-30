@@ -20,7 +20,7 @@ model should not make it impossible later.
 | Seasons | What is in season in Finland |
 | Default view | Domestic produce, grouped by vegetable, fruit, berry, and mushroom |
 | Season precision | Month-level data, friendly season labels in the UI |
-| Calendar source | Notion export (January to April, verified), September drafted from satokausi.fi and flagged unverified |
+| Calendar source | Notion export (January to April), the rest of the year from satokausi.fi, trusted as it is and corrected when Tia finds a mistake |
 | Origin | One ingredient per produce, holding separate domestic and imported month sets |
 | Language | English only for now, Finnish as a later pass. Prose is bilingual, names are a single field in whatever language Tia prefers |
 | Editing | Ingredient and recipe names and notes are editable in the app, written back into the data files in dev mode |
@@ -173,10 +173,13 @@ There is no safety warning field. One was added for korvasieni and removed on
 2026-09-23: almost nothing needs one, so it earned no place in the model (see
 `DECISIONS.md`).
 
-`verified: false` renders a small marker wherever the ingredient appears, so a
-drafted month is never mistaken for a trusted one. Corrections are made by editing
-the data file, at which point the flag flips. The marker disappearing over time is
-its own progress bar. No verification screen is built.
+`verified` and `unverifiedMonths` record provenance only: which months are
+Tia's own and which were read from satokausi.fi. Nothing in the app shows them.
+On 2026-09-30 Tia chose to trust satokausi.fi rather than confirm each month (it
+agreed with her own data on 94% of months, and never contradicted her), so the
+"unverified" marker this paragraph once described was removed. Corrections are
+made by editing the data file when she finds a mistake. No verification screen
+is built.
 
 One boolean per ingredient turned out to be too coarse, because an ingredient can
 hold trusted and drafted months at once: carrot's January came from Tia's own
@@ -346,9 +349,12 @@ button keeps the view.
    ingredients have no season to group by and are found through recipes and
    search instead.
 5. Each ingredient is a card with photo, name, season label, whether it is fresh
-   or from storage this month, an unverified marker if drafted, and a cooked
-   marker if this month's progress includes it.
-6. A month strip along the top jumps to any other month.
+   or from storage this month, and a cooked marker if this month's progress
+   includes it.
+6. A row of months along the top chooses which months are shown: one, or
+   several, with Winter, Spring, Summer and Autumn buttons that pick their three
+   months at once. The same row is on the recipe view, and the choice carries
+   across (decided 2026-09-30).
 7. Clicking an ingredient opens the side panel.
 
 ### Ingredient side panel
@@ -396,7 +402,7 @@ a one to five star rating.
 
 ### Filters
 
-Season or month, meal type, effort, time needed, tags, and origin. Filter state
+Months and seasons (the row of months, section 7 Home point 6), meal type, effort, time needed, tags, and origin. Filter state
 lives in the URL query string so a filtered view can be linked and reloaded.
 
 ### Recipe search shortcut

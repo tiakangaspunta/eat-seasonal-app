@@ -5,15 +5,30 @@
   "availability": {
     "domestic": {
       "freshMonths": [
-        9
+        6,
+        7,
+        8,
+        9,
+        10
       ],
-      "storageMonths": []
+      "storageMonths": [
+        11
+      ],
+      "peakMonths": [
+        6,
+        10
+      ]
     }
   },
   "verified": true,
   "similarTo": [],
   "unverifiedMonths": [
-    9
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
   ],
   "image": {
     "file": "/images/ingredients/spinach.jpg",

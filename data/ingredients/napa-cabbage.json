@@ -5,12 +5,19 @@
   "availability": {
     "domestic": {
       "freshMonths": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "storageMonths": [
         1,
         2,
-        9
+        11,
+        12
       ],
-      "storageMonths": [],
       "peakMonths": [
+        8,
         9
       ]
     }
@@ -18,7 +25,12 @@
   "verified": true,
   "similarTo": [],
   "unverifiedMonths": [
-    9
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
   ],
   "image": {
     "file": "/images/ingredients/napa-cabbage.jpg",
