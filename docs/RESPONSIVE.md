@@ -63,6 +63,13 @@ exist yet. This file records what was actually built.
   one never collapses to a sliver. Both the name and the field it becomes are at
   least 44 pixels high at every size.
 
+- **Note editing** (`components/EditableNotes.tsx`, step 2): opens the same way
+  as a name, a click on desktop and a press and hold on touch. "Add a note" is a
+  plain tap, since it opens nothing else. The text box is the full width of the
+  panel at every size and grows a line at a time with the note rather than
+  scrolling inside itself. The note, the add button and the box are all at
+  least 44 pixels high.
+
 - **Photo contact sheet** (`components/ContactSheet.tsx`, issue 010,
   development only): one candidate tile per row on a phone, two from `sm:` up
   and four from `lg:`, so a row of four is one glance on a laptop and a short
@@ -82,5 +89,5 @@ exist yet. This file records what was actually built.
 ## Not built yet
 
 Month strip, combine control (its space is reserved in the panel, its logic is
-step 5), name editing, and filters. See `docs/PLAN.md` section 8 for the
+step 5), and filters. See `docs/PLAN.md` section 8 for the
 intended mobile form of each.

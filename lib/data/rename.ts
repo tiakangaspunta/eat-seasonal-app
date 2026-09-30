@@ -24,7 +24,7 @@ const CONTENT = {
 export const isRenameKind = (value: string): value is RenameKind => value in CONTENT
 
 /** The ids we generate: lowercase slugs. Anything else cannot address a file. */
-const ID = /^[a-z0-9]+(-[a-z0-9]+)*$/
+export const ID = /^[a-z0-9]+(-[a-z0-9]+)*$/
 
 /** Long enough for "Kelta- ja kaurajuuri", short enough to stay a name. */
 const MAX_LENGTH = 80

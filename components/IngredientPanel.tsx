@@ -5,6 +5,7 @@ import { useState } from 'react'
 
 import { MONTHS, MONTH_NAMES, monthInitial } from '@/lib/months'
 import { EditableName } from '@/components/EditableName'
+import { EditableNotes } from '@/components/EditableNotes'
 import { MEAL_TYPE_ORDER } from '@/components/labels'
 import { OriginTag } from '@/components/OriginTag'
 import { SidePanel } from '@/components/SidePanel'
@@ -57,7 +58,7 @@ export function IngredientPanel({
         </p>
       )}
 
-      {ingredient.notes && <p className="text-sm text-neutral-700">{ingredient.notes}</p>}
+      <EditableNotes kind="ingredient" id={ingredient.id} note={ingredient.notes} />
 
       <section>
         <h3 className="text-sm font-semibold text-neutral-900">Through the year</h3>

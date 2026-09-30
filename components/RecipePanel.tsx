@@ -3,6 +3,7 @@
 import Link from 'next/link'
 
 import { EditableName } from '@/components/EditableName'
+import { EditableNotes } from '@/components/EditableNotes'
 import { SUBSTITUTION_REASON_LABEL, formatQuantity } from '@/components/labels'
 import { SidePanel } from '@/components/SidePanel'
 import type { RecipeLine, RecipeName, RecipeViewItem } from '@/components/types'
@@ -72,12 +73,7 @@ export function RecipePanel({ recipe, onClose }: { recipe: RecipeViewItem; onClo
         </p>
       )}
 
-      {recipe.ownNotes && (
-        <section>
-          <h3 className="text-sm font-semibold text-neutral-900">Notes</h3>
-          <p className="mt-1 whitespace-pre-line text-sm text-neutral-700">{recipe.ownNotes}</p>
-        </section>
-      )}
+      <EditableNotes kind="recipe" id={recipe.id} note={recipe.ownNotes} heading="Notes" />
 
       <section>
         <h3 className="text-sm font-semibold text-neutral-900">Ingredients</h3>

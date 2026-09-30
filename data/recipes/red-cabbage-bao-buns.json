@@ -12,7 +12,9 @@
       "unit": "g",
       "substitutions": [
         {
-          "use": { "ingredientId": "shallot" },
+          "use": {
+            "ingredientId": "shallot"
+          },
           "reason": "seasonal",
           "ratio": "1:1",
           "note": {
@@ -22,27 +24,83 @@
         }
       ]
     },
-    { "ingredientId": "balsamic-vinegar", "quantity": 1, "unit": "dl" },
-    { "freeText": "water", "quantity": 0.5, "unit": "dl" },
-    { "freeText": "salt", "quantity": 0.5, "unit": "tsp" },
-    { "freeText": "jam sugar", "quantity": 1, "unit": "dl" },
-    { "ingredientId": "red-cabbage", "quantity": 200, "unit": "g" },
-    { "ingredientId": "sesame-oil", "quantity": 0.5, "unit": "tbsp" },
-    { "ingredientId": "lime", "quantity": 0.5 },
-    { "freeText": "salt and sugar", "unit": "pinch" },
-    { "ingredientId": "kidney-beans", "quantity": 230, "unit": "g" },
-    { "ingredientId": "garlic", "quantity": 1, "unit": "clove" },
-    { "freeText": "oil", "quantity": 2, "unit": "tbsp" },
-    { "ingredientId": "lime", "quantity": 1 },
-    { "ingredientId": "red-chili", "quantity": 1 },
-    { "freeText": "salt", "unit": "pinch" },
-    { "freeText": "bao buns", "quantity": 8 },
+    {
+      "ingredientId": "balsamic-vinegar",
+      "quantity": 1,
+      "unit": "dl"
+    },
+    {
+      "freeText": "water",
+      "quantity": 0.5,
+      "unit": "dl"
+    },
+    {
+      "freeText": "salt",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "freeText": "jam sugar",
+      "quantity": 1,
+      "unit": "dl"
+    },
+    {
+      "ingredientId": "red-cabbage",
+      "quantity": 200,
+      "unit": "g"
+    },
+    {
+      "ingredientId": "sesame-oil",
+      "quantity": 0.5,
+      "unit": "tbsp"
+    },
+    {
+      "ingredientId": "lime",
+      "quantity": 0.5
+    },
+    {
+      "freeText": "salt and sugar",
+      "unit": "pinch"
+    },
+    {
+      "ingredientId": "kidney-beans",
+      "quantity": 230,
+      "unit": "g"
+    },
+    {
+      "ingredientId": "garlic",
+      "quantity": 1,
+      "unit": "clove"
+    },
+    {
+      "freeText": "oil",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
+    {
+      "ingredientId": "lime",
+      "quantity": 1
+    },
+    {
+      "ingredientId": "red-chili",
+      "quantity": 1
+    },
+    {
+      "freeText": "salt",
+      "unit": "pinch"
+    },
+    {
+      "freeText": "bao buns",
+      "quantity": 8
+    },
     {
       "ingredientId": "coriander",
       "unit": "to taste",
       "substitutions": [
         {
-          "use": { "ingredientId": "parsley" },
+          "use": {
+            "ingredientId": "parsley"
+          },
           "reason": "seasonal",
           "ratio": "1:1",
           "note": {
@@ -53,8 +111,13 @@
       ]
     }
   ],
-  "mealType": ["snack", "side"],
-  "tags": ["vegan"],
+  "mealType": [
+    "snack",
+    "side"
+  ],
+  "tags": [
+    "vegan"
+  ],
   "timeMinutes": 45,
   "effort": "medium",
   "servings": 8

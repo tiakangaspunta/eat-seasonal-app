@@ -100,6 +100,34 @@ Lists are ordered by the name on screen, not by the id underneath, so renaming
 something moves it. Tia's call on 2026-09-17: ids stay English slugs forever, so
 id order stops being alphabetical the moment a name becomes Finnish.
 
+## Editing a note
+
+Step 2. An ingredient's notes in the ingredient panel, Tia's own notes on a
+recipe in the recipe panel. Development only, like renaming: in a production
+build a note is plain text, and a missing one shows nothing.
+
+```mermaid
+flowchart TD
+    panel{"Does it have a note?"}
+    panel -->|"yes"| note["The note, as text"]
+    panel -->|"no"| add["+ Add a note"]
+    note -->|"click, or press and hold on a touch screen"| field["A text box with the note, caret at the end"]
+    add -->|"click or tap"| field
+    field -->|"Enter"| field
+    field -->|"Escape"| panel
+    field -->|"Ctrl+Enter, or clicking away"| check{"Changed?"}
+    check -->|"no"| panel
+    check -->|"yes"| write["PATCH /api/notes/:kind/:id"]
+    write --> guard{"Running in development?"}
+    guard -->|"no"| gone["404: the route was never built"]
+    guard -->|"yes"| validate{"Valid slug id, at most 2000 characters, file exists?"}
+    validate -->|"no"| error["The old note comes back, with the reason beneath it"]
+    validate -->|"yes, and not empty"| file["The English text is written; fi is kept, or starts empty"]
+    validate -->|"yes, and empty"| remove["The note is removed, unless it has a Finnish text to keep"]
+    file --> refresh["router.refresh(): the panel shows the saved note"]
+    remove --> refresh
+```
+
 ## Approving a photo for an ingredient
 
 Built in issue 010. Development only, apart from the credits page: the contact
@@ -133,5 +161,5 @@ flowchart TD
 
 ## Not drawn yet
 
-The recipe panel (step 2), the month strip and the month view (step 3),
+The month strip and the month view (step 3),
 favourites, tried and monthly progress (step 4), and combine (step 5).

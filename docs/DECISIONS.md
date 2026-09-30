@@ -749,3 +749,35 @@ of four wrong choices.
   a guessed-at adaptation. The card names the ingredients that put the recipe in
   season, since "in season" on a recipe with one seasonal onion would otherwise
   overclaim.
+
+## 2026-09-30 Which recipe sites can be read
+
+- **Seven sites read fine, three need pasting.** One recipe page per site,
+  tested once: satokausi.fi, yhteishyva.fi, sydanmerkki.fi, ravintolanepal.fi,
+  arla.fi, valio.fi and kotikokki.net return the page with its ingredient list.
+  k-ruoka.fi answers with a Cloudflare bot check, fazer.com sends an empty shell
+  that JavaScript fills in, and soppa365.fi is refused by the fetch tool. The
+  table lives in `docs/ADDING-RECIPES.md`, where it is used.
+- **soppa365.fi is paste-only by choice, not only by capability.** A plain
+  request does get the page, but its `robots.txt` turns away AI assistants by
+  name (ChatGPT-user, GPTBot, CCBot, Google-Extended). That is the site saying
+  no, so it is treated the same as a block rather than worked around.
+
+## 2026-09-30 Notes are editable in the app
+
+- **Ingredient notes and personal recipe notes open like names**: a click on
+  desktop, a press and hold on touch, written into `data/` through a route that
+  only exists in development. Where there is no note, an "Add a note" button
+  stands in for it in both panels, since only one ingredient and no recipe had
+  a note to edit.
+- **An emptied note is removed, not reverted.** Tia's call: clearing a note is
+  something she means to do, unlike an empty name, which is a slip. A Finnish
+  text, if one is ever there, is kept rather than lost with the English.
+- **Enter is a new line.** Notes can have paragraphs, so Ctrl+Enter (⌘+Enter)
+  saves, as does clicking away.
+- **Only `en` is written.** A new note starts with `fi` empty, as every
+  user-facing string does until the localization step.
+- **The four hand-built recipe files are reformatted once** into the layout the
+  app writes (two-space JSON, one field per line). Before, the first save of a
+  name or note on one of them expanded its compact one-line ingredient rows, so
+  a one-word edit showed as an 80-line diff. The data is unchanged.

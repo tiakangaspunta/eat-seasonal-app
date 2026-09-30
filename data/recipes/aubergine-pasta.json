@@ -12,7 +12,9 @@
       "unit": "g",
       "substitutions": [
         {
-          "use": { "ingredientId": "pumpkin" },
+          "use": {
+            "ingredientId": "pumpkin"
+          },
           "reason": "seasonal",
           "ratio": "1:1",
           "note": {
@@ -22,18 +24,39 @@
         }
       ]
     },
-    { "freeText": "oil", "quantity": 1, "unit": "tbsp" },
-    { "freeText": "dried oregano", "quantity": 2, "unit": "tsp" },
-    { "freeText": "salt", "quantity": 0.25, "unit": "tsp" },
-    { "ingredientId": "yellow-onion", "quantity": 1 },
-    { "ingredientId": "garlic", "quantity": 2, "unit": "clove" },
+    {
+      "freeText": "oil",
+      "quantity": 1,
+      "unit": "tbsp"
+    },
+    {
+      "freeText": "dried oregano",
+      "quantity": 2,
+      "unit": "tsp"
+    },
+    {
+      "freeText": "salt",
+      "quantity": 0.25,
+      "unit": "tsp"
+    },
+    {
+      "ingredientId": "yellow-onion",
+      "quantity": 1
+    },
+    {
+      "ingredientId": "garlic",
+      "quantity": 2,
+      "unit": "clove"
+    },
     {
       "ingredientId": "crushed-tomatoes",
       "quantity": 400,
       "unit": "g",
       "substitutions": [
         {
-          "use": { "ingredientId": "tomato" },
+          "use": {
+            "ingredientId": "tomato"
+          },
           "reason": "seasonal",
           "ratio": "600 g fresh for 400 g tinned",
           "note": {
@@ -43,17 +66,35 @@
         }
       ]
     },
-    { "freeText": "water", "quantity": 1, "unit": "dl" },
-    { "freeText": "salt", "quantity": 1, "unit": "tsp" },
-    { "ingredientId": "tofu", "quantity": 350, "unit": "g" },
-    { "ingredientId": "pasta", "quantity": 300, "unit": "g" },
+    {
+      "freeText": "water",
+      "quantity": 1,
+      "unit": "dl"
+    },
+    {
+      "freeText": "salt",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "ingredientId": "tofu",
+      "quantity": 350,
+      "unit": "g"
+    },
+    {
+      "ingredientId": "pasta",
+      "quantity": 300,
+      "unit": "g"
+    },
     {
       "ingredientId": "basil",
       "quantity": 0.5,
       "unit": "pot",
       "substitutions": [
         {
-          "use": { "ingredientId": "parsley" },
+          "use": {
+            "ingredientId": "parsley"
+          },
           "reason": "seasonal",
           "ratio": "1:1",
           "note": {
@@ -63,10 +104,18 @@
         }
       ]
     },
-    { "ingredientId": "sunflower-seeds", "quantity": 2, "unit": "tbsp" }
+    {
+      "ingredientId": "sunflower-seeds",
+      "quantity": 2,
+      "unit": "tbsp"
+    }
   ],
-  "mealType": ["dinner"],
-  "tags": ["vegan"],
+  "mealType": [
+    "dinner"
+  ],
+  "tags": [
+    "vegan"
+  ],
   "timeMinutes": 40,
   "effort": "medium",
   "servings": 6

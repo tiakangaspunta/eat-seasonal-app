@@ -6,19 +6,42 @@
     "url": "https://satokausi.fi/limettinuudelit/"
   },
   "ingredients": [
-    { "ingredientId": "noodles", "quantity": 200, "unit": "g" },
-    { "ingredientId": "lime", "quantity": 4 },
-    { "ingredientId": "garlic", "quantity": 3, "unit": "clove" },
-    { "ingredientId": "shallot", "quantity": 1 },
-    { "ingredientId": "red-chili", "quantity": 1 },
-    { "ingredientId": "ginger", "quantity": 20, "unit": "g" },
+    {
+      "ingredientId": "noodles",
+      "quantity": 200,
+      "unit": "g"
+    },
+    {
+      "ingredientId": "lime",
+      "quantity": 4
+    },
+    {
+      "ingredientId": "garlic",
+      "quantity": 3,
+      "unit": "clove"
+    },
+    {
+      "ingredientId": "shallot",
+      "quantity": 1
+    },
+    {
+      "ingredientId": "red-chili",
+      "quantity": 1
+    },
+    {
+      "ingredientId": "ginger",
+      "quantity": 20,
+      "unit": "g"
+    },
     {
       "ingredientId": "bok-choy",
       "quantity": 250,
       "unit": "g",
       "substitutions": [
         {
-          "use": { "ingredientId": "napa-cabbage" },
+          "use": {
+            "ingredientId": "napa-cabbage"
+          },
           "reason": "seasonal",
           "ratio": "1:1",
           "note": {
@@ -27,7 +50,9 @@
           }
         },
         {
-          "use": { "ingredientId": "spinach" },
+          "use": {
+            "ingredientId": "spinach"
+          },
           "reason": "seasonal",
           "ratio": "1:1",
           "note": {
@@ -37,17 +62,35 @@
         }
       ]
     },
-    { "ingredientId": "coriander", "quantity": 1, "unit": "pot" },
-    { "ingredientId": "rapeseed-oil", "quantity": 0.5, "unit": "dl" },
-    { "ingredientId": "peanut-butter", "quantity": 4, "unit": "tbsp" },
-    { "ingredientId": "syrup", "quantity": 2, "unit": "tbsp" },
+    {
+      "ingredientId": "coriander",
+      "quantity": 1,
+      "unit": "pot"
+    },
+    {
+      "ingredientId": "rapeseed-oil",
+      "quantity": 0.5,
+      "unit": "dl"
+    },
+    {
+      "ingredientId": "peanut-butter",
+      "quantity": 4,
+      "unit": "tbsp"
+    },
+    {
+      "ingredientId": "syrup",
+      "quantity": 2,
+      "unit": "tbsp"
+    },
     {
       "freeText": "hoisin sauce",
       "quantity": 2,
       "unit": "tbsp",
       "substitutions": [
         {
-          "use": { "ingredientId": "soy-sauce" },
+          "use": {
+            "ingredientId": "soy-sauce"
+          },
           "reason": "pantry",
           "ratio": "1 tbsp soy sauce plus 1 tbsp syrup for 2 tbsp hoisin",
           "note": {
@@ -58,8 +101,13 @@
       ]
     }
   ],
-  "mealType": ["dinner"],
-  "tags": ["vegan", "quick"],
+  "mealType": [
+    "dinner"
+  ],
+  "tags": [
+    "vegan",
+    "quick"
+  ],
   "timeMinutes": 15,
   "effort": "medium",
   "servings": 4

@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
 
 import type { RenameKind } from '@/lib/data/rename'
+import { usePressToEdit } from '@/components/usePressToEdit'
 
 /**
  * A name you can edit where it sits.
@@ -19,9 +20,6 @@ import type { RenameKind } from '@/lib/data/rename'
  * once step 2 lands.
  */
 const EDITABLE = process.env.NODE_ENV === 'development'
-
-/** Long enough not to fire while scrolling, short enough not to feel stuck. */
-const HOLD_MS = 500
 
 export function EditableName({
   kind,
@@ -40,11 +38,6 @@ export function EditableName({
   const [error, setError] = useState<string | null>(null)
   const input = useRef<HTMLInputElement>(null)
 
-  // A press and hold that has already fired, so the click it is followed by
-  // does not re-open the editor.
-  const fromTouch = useRef(false)
-  const hold = useRef<ReturnType<typeof setTimeout> | null>(null)
-
   // A rename elsewhere, or a refresh after this one, arrives as a new prop.
   useEffect(() => setValue(name), [name])
 
@@ -52,18 +45,14 @@ export function EditableName({
     if (editing) input.current?.select()
   }, [editing])
 
-  if (!EDITABLE) return <span className={className}>{name}</span>
-
   const start = () => {
     setError(null)
     setValue(name)
     setEditing(true)
   }
+  const press = usePressToEdit(start)
 
-  const cancelHold = () => {
-    if (hold.current) clearTimeout(hold.current)
-    hold.current = null
-  }
+  if (!EDITABLE) return <span className={className}>{name}</span>
 
   const save = async () => {
     setEditing(false)
@@ -119,24 +108,7 @@ export function EditableName({
     <>
       <button
         type="button"
-        onClick={() => {
-          if (fromTouch.current) {
-            fromTouch.current = false
-            return
-          }
-          start()
-        }}
-        onPointerDown={(event) => {
-          if (event.pointerType === 'mouse') return
-          fromTouch.current = true
-          hold.current = setTimeout(start, HOLD_MS)
-        }}
-        onPointerUp={cancelHold}
-        onPointerLeave={cancelHold}
-        onPointerCancel={cancelHold}
-        // Otherwise a long press raises the browser's own text selection menu
-        // over the field it has just opened.
-        onContextMenu={(event) => event.preventDefault()}
+        {...press}
         title="Click to rename, or press and hold on a touch screen"
         className={`-mx-1 flex min-h-11 items-center rounded px-1 text-left hover:bg-neutral-100 ${className}`}
       >
