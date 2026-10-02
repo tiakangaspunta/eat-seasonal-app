@@ -27,7 +27,7 @@ model should not make it impossible later.
 | Content format | JSON files under `data/`, typed and validated on load, so the app can write to them |
 | Platform | Desktop first, built so mobile is an adaptation and not a rewrite |
 | Recipe content | Ingredients, tags, substitutions, and personal notes in the app. Method links out |
-| Recipe classification | Meal type (breakfast, lunch, dinner, dessert, side, snack) is its own field, separate from diet and style tags |
+| Recipe classification | Meal type is its own field, separate from diet and style tags. Four types from issue 021: breakfast, meal, sides, baking, and a recipe can have several |
 | Adding recipes | Paste a URL to Claude Code, it writes the data file. No in-app form for now |
 | Images | Freely licensed photos per ingredient, attribution stored, approved by contact sheet |
 | The game | Monthly ingredient completion, driven by "tried this" |
@@ -246,8 +246,15 @@ type Substitution = {
 `mealType` is kept separate from `tags` on purpose: one is what course a recipe
 is, the other is a property of how it's made. A filter for "vegan dinners" is then
 two clean filters, `mealType` and `tags`, instead of guessing which strings in one
-flat list mean what. A recipe can have more than one meal type, since a soup can
-be lunch and dinner both.
+flat list mean what. A recipe can have more than one meal type, since pancakes
+can be a meal or a side.
+
+**Four meal types from issue 021** (decided 2026-10-02): Breakfast, Meal, Sides
+and Baking, as `'breakfast' | 'meal' | 'side' | 'baking'`. Meal is a main
+course at any time of day, so lunch and dinner merge into it. Baking holds
+anything baked and anything sweet, baked or not, so dessert goes too. Snack goes
+because its two recipes were really a meal and a side. The type block above
+still shows the six until issue 021 is built.
 
 A recipe's own seasonality is derived, never stored. Tia's rule since
 2026-09-23: a recipe is in season in a month when **at least one** of its

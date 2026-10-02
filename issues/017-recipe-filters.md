@@ -54,3 +54,5 @@ the sidebar on desktop.
 
 - Blocked by `issues/015-month-view.md`.
 - Blocked by `issues/016-filters-in-the-url.md`.
+- Blocked by `issues/021-meal-categories.md`, so the meal-type filter is built
+  on Breakfast, Meal, Sides and Baking rather than the old six.

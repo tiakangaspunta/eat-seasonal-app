@@ -893,3 +893,17 @@ of four wrong choices.
   looked at 3000, found Bitflow there, and failed every smoke flow against its
   sign-in page. Fixed in one place each, so the two cannot drift apart again.
   If 3002 is taken, `next dev` now stops with an error instead of moving.
+
+## 2026-10-02 Four meal types instead of six (issue 021)
+
+- **Breakfast, Meal, Sides, Baking.** The six from 2026-09-03 didn't match how
+  Tia chooses what to cook: 28 of 31 recipes were dinner, lunch was only ever
+  dinner as well, and snack and dessert held almost nothing. Tia's call.
+- **Meal means a main course at any time of day.** Lunch and dinner merge.
+- **Baking covers sweets, baked or not.** No separate dessert category; a
+  mousse or a kiisseli goes under Baking.
+- **Snack goes.** Its two recipes were really a meal (red cabbage bao buns) and
+  a side (smashed Brussels sprouts). Naan stays a side, not Baking.
+- **Old values are rejected on load**, so a stale recipe file fails loudly
+  rather than vanishing from every section.
+- **Meal-type filtering (issue 017) waits for this**, so it is built once.
