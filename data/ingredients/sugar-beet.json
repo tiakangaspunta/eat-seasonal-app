@@ -1,0 +1,19 @@
+{
+  "id": "sugar-beet",
+  "name": "Sugar beet",
+  "category": "vegetable",
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        10,
+        11
+      ],
+      "storageMonths": [],
+      "peakMonths": [
+        11
+      ]
+    }
+  },
+  "verified": false,
+  "similarTo": []
+}

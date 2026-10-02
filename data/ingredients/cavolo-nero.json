@@ -1,0 +1,27 @@
+{
+  "id": "cavolo-nero",
+  "name": "Cavolo nero",
+  "category": "vegetable",
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        7,
+        8,
+        10,
+        11
+      ],
+      "storageMonths": [
+        1,
+        12
+      ],
+      "peakMonths": [
+        8,
+        10
+      ]
+    }
+  },
+  "verified": false,
+  "similarTo": [
+    "kale"
+  ]
+}

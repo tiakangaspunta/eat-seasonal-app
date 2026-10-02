@@ -1,0 +1,39 @@
+{
+  "id": "swiss-chard",
+  "name": "Swiss chard",
+  "category": "vegetable",
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        6
+      ],
+      "storageMonths": [
+        10
+      ],
+      "peakMonths": [
+        6
+      ]
+    },
+    "imported": {
+      "months": [
+        4,
+        5
+      ],
+      "origins": [
+        {
+          "months": [
+            4,
+            5
+          ],
+          "countries": [
+            "Netherlands",
+            "Italy",
+            "Spain"
+          ]
+        }
+      ]
+    }
+  },
+  "verified": false,
+  "similarTo": []
+}

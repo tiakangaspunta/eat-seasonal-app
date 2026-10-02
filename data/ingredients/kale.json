@@ -20,7 +20,9 @@
     }
   },
   "verified": true,
-  "similarTo": [],
+  "similarTo": [
+    "cavolo-nero"
+  ],
   "unverifiedMonths": [
     8,
     9,

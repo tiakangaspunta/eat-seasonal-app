@@ -842,3 +842,33 @@ of four wrong choices.
 - **New interface words are `{ en, fi }` in `lib/strings.ts`.** The older
   labels are still plain English in their components, which already bent the
   rule; they move at the Finnish step rather than inside this issue.
+
+## 2026-10-02 October from the calendar page
+
+- **Nothing had changed on satokausi.fi.** All 119 ingredient pages read on
+  2026-09-30 were read again and agree, so the check was against the calendar
+  page's October listing only. Record in `docs/OCTOBER-CALENDAR-GAPS.md`.
+- **A typo in a flag is still a flag.** White cabbage's October is typed "fIN"
+  on its page. Unlike romanesco's "EPS", which could be a typo for more than
+  one thing, "fIN" can only mean Finland, so the fetch script now reads flags
+  in any case and October is filled.
+- **Red cabbage's unflagged months are Finnish.** Tia's call: every other
+  cabbage is Finnish, so June to December on its page are too.
+- **Four Finnish additions, English names, imported ones still left out.**
+  Cavolo nero, Swiss chard, sugar beet and salsify, with the whole year from
+  their own pages. Cavolo nero and kale stand in for each other (Tia).
+
+## 2026-10-02 Ingredient names become bilingual (issue 020)
+
+- **Reverses 2026-09-11 "Names stay a single field".** Tia wants to use the app
+  in Finnish but may show it to people who don't speak Finnish, which a single
+  name can't serve. `Ingredient.name` becomes `{ en, fi }` at step 6.
+- **The interface language's name on top, the other underneath in smaller
+  text.** Switching to English flips the order. One empty side, or two
+  identical sides, shows a single line.
+- **Ingredients only.** Recipe titles stay a single string; many are proper
+  names that don't translate.
+- **`searchTermFi` goes away.** The Finnish name does its job.
+- **Search is a requirement, not part of this issue.** No search exists yet.
+  When it is built it matches either name. Where it sits in the build order is
+  an open question in `docs/PLAN.md` section 11.

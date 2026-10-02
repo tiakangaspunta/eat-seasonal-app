@@ -37,7 +37,8 @@ export function parseSeason(html) {
   while ((m = re.exec(cell[1])) !== null) {
     const bucket = BUCKET[norm(m[3])]
     if (!bucket) continue
-        const flags = [...m[4].matchAll(/alt="([A-Z]{2,3})"/g)].map((f) => f[1])
+        // Case-insensitive: valkokaali's October flag is typed "fIN" on the page.
+        const flags = [...m[4].matchAll(/alt="([A-Za-z]{2,3})"/gi)].map((f) => f[1].toUpperCase())
     rows.push({ months: expand(m[1], m[2]), bucket, flags })
   }
   return rows

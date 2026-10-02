@@ -1,0 +1,262 @@
+{
+  "valkokaali-kerakaali": {
+    "url": "https://satokausi.fi/raaka-aineet/valkokaali-kerakaali/",
+    "title": "Valkokaali, keräkaali",
+    "season": [
+      {
+        "months": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "bucket": "storage",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          10
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          11
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          12
+        ],
+        "bucket": "storage",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "punakaali": {
+    "url": "https://satokausi.fi/raaka-aineet/punakaali/",
+    "title": "Punakaali",
+    "season": [
+      {
+        "months": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "bucket": "storage",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "bucket": "fresh",
+        "flags": []
+      },
+      {
+        "months": [
+          12
+        ],
+        "bucket": "storage",
+        "flags": []
+      }
+    ]
+  },
+  "mustakaali-palmukaali": {
+    "url": "https://satokausi.fi/raaka-aineet/mustakaali-palmukaali/",
+    "title": "Mustakaali, palmukaali",
+    "season": [
+      {
+        "months": [
+          1
+        ],
+        "bucket": "storage",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          7
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          8
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          10
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          11
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          12
+        ],
+        "bucket": "storage",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "mangoldi-lehtijuurikas": {
+    "url": "https://satokausi.fi/raaka-aineet/mangoldi-lehtijuurikas/",
+    "title": "Mangoldi, lehtijuurikas",
+    "season": [
+      {
+        "months": [
+          4,
+          5
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "NLD",
+          "ITA",
+          "ESP"
+        ]
+      },
+      {
+        "months": [
+          6
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          10
+        ],
+        "bucket": "storage",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "sokerijuurikas": {
+    "url": "https://satokausi.fi/raaka-aineet/sokerijuurikas/",
+    "title": "Sokerijuurikas",
+    "season": [
+      {
+        "months": [
+          10
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          11
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  },
+  "kaurajuuri": {
+    "url": "https://satokausi.fi/raaka-aineet/kaurajuuri/",
+    "title": "Kaurajuuri",
+    "season": [
+      {
+        "months": [
+          1,
+          2,
+          3
+        ],
+        "bucket": "storage",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          9,
+          10
+        ],
+        "bucket": "peak",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          11
+        ],
+        "bucket": "fresh",
+        "flags": [
+          "FIN"
+        ]
+      },
+      {
+        "months": [
+          12
+        ],
+        "bucket": "storage",
+        "flags": [
+          "FIN"
+        ]
+      }
+    ]
+  }
+}

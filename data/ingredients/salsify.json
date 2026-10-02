@@ -1,0 +1,26 @@
+{
+  "id": "salsify",
+  "name": "Salsify",
+  "category": "vegetable",
+  "availability": {
+    "domestic": {
+      "freshMonths": [
+        9,
+        10,
+        11
+      ],
+      "storageMonths": [
+        1,
+        2,
+        3,
+        12
+      ],
+      "peakMonths": [
+        9,
+        10
+      ]
+    }
+  },
+  "verified": false,
+  "similarTo": []
+}
