@@ -1,6 +1,9 @@
 import { defineConfig, devices } from '@playwright/test'
 
-const baseURL = 'http://localhost:3000'
+// The same fixed port as `npm run dev`. Tia's other projects hold 3000 and
+// 3001, and with the default port the tests reused whatever answered on 3000:
+// another app's sign-in page, failing every flow (2026-10-02).
+const baseURL = 'http://localhost:3002'
 
 export default defineConfig({
   testDir: './e2e',

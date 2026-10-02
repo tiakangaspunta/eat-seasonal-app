@@ -885,3 +885,11 @@ of four wrong choices.
 - **A recipe the filter hides can still be opened by link.** An ingredient
   panel can link to a recipe where that ingredient is only optional, so the
   panel looks recipes up in the full list, not the shown one.
+
+## 2026-10-02 The dev server has a fixed port, 3002
+
+- **`npm run dev` and Playwright both use 3002.** Tia's Bitflow project holds
+  3000 and 3001. Next.js quietly moved this app to 3002 while the tests still
+  looked at 3000, found Bitflow there, and failed every smoke flow against its
+  sign-in page. Fixed in one place each, so the two cannot drift apart again.
+  If 3002 is taken, `next dev` now stops with an error instead of moving.
