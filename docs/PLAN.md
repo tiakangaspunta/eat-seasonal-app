@@ -22,7 +22,7 @@ model should not make it impossible later.
 | Season precision | Month-level data, friendly season labels in the UI |
 | Calendar source | Notion export (January to April), the rest of the year from satokausi.fi, trusted as it is and corrected when Tia finds a mistake |
 | Origin | One ingredient per produce, holding separate domestic and imported month sets |
-| Language | English only for now, Finnish as a later pass. Prose is bilingual, names are a single field in whatever language Tia prefers |
+| Language | English only for now, Finnish as a later pass. Prose is bilingual. Ingredient names become bilingual at step 6, the chosen language on top and the other underneath (issue 020); recipe titles stay a single field |
 | Editing | Ingredient and recipe names and notes are editable in the app, written back into the data files in dev mode |
 | Content format | JSON files under `data/`, typed and validated on load, so the app can write to them |
 | Platform | Desktop first, built so mobile is an adaptation and not a rewrite |
@@ -82,13 +82,18 @@ are `{ en, fi }` objects, with `en` filled now and `fi` left empty, and an empty
 field falling back to the other language so nothing renders blank. This is where
 translation actually earns anything.
 
-The tradeoff, stated plainly: at the Finnish step, switching the interface to
-Finnish will not translate names, so a list will read half English and half
-Finnish. Tia confirmed on 2026-09-11 that this is fine, and that a Finnish name
-replaces the English one rather than sitting beside it. The `{ en, fi }`
-migration held in reserve here is therefore not happening: names stay a single
-string. Renaming an ingredient to Finnish loses the English, which is the
-intended behaviour, since the id it is stored under stays an English slug.
+**Ingredient names become bilingual at step 6** (decided 2026-10-02, issue
+020). Tia wants to use the app in Finnish but may show it to people who don't
+speak Finnish, so `Ingredient.name` becomes `{ en, fi }`. The card and panel
+show the name in the interface language on top and the other in smaller text
+underneath; an empty side, or two identical sides, shows one line. The Finnish
+name also replaces `searchTermFi`. Names are never machine-translated: Finnish
+from satokausi.fi or from Tia, English from Tia or left empty. Until step 6,
+`name` stays the single string described above. Recipe titles stay a single
+string for good.
+
+This reverses the 2026-09-11 decision that a Finnish name replaces the English
+one and that names would never become a `{ en, fi }` pair.
 
 ### Ingredient
 
@@ -502,6 +507,13 @@ recipes surfaced through seasonal substitutions.
 
 **Step 6: Finnish**
 Fill every `fi` field, add the language switch, check date and month names.
+Bilingual ingredient names (issue 020).
+
+**Ingredient search (not yet placed)**
+There is no search yet, though section 4 already says non-seasonal ingredients
+are found through it. When it is built it must match an ingredient by either
+its English or its Finnish name. Which step it belongs to is still open
+(section 11).
 
 **Step 7: mobile**
 Work through `docs/RESPONSIVE.md` and verify on real viewport sizes.
@@ -519,5 +531,4 @@ migrate what is in browser storage.
   calendar needs drafting and flagging.
 - Whether a yearly collection view is worth adding alongside monthly progress.
 - Whether the in-app add-recipe form is needed once mobile exists.
-- Whether a half-English, half-Finnish list of names is annoying enough to justify
-  migrating names to bilingual fields at the Finnish step.
+- Which step ingredient search belongs to, and whether it searches recipes too.
