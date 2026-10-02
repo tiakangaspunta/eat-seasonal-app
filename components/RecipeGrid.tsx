@@ -8,16 +8,28 @@ import type { RecipeViewItem } from '@/components/types'
 import { useOpenParam } from '@/components/useOpenParam'
 
 /**
- * The recipe view: every recipe, in meal-type sections, opening in the side
- * panel. A recipe with two meal types sits in both sections, since a soup that
- * is lunch and dinner should be found by someone looking for either.
+ * The recipe view: the recipes shown, in meal-type sections and in the order
+ * given, opening in the side panel. A recipe with two meal types sits in both
+ * sections, since a soup that is lunch and dinner should be found by someone
+ * looking for either.
+ *
+ * `all` is every recipe, so a link can still open one the chosen months have
+ * left out of the grid.
  */
-export function RecipeGrid({ recipes, when }: { recipes: RecipeViewItem[]; when: string }) {
+export function RecipeGrid({
+  recipes,
+  all,
+  when,
+}: {
+  recipes: RecipeViewItem[]
+  all: RecipeViewItem[]
+  when: string
+}) {
   const [selectedId, setSelectedId] = useOpenParam()
   // Where focus goes when the panel closes: back to the card that opened it.
   const opener = useRef<HTMLElement | null>(null)
 
-  const selected = recipes.find((recipe) => recipe.id === selectedId)
+  const selected = all.find((recipe) => recipe.id === selectedId)
 
   const open = (id: string, element: HTMLElement) => {
     opener.current = element

@@ -19,6 +19,10 @@ building:
   season" a toggle?
 - Does the sort replace the meal-type sections, or sort within them?
 
+Answered by Tia on 2026-10-02: choosing months narrows the view to recipes
+with at least one ingredient in season; with no months chosen the view still
+shows every recipe. The sort applies within each meal-type section.
+
 ## Type
 
 AFK once the questions above are answered, which is Tia's call on product
@@ -26,12 +30,12 @@ behaviour.
 
 ## Acceptance criteria
 
-- [ ] Tia has answered the two open questions above
-- [ ] Recipes in season in the chosen months are shown, sorted by how many of
+- [x] Tia has answered the two open questions above
+- [x] Recipes in season in the chosen months are shown, sorted by how many of
       their ingredients are in season then, ties broken by title
-- [ ] Recipes with no ingredient list are never shown as in season
-- [ ] A smoke flow: choose months, see their in-season recipes
-- [ ] `docs/FLOWS.md` and `docs/RESPONSIVE.md` updated
+- [x] Recipes with no ingredient list are never shown as in season
+- [x] A smoke flow: choose months, see their in-season recipes
+- [x] `docs/FLOWS.md` and `docs/RESPONSIVE.md` updated
 
 ## Tests
 

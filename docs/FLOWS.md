@@ -54,7 +54,7 @@ flowchart TD
     heading -->|"any other set"| list["Heading: October and November"]
     whole --> several["Cards name their months: fresh Oct · storage Nov"]
     list --> several
-    render --> views["Ingredient view: produce from Finland in any chosen month. Recipe view: recipes in season in any chosen month are marked"]
+    render --> views["Ingredient view: produce from Finland in any chosen month. Recipe view: only recipes in season in any chosen month, most seasonal first in each meal section"]
 ```
 
 ## Browsing the current month, and opening an ingredient
@@ -84,11 +84,15 @@ flowchart TD
 
 ## Browsing recipes, and opening one
 
-Built in step 2.
+Built in step 2. Narrowing by chosen months added in issue 015.
 
 ```mermaid
 flowchart TD
-    recipes["Recipe view: every recipe, in breakfast, lunch, dinner, dessert, side and snack sections"]
+    open["Open the recipe view"] --> chosen{"Months chosen in the row, ?months= in the address?"}
+    chosen -->|"no"| recipes["Recipe view: every recipe, by title, in breakfast, lunch, dinner, dessert, side and snack sections"]
+    chosen -->|"yes"| narrowed["Only recipes with an ingredient in season in any chosen month, in the same sections, most in-season ingredients first, ties by title"]
+    narrowed -->|"none"| none["Says nothing with an ingredient list is in season yet"]
+    narrowed --> card
     recipes --> card["Card: title, effort, time, tags, a note when the ingredient list is not added yet"]
     card --> season{"At least one non-optional ingredient available from Finland in a chosen month?"}
     season -->|"yes"| marked["Marked in season, naming those ingredients"]

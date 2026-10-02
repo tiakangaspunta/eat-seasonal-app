@@ -19,4 +19,9 @@ export const UI = {
     and: { en: 'and', fi: '' },
     thisMonth: { en: 'this month', fi: '' },
   },
+  recipeView: {
+    inSeasonIntro: { en: 'Recipes with something in season', fi: '' },
+    inSeasonOrder: { en: 'By meal, the most seasonal first.', fi: '' },
+    empty: { en: 'Nothing with an ingredient list is in season in these months yet.', fi: '' },
+  },
 } satisfies Record<string, Record<string, Text>>

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { inSeasonIngredients } from './recipe'
+import { inSeasonIngredients, inSeasonRecipes } from './recipe'
 import type { Ingredient, Recipe, RecipeIngredient } from '@/lib/types'
 
 const carrot: Ingredient = {
@@ -33,10 +33,10 @@ const lime: Ingredient = {
 const calendar = new Map([carrot, asparagus].map((ingredient) => [ingredient.id, ingredient]))
 const withLime = new Map([...calendar, [lime.id, lime]])
 
-function recipe(ingredients: RecipeIngredient[]): Recipe {
+function recipe(ingredients: RecipeIngredient[], title = 'Fixture'): Recipe {
   return {
-    id: 'fixture',
-    title: 'Fixture',
+    id: title.toLowerCase(),
+    title,
     ingredients,
     mealType: ['dinner'],
     tags: [],
@@ -89,5 +89,42 @@ describe('a recipe in season over several chosen months', () => {
   it('is not in season when none of the months has any of its ingredients', () => {
     const soup = recipe([{ ingredientId: 'carrot' }, { ingredientId: 'asparagus' }])
     expect(inSeasonIngredients(soup, calendar, [3, 4])).toEqual([])
+  })
+})
+
+describe('the recipes in season in the chosen months', () => {
+  const both = recipe([{ ingredientId: 'carrot' }, { ingredientId: 'asparagus' }], 'Both')
+  const carrotOnly = recipe([{ ingredientId: 'carrot' }], 'Carrot soup')
+  const asparagusOnly = recipe([{ ingredientId: 'asparagus' }], 'Asparagus salad')
+  const noList = recipe([], 'No list yet')
+
+  it('leaves out recipes with nothing in season, and recipes with no ingredient list', () => {
+    const titles = inSeasonRecipes([carrotOnly, asparagusOnly, noList], calendar, [9]).map((r) => r.title)
+    expect(titles).toEqual(['Carrot soup'])
+  })
+
+  it('puts the recipe with the most ingredients in season first', () => {
+    const titles = inSeasonRecipes([carrotOnly, both], calendar, [5, 9]).map((r) => r.title)
+    expect(titles).toEqual(['Both', 'Carrot soup'])
+  })
+
+  it('breaks a tie by title', () => {
+    const titles = inSeasonRecipes([carrotOnly, asparagusOnly], calendar, [5, 9]).map((r) => r.title)
+    expect(titles).toEqual(['Asparagus salad', 'Carrot soup'])
+  })
+
+  it('counts an ingredient once, however many lines it is on', () => {
+    const twice = recipe([{ ingredientId: 'carrot' }, { ingredientId: 'carrot' }], 'Zesty carrots')
+    const titles = inSeasonRecipes([twice, asparagusOnly], calendar, [5, 9]).map((r) => r.title)
+    expect(titles).toEqual(['Asparagus salad', 'Zesty carrots'])
+  })
+
+  it('does not count optional lines or imported-only ingredients towards the order', () => {
+    const padded = recipe(
+      [{ ingredientId: 'carrot' }, { ingredientId: 'asparagus', optional: true }, { ingredientId: 'lime' }],
+      'Ample',
+    )
+    const titles = inSeasonRecipes([padded, both], withLime, [5, 9]).map((r) => r.title)
+    expect(titles).toEqual(['Both', 'Ample'])
   })
 })

@@ -8,9 +8,10 @@
  * needs editing when the content changes is a test that gets deleted.
  */
 import { getIngredients } from '../lib/data/ingredients'
-import { recipesByIngredient } from '../lib/data/recipes'
+import { getRecipes, recipesByIngredient } from '../lib/data/recipes'
 import { MONTH_NAMES } from '../lib/months'
 import { CALENDAR_SEASONS, domesticAvailability } from '../lib/season/availability'
+import { inSeasonRecipes } from '../lib/season/recipe'
 import { SEASONAL_CATEGORIES } from '../lib/types'
 import type { Month } from '../lib/types'
 
@@ -69,4 +70,23 @@ export function importedOnlyCount(): number {
  */
 export function anotherSeason(): string {
   return CALENDAR_SEASONS.find((season) => !season.months.includes(currentMonth()))!.name
+}
+
+/**
+ * A season the month view can prove something with: one recipe in season in
+ * it, and one recipe left out because it has no ingredient list yet.
+ */
+export function seasonWithRecipes(): { season: string; inSeason: string; leftOut: string } {
+  const calendar = new Map(getIngredients().map((ingredient) => [ingredient.id, ingredient]))
+  const recipes = getRecipes()
+  const leftOut = recipes.find((recipe) => recipe.ingredients.length === 0)
+  for (const season of CALENDAR_SEASONS) {
+    const shown = inSeasonRecipes(recipes, calendar, season.months)
+    if (shown.length > 0 && leftOut) {
+      return { season: season.name, inSeason: shown[0].title, leftOut: leftOut.title }
+    }
+  }
+  throw new Error(
+    'No season has an in-season recipe, or every recipe has an ingredient list, so the month view flow cannot prove anything.',
+  )
 }

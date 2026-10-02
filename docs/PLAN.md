@@ -391,14 +391,19 @@ selected ingredients, near-misses included and marked.
 
 ### Month view
 
-Clicking a month shows recipes in season that month (section 4), sorted by how
-many seasonal ingredients they use. Same filters as elsewhere.
+Not a separate screen: it is the recipe view with months chosen in the row of
+months. With a choice in the address it shows only the recipes in season in any
+chosen month (section 4), most seasonal ingredients first within each meal-type
+section, ties by title. With no choice it shows every recipe. Same filters as
+elsewhere.
 
 ### Recipe view, recipe card and recipe panel
 
 The recipe view lists every recipe, in meal-type sections, with the ones in
-season this month marked (one in-season ingredient is enough, section 4). It is not narrowed to in-season
-recipes, because most recipes have no ingredient list yet and would drop out.
+season this month marked (one in-season ingredient is enough, section 4). Opened
+without a choice of months it is not narrowed, because most recipes have no
+ingredient list yet and would drop out. Once months are chosen it narrows (see
+Month view).
 
 Card: title, time, effort, meal type, tags, and which seasonal ingredients it hits.
 Panel: full ingredient list with substitutions inline, personal notes, a prominent

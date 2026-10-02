@@ -1,4 +1,5 @@
 import { domesticAvailability } from './availability'
+import { compareNames } from '@/lib/sort'
 import type { Ingredient, Month, Recipe } from '@/lib/types'
 
 /**
@@ -30,4 +31,25 @@ export function inSeasonIngredients(
       )
     })
   return [...new Set(ids)]
+}
+
+/**
+ * The recipes in season in any of the chosen months, the ones using the most
+ * in-season ingredients first, ties by title.
+ *
+ * Tia's call on 2026-10-02 (issue 015): with months chosen, the recipe view
+ * shows only these, in this order within each meal-type section. The count is
+ * the same one the card shows, so optional lines, imported-only and pantry
+ * ingredients do not move a recipe up.
+ */
+export function inSeasonRecipes(
+  recipes: Recipe[],
+  calendar: Map<string, Ingredient>,
+  months: Month[],
+): Recipe[] {
+  return recipes
+    .map((recipe) => ({ recipe, count: inSeasonIngredients(recipe, calendar, months).length }))
+    .filter(({ count }) => count > 0)
+    .sort((a, b) => b.count - a.count || compareNames(a.recipe.title, b.recipe.title))
+    .map(({ recipe }) => recipe)
 }

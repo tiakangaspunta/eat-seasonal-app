@@ -43,7 +43,9 @@ exist yet. This file records what was actually built.
 - **Recipe grid** (`app/recipes/page.tsx`, `components/RecipeGrid.tsx`, step
   2): the same column steps as the home grid, one on mobile up to four on a wide
   screen, in meal-type sections. Cards have no photo, so they are text only and
-  wrap a long title rather than widening.
+  wrap a long title rather than widening. With months chosen (issue 015) it is
+  the same grid holding fewer cards; the empty-state line is plain text at full
+  width on both.
 - **Recipe side panel** (`components/RecipePanel.tsx`, step 2): the same frame
   as the ingredient panel (`components/SidePanel.tsx`), bottom sheet on mobile
   and right-hand panel from `md:`. The method link is a full-width button at

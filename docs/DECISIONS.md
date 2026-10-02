@@ -872,3 +872,16 @@ of four wrong choices.
 - **Search is a requirement, not part of this issue.** No search exists yet.
   When it is built it matches either name. Where it sits in the build order is
   an open question in `docs/PLAN.md` section 11.
+
+## 2026-10-02 The month view narrows the recipe view (issue 015)
+
+- **Choosing months narrows; not choosing does not.** With `?months=` in the
+  address, the recipe view shows only recipes with at least one ingredient in
+  season in a chosen month. Opened without a choice it still shows every
+  recipe, since 26 of 31 have no ingredient list and would otherwise vanish
+  from the view entirely. Tia's call.
+- **Most seasonal first, within each meal-type section.** The sections stay;
+  the order inside them is the count of in-season ingredients, ties by title.
+- **A recipe the filter hides can still be opened by link.** An ingredient
+  panel can link to a recipe where that ingredient is only optional, so the
+  panel looks recipes up in the full list, not the shown one.

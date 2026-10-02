@@ -10,7 +10,13 @@
  */
 import { expect, test } from '@playwright/test'
 
-import { anotherSeason, currentMonthName, importedOnlyCount, ingredientWithRecipes } from './fixtures'
+import {
+  anotherSeason,
+  currentMonthName,
+  importedOnlyCount,
+  ingredientWithRecipes,
+  seasonWithRecipes,
+} from './fixtures'
 
 /** Every ingredient card is a button that opens the panel, and says so. */
 const cards = (page: import('@playwright/test').Page) => page.locator('button[aria-expanded]')
@@ -119,4 +125,18 @@ test('choosing a season changes the heading, survives a reload, and carries to t
   await page.getByRole('navigation', { name: 'View' }).getByRole('link', { name: 'Recipes' }).click()
   await expect(page).toHaveURL(/\/recipes\?months=/)
   await expect(heading).toHaveText(new RegExp(`^${season}$`, 'i'))
+})
+
+test('choosing months narrows the recipe view to what is in season then', async ({ page }) => {
+  const { season, inSeason, leftOut } = seasonWithRecipes()
+  await page.goto('/recipes', { waitUntil: 'networkidle' })
+
+  // With nothing chosen, every recipe is there.
+  await expect(cards(page).filter({ hasText: leftOut }).first()).toBeVisible()
+
+  await page.getByRole('group', { name: 'Seasons' }).getByRole('button', { name: season }).click()
+  await expect(page).toHaveURL(/months=/)
+
+  await expect(cards(page).filter({ hasText: inSeason }).first()).toBeVisible()
+  await expect(cards(page).filter({ hasText: leftOut })).toHaveCount(0)
 })
